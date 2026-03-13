@@ -1,0 +1,65 @@
+/* ── Marquee Strip ───────────────────────────────────────────── */
+.marquee-strip {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    background: rgba(255,255,255,0.018);
+    position: relative;
+    z-index: 3;
+}
+.marquee-strip::before,
+.marquee-strip::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 80px;
+    z-index: 1;
+    pointer-events: none;
+}
+.marquee-strip::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg) 0%, transparent 100%);
+}
+.marquee-strip::after {
+    right: 0;
+    background: linear-gradient(-90deg, var(--bg) 0%, transparent 100%);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 0;
+    width: max-content;
+    animation: marqueeScroll 28s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.marquee-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+.marquee-inner span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0 28px;
+    transition: color 0.2s;
+}
+.marquee-inner span:hover { color: var(--accent); }
+.marquee-inner .m-sep {
+    font-size: 0.55rem;
+    color: var(--accent);
+    opacity: 0.7;
+    padding: 0;
+}
+

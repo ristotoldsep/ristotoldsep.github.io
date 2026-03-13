@@ -1,0 +1,82 @@
+/* ── Intro / Hero ────────────────────────────────────────────── */
+.intro-inner {
+    max-width: 680px;
+    position: relative;
+    z-index: 4;
+}
+
+.intro-title {
+    font-size: clamp(2rem,5vw,4.6rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 22px;
+}
+.intro-title em {
+    background: linear-gradient(90deg,
+        #C49A3C 0%,
+        #f4d06e 18%,
+        #f09060 32%,
+        #e06aaf 46%,
+        #a87cfa 60%,
+        #5fa8f8 72%,
+        #f4d06e 86%,
+        #C49A3C 100%
+    );
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 5s linear infinite;
+}
+@keyframes gradientFlow {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 250% 50%; }
+}
+
+.intro-subtitle {
+    font-size: clamp(1rem,1.5vw,1.2rem);
+    color: var(--text-muted);
+    max-width: 500px;
+    margin-bottom: 36px;
+    line-height: 1.75;
+}
+
+.intro-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* ── Rotating scroll button ──────────────────────────────────── */
+.rotating-btn {
+    position: absolute;
+    bottom: clamp(32px,5vw,60px);
+    right: clamp(28px,5vw,72px);
+    width: 108px; height: 108px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+.rotating-btn:hover { color: var(--accent); }
+
+.rotating-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    animation: spin 14s linear infinite;
+    font-size: 11.5px;
+    letter-spacing: 2px;
+}
+@keyframes spin { to { transform:rotate(360deg); } }
+
+.rotating-arrow {
+    font-size: 1.2rem;
+    z-index: 1;
+    transition: transform 0.3s var(--ease-out);
+}
+.rotating-btn:hover .rotating-arrow { transform: translateY(4px); }
+

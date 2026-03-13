@@ -1,0 +1,58 @@
+/* ── Sections ────────────────────────────────────────────────── */
+.content { flex: 1; }
+
+.sec-main,
+.sec-inner {
+    padding: clamp(64px,9vw,120px) clamp(28px,5vw,72px);
+}
+
+.sec-main {
+    min-height: calc(100vh - var(--topnav-h));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.sec-inner { border-top: 1px solid var(--border); }
+
+/* Section title block */
+.sec-title-block { max-width: 640px; margin-bottom: clamp(40px,6vw,72px); }
+.sec-title-block--mt { margin-top: clamp(60px,8vw,100px); }
+
+.sec-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+}
+.sec-eyebrow svg { flex-shrink:0; }
+
+.sec-h2 {
+    font-size: clamp(1.9rem, 3.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 16px;
+}
+
+.sec-text {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 520px;
+}
+
+/* Animate states */
+.animate-up,
+.animate-card {
+    opacity: 0;
+    transform: translateY(50px);
+}
+.animate-card { transform: translateY(70px); }
+

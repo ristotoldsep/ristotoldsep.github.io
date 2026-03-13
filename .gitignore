@@ -1,4 +1,13 @@
 # dependencies
-/node_modules 
-.claude
+/node_modules
 .DS_Store
+.claude
+
+# Astro build output
+/dist
+/.astro
+
+# env
+.env
+.env.*
+!.env.example

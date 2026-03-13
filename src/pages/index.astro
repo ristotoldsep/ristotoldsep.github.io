@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Cursor from '../components/global/Cursor.astro';
+import BackgroundLayers from '../components/global/BackgroundLayers.astro';
+import Preloader from '../components/global/Preloader.astro';
+import MobileOverlay from '../components/global/MobileOverlay.astro';
+import Sidebar from '../components/layout/Sidebar.astro';
+import TopNav from '../components/layout/TopNav.astro';
+import SectionHome from '../components/sections/SectionHome.astro';
+import MobileProfile from '../components/sections/MobileProfile.astro';
+import MarqueeStrip from '../components/sections/MarqueeStrip.astro';
+import SectionWork from '../components/sections/SectionWork.astro';
+import SectionAgency from '../components/sections/SectionAgency.astro';
+import SectionAbout from '../components/sections/SectionAbout.astro';
+import SectionSkills from '../components/sections/SectionSkills.astro';
+import SectionContact from '../components/sections/SectionContact.astro';
+import SectionCtaFull from '../components/sections/SectionCtaFull.astro';
+import Footer from '../components/sections/Footer.astro';
+---
+
+<BaseLayout>
+  <Cursor />
+  <BackgroundLayers />
+  <Preloader />
+
+  <div class="site-layout">
+    <Sidebar />
+
+    <div class="main-wrap" id="mainWrap">
+      <TopNav />
+      <MobileOverlay />
+
+      <main class="content" id="content">
+        <SectionHome />
+        <MobileProfile />
+        <MarqueeStrip />
+        <SectionWork />
+        <SectionAgency />
+        <SectionAbout />
+        <SectionSkills />
+        <SectionContact />
+        <SectionCtaFull />
+        <Footer />
+      </main>
+    </div>
+  </div>
+</BaseLayout>

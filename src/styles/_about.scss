@@ -1,0 +1,250 @@
+/* ── Achievements ────────────────────────────────────────────── */
+.achievements {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+    margin-bottom: clamp(40px,6vw,64px);
+}
+
+@media screen and (max-width: 767px) {
+    .achievements {
+        grid-template-columns: 1fr;
+    }
+}
+
+.achievement {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-top-color: rgba(255,255,255,0.16);
+    border-radius: var(--r-l);
+    padding: clamp(24px,3vw,36px);
+    text-align: center;
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.07) inset, 0 8px 32px rgba(0,0,0,0.25);
+    transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.achievement:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.16);
+    transform: translateY(-4px);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 16px 48px rgba(0,0,0,0.35), 0 0 30px rgba(196,154,60,0.06);
+}
+
+.ach-num {
+    font-size: clamp(2.4rem,4vw,3.4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-lt) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+.ach-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+/* ── About body ─────────────────────────────────────────────── */
+.about-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px,5vw,64px);
+    align-items: start;
+}
+
+.about-bio-text {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.75;
+    margin-bottom: 18px;
+}
+.about-bio-actions { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+.about-info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-info-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-top-color: rgba(255,255,255,0.14);
+    border-radius: var(--r-m);
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.about-info-item:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.15);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 4px 20px rgba(0,0,0,0.2);
+}
+.about-info-item small {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+.about-info-item span,
+.about-info-item a {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text);
+}
+.info-link { transition: color 0.2s; }
+.info-link:hover { color: var(--accent); }
+
+.avail-badge {
+    display: inline-block;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #3ecf6f !important;
+    background: rgba(62,207,111,0.12);
+    border: 1px solid rgba(62,207,111,0.25);
+    padding: 3px 10px;
+    border-radius: 100px;
+}
+
+/* ── Services ────────────────────────────────────────────────── */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.svc-card {
+    position: relative;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: var(--r-l);
+    padding: 40px 32px 32px;
+    overflow: hidden;
+    backdrop-filter: blur(24px) saturate(1.4);
+    -webkit-backdrop-filter: blur(24px) saturate(1.4);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.06) inset,
+        0 12px 48px rgba(0,0,0,0.32),
+        0 1px 3px rgba(0,0,0,0.4);
+    transition: background 0.4s, border-color 0.4s, transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s;
+}
+
+/* Gold top-edge rule */
+.svc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(196,154,60,0.55) 40%, rgba(220,180,80,0.7) 50%, rgba(196,154,60,0.55) 60%, transparent 100%);
+    opacity: 0.6;
+    transition: opacity 0.4s;
+}
+
+.svc-card:hover {
+    background: rgba(255,255,255,0.055);
+    border-color: rgba(255,255,255,0.12);
+    transform: translateY(-6px);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.09) inset,
+        0 28px 72px rgba(0,0,0,0.42),
+        0 0 0 1px rgba(196,154,60,0.12);
+}
+.svc-card:hover::before { opacity: 1; }
+
+.svc-num {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(196,154,60,0.7);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.svc-num::after {
+    content: '';
+    flex: 1;
+    max-width: 28px;
+    height: 1px;
+    background: rgba(196,154,60,0.3);
+}
+
+.svc-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    margin-bottom: 18px;
+    color: var(--text);
+}
+
+.svc-divider {
+    width: 32px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(196,154,60,0.6), transparent);
+    margin-bottom: 16px;
+}
+
+.svc-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+.stag {
+    font-size: 0.63rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    padding: 4px 11px;
+    border-radius: 100px;
+    background: rgba(196,154,60,0.06);
+    color: rgba(196,154,60,0.8);
+    border: 1px solid rgba(196,154,60,0.2);
+    transition: background 0.2s, color 0.2s;
+}
+.svc-card:hover .stag {
+    background: rgba(196,154,60,0.1);
+    color: rgba(220,180,80,0.9);
+}
+
+.svc-text {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    line-height: 1.72;
+    position: relative;
+    z-index: 1;
+}
+
+/* Accent corner glow */
+.svc-accent {
+    position: absolute;
+    bottom: -50px; right: -50px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: var(--ac, transparent);
+    filter: blur(40px);
+    pointer-events: none;
+    opacity: 0.7;
+    transition: opacity 0.4s, transform 0.4s;
+}
+.svc-card:hover .svc-accent {
+    opacity: 1;
+    transform: scale(1.15);
+}
+

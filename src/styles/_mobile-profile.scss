@@ -1,0 +1,101 @@
+/* ── Mobile Profile Card (inserted after hero, mobile only) ─── */
+.mobile-profile {
+    display: none;
+    padding: clamp(20px,5vw,56px);
+    padding-top: 0;
+}
+.mobile-profile-inner {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-top-color: rgba(255,255,255,0.18);
+    border-radius: var(--r-xl);
+    padding: 28px 24px;
+    backdrop-filter: blur(28px) saturate(1.5);
+    -webkit-backdrop-filter: blur(28px) saturate(1.5);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.07) inset,
+        0 20px 60px rgba(0,0,0,0.32);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    position: relative;
+    overflow: hidden;
+}
+.mobile-profile-inner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(196,154,60,0.5) 40%, rgba(220,180,80,0.7) 50%, rgba(196,154,60,0.5) 60%, transparent);
+}
+.mp-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.mp-photo {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 2px solid rgba(196,154,60,0.4);
+    box-shadow: 0 0 0 5px rgba(196,154,60,0.08);
+    flex-shrink: 0;
+    filter: grayscale(10%);
+}
+.mp-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.mp-name {
+    font-size: 1.18rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+.mp-role {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+.mp-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+.mp-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.mp-stat-label {
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+.mp-stat-value {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+}
+.mp-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.mp-socials {
+    display: flex;
+    gap: 8px;
+}
+

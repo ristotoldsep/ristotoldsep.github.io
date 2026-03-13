@@ -1,0 +1,32 @@
+/* ── Variables ──────────────────────────────────────────────── */
+:root {
+    --bg:          #070710;
+    --surface:     rgba(255,255,255,0.05);
+    --surface-2:   rgba(255,255,255,0.09);
+    --border:      rgba(255,255,255,0.08);
+    --border-h:    rgba(255,255,255,0.15);
+
+    --text:        #EDE8DD;
+    --text-muted:  rgba(237,232,221,0.70);
+    --text-dim:    rgba(237,232,221,0.22);
+
+    --accent:      #C49A3C;
+    --accent-lt:   #DDB95A;
+    --accent-dim:  rgba(196,154,60,0.15);
+    --accent-glow: rgba(196,154,60,0.28);
+
+    --font:        'Syne', sans-serif;
+
+    --sidebar-w:   272px;
+    --sidebar-gap: 16px;
+    --sidebar-off: calc(var(--sidebar-w) + var(--sidebar-gap) * 2);
+    --topnav-h:    76px;
+
+    --ease-out:    cubic-bezier(0.16,1,0.3,1);
+    --ease-io:     cubic-bezier(0.87,0,0.13,1);
+    --r-s:         10px;
+    --r-m:         16px;
+    --r-l:         22px;
+    --r-xl:        28px;
+}
+

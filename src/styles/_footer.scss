@@ -1,0 +1,30 @@
+/* ── Footer ──────────────────────────────────────────────────── */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px clamp(28px,5vw,72px);
+    border-top: 1px solid var(--border);
+    background: rgba(255,255,255,0.01);
+}
+.footer-logo {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+}
+.footer-copy {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--text-dim);
+}
+.footer-top {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+.footer-top:hover { color: var(--accent); }
+

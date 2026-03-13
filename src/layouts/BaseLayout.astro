@@ -1,0 +1,38 @@
+---
+import '../styles/main.scss';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Risto Tõldsep — Full Stack Developer',
+  description = 'Risto Tõldsep — Full Stack Web Developer based in Tallinn, Estonia. 5+ years building web apps, eCommerce, AI tools and more.',
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="risto tõldsep, freelance web developer, full stack developer, portfolio, wordpress, react, seo, ai, automation" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="/images/logo.webp" type="image/png">
+  <meta property="og:image" content="/images/coverphoto.jpg" />
+  <meta property="og:title" content={title} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <slot />
+  <script>
+    import { initAll } from '../scripts/main';
+    initAll();
+  </script>
+</body>
+</html>
