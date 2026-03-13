@@ -188,6 +188,16 @@ function openMobileMenu() {
     lenis.stop();
 }
 
+// Stop Lenis from eating touchmove events inside the sidebar
+// Lenis listens on window (bubble phase), so stopPropagation from the inner
+// child prevents it from ever reaching Lenis.
+const sidebarInner = document.getElementById('sidebarInner');
+if (sidebarInner) {
+    sidebarInner.addEventListener('touchmove', function (e) {
+        e.stopPropagation();
+    }, { passive: true });
+}
+
 if (mobileToggle) {
     mobileToggle.addEventListener('click', () => {
         sidebar.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
