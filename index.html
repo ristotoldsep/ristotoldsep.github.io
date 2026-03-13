@@ -4,317 +4,726 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- FOR SEO -->
-    <meta name="keywords"
-        content="risto tõldsep, freelance web developer, full stack developer, full stack developer portfolio, frontend developer, backend developer" />
-
-    <title>Risto Tõldsep Portfolio | Web Developer 👨‍💻</title>
-    <meta name="description" content="Risto Tõldsep Full Stack Web Developer Portfolio" />
-    <!-- ICON LOGO -->
-    <link rel="icon" href="images/logo.webp" type="image/icon type">
-    <!-- Font awesome icons -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    <meta name="keywords" content="risto tõldsep, freelance web developer, full stack developer, portfolio, wordpress, react, seo, ai, automation" />
+    <title>Risto Tõldsep — Full Stack Developer</title>
+    <meta name="description" content="Risto Tõldsep — Full Stack Web Developer based in Tallinn, Estonia. 5+ years building web apps, eCommerce, AI tools and more." />
+    <link rel="icon" href="images/logo.webp" type="image/png">
     <meta property="og:image" content="/images/coverphoto.jpg" />
+    <meta property="og:title" content="Risto Tõldsep — Full Stack Developer" />
+
+    <!-- Syne font (same as Braxton) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <div class="preloader" style=" display: flex;
-        align-items: center;
-        background: #000;
-        height: 100vh;
-        width: 100%;
-        justify-content: center;
-        left: 0;
-        position: fixed;
-        top: 0;
-        transition: opacity 0.2s linear;
-        z-index: 9999;
-        opacity: 1;
-        transform: opacity 1s linear;">
-        <img src="/images/rt.gif" alt="spinner">
+    <!-- Custom Cursor -->
+    <div id="cursor" class="cursor"></div>
+    <div id="cursorRing" class="cursor-ring"></div>
+
+    <!-- Background Layers -->
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="ambient-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-inner">
+            <span class="preloader-logo">RT</span>
+            <div class="preloader-track">
+                <div class="preloader-fill" id="preloaderFill"></div>
+            </div>
+        </div>
     </div>
 
-    <!-- PROGRESSBAR -->
-    <div id="progressbar"></div>
-    <div id="scrollPath"></div>
-    <!-- NAVBAR -->
-    <header>
-        <a href="#home" class="logo"><span class="initial">R</span>ISTO <span class="initial">T</span>ÕLDSEP</a>
-        <div class="toggle" onclick="toggleMenu();"></div>
-        <ul class="menu">
-            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
-            <li><a href="#about" onclick="toggleMenu();">About</a></li>
-            <li><a href="#services" onclick="toggleMenu();">Services</a></li>
-            <li><a href="#projects" onclick="toggleMenu();">Projects</a></li>
-            <li><a href="#testimonial" onclick="toggleMenu();">Testimonial</a></li>
-            <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
-        </ul>
-    </header>
-    <!-- LANDING SECTION -->
-    <section class="banner" id="home">
-        <div class="textBx">
-            <h2>Hello, I'm<br><span>Risto Tõldsep.</span></h2>
-            <h3>I'm a <span class="typed-text"></span><span class="cursor">&nbsp;</span></h3>
-            <!-- About button -->
-            <a href="#about" class="btn">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                About Me
-            </a>
-            <!-- Work button -->
-            <a href="#projects" class="btn btn-white">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Work I've done
-            </a>
-        </div>
-    </section>
-    <!-- ABOUT SECTION -->
-    <section class="about" id="about">
-        <div class="heading">
-            <h2>About Me</h2>
-        </div>
-        <div class="content">
-            <div class="contentBx w50">
-                <h3>I'm a Full Stack Web Developer. <br>Feel free to get in touch with me if you need a website or an
-                    online store!</h3>
-                <br>
-                I have graduated from Tallinn University of Technology with a Bachelor in Computer Systems
-                Engineering.<br><br>
-                I am passionate about creating beautiful responsive web applications.</p><br>
-                <p>🤓 Currently working full time as a Web developer/designer, mainly focused on crafting intuitive and
-                    dynamic user
-                    experiences (websites and eCommerce stores), while also focusing on SEO, security and
-                    optimization.<br><br>
-                    Familiar with several languages/libraries/frameworks/platforms - Probably stronger in front-end, but
-                    aspiring to become an experienced full stack web developer. 4 years of experience with
-                    PHP/Wordpress, also currently heavily focused on learning the React ecosystem + Headless CMS
-                    solutions and building projects with them.<br><br>
-                    😎 I am a team player. I am outgoing, dedicated and open-minded. I usually get across to people and
-                    adjust to changes
-                    quickly. I believe that a person should work on developing their professional skills and learning
-                    new things all the
-                    time.</p><br>
-                <div class="links">
-                    <!-- FB -->
-                    <a href="https://www.facebook.com/risto.toldsep/" target="_blank"><i class="fa fa-facebook-square"
-                            aria-hidden="true"></i></a>
-                    <!-- LinkedIN -->
-                    <a href="https://www.linkedin.com/in/risto-toldsep" target="_blank"><i class="fa fa-linkedin-square"
-                            aria-hidden="true"></i></a>
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/ristotoldsep/" target="_blank"><i class="fa fa-instagram"
-                            aria-hidden="true"></i></a>
-                    <!-- GitHub -->
-                    <a href="https://github.com/ristotoldsep" target="_blank"><i class="fa fa-github"></i></a>
-                    <a href="Resume-RistoToldsep.pdf" download>
-                        <img src="./images/cv2.png" alt="CV" height="25px">
+    <!-- ════════════════════════════════════════════════
+         SITE LAYOUT
+         ════════════════════════════════════════════════ -->
+    <div class="site-layout">
+
+        <!-- ══════════════════════════ SIDEBAR ══ -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+
+                <!-- Photo -->
+                <div class="sidebar-photo">
+                    <img src="aa_profile_pic.png" alt="Risto Tõldsep — Full Stack Developer">
+                </div>
+
+                <!-- Name + Role -->
+                <div class="sidebar-name">
+                    <h1 class="sidebar-title">Risto<br>Tõldsep</h1>
+                    <p class="sidebar-role">Full Stack Developer</p>
+                </div>
+
+                <!-- Data blocks -->
+                <div class="sidebar-data">
+                    <div class="sidebar-data-item">
+                        <small>Specialization</small>
+                        <span>Web Apps &amp; eCommerce</span>
+                    </div>
+                    <div class="sidebar-data-item">
+                        <small>Based in</small>
+                        <span>Tallinn, Estonia</span>
+                    </div>
+                    <div class="sidebar-data-item">
+                        <small>Experience</small>
+                        <span>5+ Years</span>
+                    </div>
+                    <div class="sidebar-data-item">
+                        <small>Status</small>
+                        <span class="avail-status"><span class="avail-dot"></span>Open for freelance</span>
+                    </div>
+                </div>
+
+                <!-- Socials -->
+                <div class="sidebar-socials">
+                    <a href="https://www.linkedin.com/in/risto-toldsep" target="_blank" rel="noopener" class="soc-btn" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://github.com/ristotoldsep" target="_blank" rel="noopener" class="soc-btn" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/ristotoldsep/" target="_blank" rel="noopener" class="soc-btn" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/risto.toldsep/" target="_blank" rel="noopener" class="soc-btn" title="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     </a>
                 </div>
+
+                <!-- Navigation (mobile drawer) -->
+                <nav class="sidebar-nav" aria-label="Site navigation">
+                    <a href="#home"    class="sidebar-nav-link">Home</a>
+                    <a href="#work"    class="sidebar-nav-link">Work</a>
+                    <a href="#about"   class="sidebar-nav-link">About</a>
+                    <a href="#resume"  class="sidebar-nav-link">Resume</a>
+                    <a href="#contact" class="sidebar-nav-link">Contact</a>
+                </nav>
+
+                <!-- CTA -->
+                <a href="#contact" class="sidebar-cta">Let's Work Together!</a>
+
             </div>
+        </aside>
 
-            <!-- About me Image -->
+        <!-- ══════════════════════════ MAIN AREA ══ -->
+        <div class="main-wrap" id="mainWrap">
 
-            <div class="w50">
-                <div class="how-bor1">
-                    <img id="mina" src="images/risto.webp" alt="Profiilipilt" class="img hov-img0">
+            <!-- Top Navigation -->
+            <nav class="topnav" id="topnav">
+                <a href="#home" class="topnav-logo" aria-label="Home">RT</a>
+                <div class="topnav-nav">
+                    <span class="topnav-pill" id="topnavPill" aria-hidden="true"></span>
+                    <ul class="topnav-list" id="topnavList">
+                        <li><a href="#home"    class="topnav-link active">Home</a></li>
+                        <li><a href="#work"    class="topnav-link">Work</a></li>
+                        <li><a href="#about"   class="topnav-link">About</a></li>
+                        <li><a href="#resume"  class="topnav-link">Resume</a></li>
+                        <li><a href="#contact" class="topnav-link">Contact</a></li>
+                    </ul>
                 </div>
-
-            </div>
-
-        </div>
-    </section>
-    <!-- SERVICES SECTION -->
-    <section class="services" id="services">
-        <div class="heading white">
-            <h2>My Services</h2>
-            <p>I'm constantly learning new technologies</p>
-        </div>
-        <div class="content">
-            <div class="servicesBx">
-                <img src="images/icon1.webp" alt="full-stack-development">
-                <h2>Full Stack Web Development</h2>
-                <p>I develop modern web applications with high-quality features focused on speed and high performance.
-                    Can do both Front + Back-end.</p>
-            </div>
-            <div class="servicesBx">
-                <img src="images/icon2.webp" alt="Responsive Web Design">
-                <h2>Responsive Web Design</h2>
-                <p>I make websites fluidly resize for optimal viewing in mobile, tablet, and desktop so that they are
-                    accessible to all users.</p>
-            </div>
-            <div class="servicesBx">
-                <img data-src="images/wordpress.webp" class="lazyload" alt="WordPress">
-                <h2>WordPress</h2>
-                <p>I can manage, design and create WordPress websites & online stores, develop themes & plugins.</p>
-            </div>
-            <div class="servicesBx">
-                <img src="images/icon5.webp" alt="Content Writing">
-                <h2>Content Writing</h2>
-                <p>I can create/write and manage content for your website.</p>
-            </div>
-            <div class="servicesBx">
-                <img src="images/icon6.webp" alt="Video/photo Editing">
-                <h2>Video/Photo Editing</h2>
-                <p>I am proficient in several photo/video editing software.</p>
-            </div>
-            <div class="servicesBx">
-                <img src="images/js.webp" alt="Coding">
-                <h2>Coding</h2>
-                <p>I am familiar with several programming languages/frameworks/libraries and can code websites from
-                    scratch.</p>
-            </div>
-        </div>
-        <div class="heading">
-            <a href="https://github.com/ristotoldsep/My-Tech-Stack/blob/main/README.md" target="_blank" class="btn">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                MY TECH STACK
-            </a>
-        </div>
-    </section>
-    <!-- PROJECTS SECTION -->
-    <section class="work" id="projects">
-        <div class="heading">
-            <h2>Featured projects</h2>
-            <p>Always creating projects</p>
-            <hr style="width: 100px; margin: 20px auto;">
-
-            <p style="padding: 0px 40px">Websites and online stores I have developed/designed or I've been part of in
-                the workplace / took on as freelance projects for real clients.<br> Just to showcase my abilities /
-                portfolio, most projects are developed with PHP/Wordpress. Trying to update the list regularly.</p>
-        </div>
-        <div class="heading">
-            <a href="https://github.com/ristotoldsep" target="_blank" class="btn">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                View More On Github
-            </a>
-        </div>
-    </section>
-    <section class="testimonial" id="testimonial">
-        <div class="heading">
-            <h2>Testimonials</h2>
-            <p>References from others</p>
-        </div>
-        <div class="content">
-            <div class="testimonialBx">
-                <p>Risto was a valuable member of the team during his time with IPF Digital and proved
-                    himself to be a strong team player with a positive attitude. I can truly say he was a real asset to
-                    the
-                    business. He is leaving our business on very good terms and I would not hesitate to hire Risto again
-                    if
-                    the opportunity arose.</p>
-                <h3>Helina Haponen<br><span>IPF Digital</span></h3>
-            </div>
-            <!-- <div class="testimonialBx">
-                <p>Risto was a valuable member of the team during his time with IPF Digital and proved
-                himself to be a strong team player with a positive attitude. I can truly say he was a real asset to the
-                business. He is leaving our business on very good terms and I would not hesitate to hire Risto again if
-                the opportunity arose.</p>
-                <h3>Rami Ryhanen<br><span>IPF Digital</span></h3>
-            </div> -->
-        </div>
-    </section>
-    <section class="contact" id="contact">
-        <div class="heading white">
-            <h2>Contact</h2>
-            <p>Feel free to get in touch with me</p>
-        </div>
-        <div class="content">
-            <div class="contactInfo">
-                <h3>Contact Info</h3>
-                <div class="contactInfoBx">
-                    <div class="box">
-                        <div class="icon">
-                            <i class="fa fa-map-marker"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Address</h3>
-                            <p>Tallinn, Estonia</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Phone</h3>
-                            <p>+372 56894570</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon">
-                            <i class="fa fa-envelope"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Email</h3>
-                            <p>ristotoldsep@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="links2">
-                        <!-- FB -->
-                        <a href="https://www.facebook.com/risto.toldsep/" target="_blank"><i
-                                class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                        <!-- LinkedIN -->
-                        <a href="https://www.linkedin.com/in/risto-toldsep/" target="_blank"><i
-                                class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/ristotoldsep/" target="_blank"><i class="fa fa-instagram"
-                                aria-hidden="true"></i></a>
-                        <!-- GitHub -->
-                        <a href="https://github.com/ristotoldsep" target="_blank"><i class="fa fa-github"></i></a>
-                        <a href="Resume-RistoToldsep.pdf" download>
-                            <img src="./images/cv2.png" alt="CV" height="25px">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="formBx">
-                <form id="contact-form" method="POST" data-netlify="true">
-                    <h3>Message Me</h3>
-                    <input type="text" name="name" placeholder="Full Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <textarea name="message" id="" cols="20" rows="10" placeholder="Your Message" required></textarea>
-                    <!-- <div data-netlify-recaptcha="true"></div> -->
-                    <button type="submit" class="btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        SEND
+                <div class="topnav-right">
+                    <a href="#contact" class="topnav-cv">Get in Touch</a>
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
+                        <span></span><span></span>
                     </button>
-                </form>
-            </div>
-        </div>
-    </section>
-    <div class="copyright">
-        <p>
-            Copyright ©
-            <script>document.write(new Date().getFullYear());</script>. Risto Tõldsep
-        </p>
-    </div>
-    <!-- SCRIPTS -->
-    <!-- jQUERY CDN - for projects hover effect -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <!-- JS FOR EVERYTHING ELSE -->
-    <script src="js/main.min.js"></script>
-    <!-- For lazy loading some content -->
-    <script src="lazysizes.min.js" async></script>
-    <!-- Images End -->
-</body>
+                </div>
+            </nav>
 
+            <!-- Mobile overlay -->
+            <div class="mobile-overlay" id="mobileOverlay"></div>
+
+            <!-- Main content -->
+            <main class="content" id="content">
+
+                <!-- ══════════════ HOME ══ -->
+                <section id="home" class="sec-main">
+                    <div class="intro-inner">
+
+                        <p class="sec-eyebrow animate-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+                            <span>Available for new projects</span>
+                        </p>
+
+                        <h2 class="intro-title animate-up">
+                            I build powerful<br>web <em>experiences.</em>
+                        </h2>
+
+                        <p class="intro-subtitle animate-up">
+                            5+ years crafting fast, scalable, and beautiful web applications — from sleek marketing sites to complex eCommerce platforms and AI-powered tools. Full-time and freelance.
+                        </p>
+
+                        <div class="intro-actions animate-up">
+                            <a href="#work" class="btn-primary">View My Work</a>
+                            <a href="#contact" class="btn-ghost">Let's Talk →</a>
+                        </div>
+
+                    </div>
+
+                    <!-- Rotating scroll button -->
+                    <a href="#work" class="rotating-btn" aria-label="Scroll to work">
+                        <svg class="rotating-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <path id="rCircle" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/>
+                            </defs>
+                            <text fill="currentColor" font-size="11.5" font-family="Syne, sans-serif" font-weight="600" letter-spacing="2">
+                                <textPath href="#rCircle" startOffset="0%">Scroll for More ✦ Scroll for More ✦ </textPath>
+                            </text>
+                        </svg>
+                        <span class="rotating-arrow">↓</span>
+                    </a>
+                </section>
+
+                <!-- ══════════════ MOBILE PROFILE (≤860px only) ══ -->
+                <div class="mobile-profile">
+                    <div class="mobile-profile-inner">
+                        <div class="mp-header">
+                            <img src="aa_profile_pic.png" alt="Risto Tõldsep" class="mp-photo" loading="lazy">
+                            <div class="mp-identity">
+                                <span class="mp-name">Risto Tõldsep</span>
+                                <span class="mp-role">Full Stack Developer</span>
+                                <span class="avail-status"><span class="avail-dot"></span>Open to work</span>
+                            </div>
+                        </div>
+                        <div class="mp-stats">
+                            <div class="mp-stat">
+                                <span class="mp-stat-label">Experience</span>
+                                <span class="mp-stat-value">5+ Years</span>
+                            </div>
+                            <div class="mp-stat">
+                                <span class="mp-stat-label">Location</span>
+                                <span class="mp-stat-value">Tallinn, Estonia</span>
+                            </div>
+                            <div class="mp-stat">
+                                <span class="mp-stat-label">Specialization</span>
+                                <span class="mp-stat-value">Web &amp; eCommerce</span>
+                            </div>
+                        </div>
+                        <div class="mp-footer">
+                            <div class="mp-socials">
+                                <a href="https://www.linkedin.com/in/risto-toldsep" target="_blank" rel="noopener" class="soc-btn" title="LinkedIn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                </a>
+                                <a href="https://github.com/ristotoldsep" target="_blank" rel="noopener" class="soc-btn" title="GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                                <a href="https://www.instagram.com/ristotoldsep/" target="_blank" rel="noopener" class="soc-btn" title="Instagram">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                </a>
+                                <a href="https://www.facebook.com/risto.toldsep/" target="_blank" rel="noopener" class="soc-btn" title="Facebook">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                </a>
+                            </div>
+                            <a href="#contact" class="sidebar-cta">Let's Work Together!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══════════════ MARQUEE ══ -->
+                <div class="marquee-strip" aria-hidden="true">
+                    <div class="marquee-track">
+                        <div class="marquee-inner">
+                            <span>Full Stack Development</span><span class="m-sep">✦</span>
+                            <span>Web &amp; UI/UX Design</span><span class="m-sep">✦</span>
+                            <span>WordPress &amp; WooCommerce</span><span class="m-sep">✦</span>
+                            <span>eCommerce Solutions</span><span class="m-sep">✦</span>
+                            <span>AI Integrations</span><span class="m-sep">✦</span>
+                            <span>Custom Web Apps</span><span class="m-sep">✦</span>
+                            <span>Technical SEO</span><span class="m-sep">✦</span>
+                            <span>Laravel &amp; PHP</span><span class="m-sep">✦</span>
+                            <span>Automation &amp; APIs</span><span class="m-sep">✦</span>
+                        </div>
+                        <div class="marquee-inner" aria-hidden="true">
+                            <span>Full Stack Development</span><span class="m-sep">✦</span>
+                            <span>Web &amp; UI/UX Design</span><span class="m-sep">✦</span>
+                            <span>WordPress &amp; WooCommerce</span><span class="m-sep">✦</span>
+                            <span>eCommerce Solutions</span><span class="m-sep">✦</span>
+                            <span>AI Integrations</span><span class="m-sep">✦</span>
+                            <span>Custom Web Apps</span><span class="m-sep">✦</span>
+                            <span>Technical SEO</span><span class="m-sep">✦</span>
+                            <span>Laravel &amp; PHP</span><span class="m-sep">✦</span>
+                            <span>Automation &amp; APIs</span><span class="m-sep">✦</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══════════════ WORK ══ -->
+                <section id="work" class="sec-inner">
+
+                    <div class="sec-title-block">
+                        <p class="sec-eyebrow animate-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+                            <span>Portfolio</span>
+                        </p>
+                        <h2 class="sec-h2 animate-up">Check out some of my featured projects</h2>
+                    </div>
+
+                    <div class="gallery-grid">
+
+                        <figure class="gallery-item animate-card">
+                            <div class="gallery-img-wrap">
+                                <img src="images/uusloo.webp" alt="Uusloo — Full Stack Laravel &amp; Vue" loading="lazy">
+                            </div>
+                            <figcaption class="gallery-caption">
+                                <h5>Uusloo</h5>
+                                <div class="card-tags">
+                                    <span class="rtag">Laravel</span>
+                                    <span class="rtag">Vue</span>
+                                    <span class="rtag">Inertia.js</span>
+                                </div>
+                                <p>Full stack custom website built with a Laravel backend and Vue frontend connected via Inertia — seamless SPA experience with server-side power.</p>
+                                <a href="https://uusloo.hausers.ee/" target="_blank" rel="noopener" class="gallery-link">Visit Site →</a>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="gallery-item animate-card">
+                            <div class="gallery-img-wrap">
+                                <img src="images/snabb.webp" alt="Snabb — Parking &amp; EV App" loading="lazy">
+                            </div>
+                            <figcaption class="gallery-caption gallery-caption--alt">
+                                <h5>Snabb</h5>
+                                <div class="card-tags">
+                                    <span class="rtag rtag--outline">WordPress</span>
+                                    <span class="rtag rtag--outline">Elementor</span>
+                                    <span class="rtag rtag--outline">PHP</span>
+                                </div>
+                                <p>Unified parking, car wash &amp; EV charging platform — custom Elementor widgets built with PHP for a seamless drag-and-drop editing experience. 85,000+ users, 250+ locations.</p>
+                                <a href="https://snabb.xyz/" target="_blank" rel="noopener" class="gallery-link">Visit Site →</a>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="gallery-item animate-card">
+                            <div class="gallery-img-wrap">
+                                <img src="images/ribaana.webp" alt="Ribaana Horm — Real Estate" loading="lazy">
+                            </div>
+                            <figcaption class="gallery-caption">
+                                <h5>Ribaana Horm</h5>
+                                <div class="card-tags">
+                                    <span class="rtag">WordPress</span>
+                                    <span class="rtag">ACF</span>
+                                    <span class="rtag">Tailwind</span>
+                                </div>
+                                <p>Fully custom PHP WordPress theme for an Estonian real estate broker — built with ACF blocks and Tailwind CSS, conversion-focused and pixel-perfect.</p>
+                                <a href="https://ribaanahorm.ee/" target="_blank" rel="noopener" class="gallery-link">Visit Site →</a>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="gallery-item animate-card">
+                            <div class="gallery-img-wrap">
+                                <img src="images/qi.webp" alt="QiNutritionist — Wellness" loading="lazy">
+                            </div>
+                            <figcaption class="gallery-caption gallery-caption--alt">
+                                <h5>QiNutritionist</h5>
+                                <div class="card-tags">
+                                    <span class="rtag rtag--outline">Headless WP</span>
+                                    <span class="rtag rtag--outline">Astro</span>
+                                    <span class="rtag rtag--outline">GraphQL</span>
+                                </div>
+                                <p>Headless WordPress solution with an Astro frontend and WordPress backend connected via GraphQL — automatically rebuilds and regenerates when content is updated.</p>
+                                <a href="https://qinutritionist.com/" target="_blank" rel="noopener" class="gallery-link">Visit Site →</a>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="gallery-item animate-card">
+                            <div class="gallery-img-wrap">
+                                <img src="images/serenesleep.webp" alt="Serene Sleep — Luxury Bedding" loading="lazy">
+                            </div>
+                            <figcaption class="gallery-caption">
+                                <h5>Serene Sleep</h5>
+                                <div class="card-tags">
+                                    <span class="rtag">WooCommerce</span>
+                                    <span class="rtag">Custom Theme</span>
+                                    <span class="rtag">eCommerce</span>
+                                </div>
+                                <p>Custom WooCommerce e-store for luxury silk bedding — premium brand identity, refined UX, and OEKO-TEX certified product showcase built for conversion.</p>
+                                <a href="https://serenesleep.ee/" target="_blank" rel="noopener" class="gallery-link">Visit Site →</a>
+                            </figcaption>
+                        </figure>
+
+                    </div>
+
+                    <div class="sec-cta animate-up">
+                        <a href="https://github.com/ristotoldsep" target="_blank" rel="noopener" class="btn-outline">View All Projects on GitHub →</a>
+                    </div>
+
+                </section>
+
+                <!-- ══════════════ AGENCY WORK ══ -->
+                <section class="sec-inner">
+
+                    <div class="sec-title-block">
+                        <p class="sec-eyebrow animate-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+                            <span>Agency Work</span>
+                        </p>
+                        <h2 class="sec-h2 animate-up">The best products are built with great teams</h2>
+                        <p class="sec-text animate-up">Beyond personal projects, I've contributed to hundreds of client builds at two of Tallinn's top digital studios — as a full-time developer and as a collaborator.</p>
+                    </div>
+
+                    <div class="agency-grid">
+
+                        <div class="agency-card animate-card">
+                            <div class="agency-card-glow" style="background:radial-gradient(circle,rgba(80,130,255,0.22) 0%,transparent 70%)"></div>
+                            <span class="agency-num">01</span>
+                            <div class="agency-head">
+                                <h4>Reaktiiv</h4>
+                                <span class="agency-badge">Current</span>
+                            </div>
+                            <p class="agency-desc">Tallinn-based digital agency specialising in web design, development, and branding for Baltic and international clients. I work here full-time building high-quality web products.</p>
+                            <a href="https://reaktiiv.com/tood/" target="_blank" rel="noopener" class="agency-link">View their work →</a>
+                        </div>
+
+                        <div class="agency-card animate-card">
+                            <div class="agency-card-glow" style="background:radial-gradient(circle,rgba(196,154,60,0.18) 0%,transparent 70%)"></div>
+                            <span class="agency-num">02</span>
+                            <div class="agency-head">
+                                <h4>vDisain</h4>
+                                <span class="agency-badge agency-badge--past">Previous</span>
+                            </div>
+                            <p class="agency-desc">Creative digital studio where I spent several years building custom websites, eCommerce solutions, and brand experiences for Estonian and international clients across Europe and beyond.</p>
+                            <a href="https://vdisain.ee/referentsid/" target="_blank" rel="noopener" class="agency-link">View their references →</a>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ══════════════ ABOUT ══ -->
+                <section id="about" class="sec-inner">
+
+                    <div class="sec-title-block">
+                        <p class="sec-eyebrow animate-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+                            <span>About Me</span>
+                        </p>
+                        <h2 class="sec-h2 animate-up">5+ years turning ideas into working software</h2>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="achievements">
+                        <div class="achievement animate-card">
+                            <p class="ach-num">5+</p>
+                            <p class="ach-label">Years full-time</p>
+                        </div>
+                        <div class="achievement animate-card">
+                            <p class="ach-num">250+</p>
+                            <p class="ach-label">Projects worked on</p>
+                        </div>
+                    </div>
+
+                    <!-- Bio + Info -->
+                    <div class="about-body">
+                        <div class="about-bio">
+                            <p class="about-bio-text animate-up">
+                                I'm a Full Stack Web Developer based in Tallinn, Estonia, with over 5 years of hands-on experience building web applications, eCommerce stores, and digital tools — working both full-time and as a freelancer.
+                            </p>
+                            <p class="about-bio-text animate-up">
+                                I graduated from Tallinn University of Technology with a Bachelor in Computer Systems Engineering, and have since built everything from pixel-perfect marketing sites to complex multi-language stores, custom CMS platforms, REST APIs, and AI-powered workflow automations.
+                            </p>
+                            <p class="about-bio-text animate-up">
+                                I care deeply about code quality, performance, and real business results. If you need a website that actually converts, a web app built to scale, or someone to eliminate your team's repetitive work through automation — that's exactly what I do.
+                            </p>
+                            <div class="about-bio-actions animate-up">
+                                <a href="https://www.linkedin.com/in/risto-toldsep" target="_blank" rel="noopener" class="btn-primary">View LinkedIn →</a>
+                                <a href="#contact" class="btn-ghost">Start a Project →</a>
+                            </div>
+                        </div>
+
+                        <div class="about-info-panel">
+                            <div class="about-info-item animate-up">
+                                <small>Name</small>
+                                <span>Risto Tõldsep</span>
+                            </div>
+                            <div class="about-info-item animate-up">
+                                <small>Email</small>
+                                <a href="mailto:ristotoldsep@gmail.com" class="info-link">ristotoldsep@gmail.com</a>
+                            </div>
+                            <div class="about-info-item animate-up">
+                                <small>Location</small>
+                                <span>Tallinn, Estonia</span>
+                            </div>
+                            <div class="about-info-item animate-up">
+                                <small>Freelance</small>
+                                <span class="avail-badge">Available</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="sec-title-block sec-title-block--mt">
+                        <p class="sec-eyebrow animate-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+                            <span>Services</span>
+                        </p>
+                        <h2 class="sec-h2 animate-up">What I can do for you</h2>
+                    </div>
+
+                    <div class="services-grid">
+
+                        <div class="svc-card animate-card">
+                            <div class="svc-num">01</div>
+                            <h4 class="svc-title">Web Design<br>&amp; UI/UX</h4>
+                            <div class="svc-divider"></div>
+                            <div class="svc-tags">
+                                <span class="stag">Custom Design</span>
+                                <span class="stag">Figma</span>
+                            </div>
+                            <p class="svc-text">Beautiful, conversion-focused interfaces designed from scratch. Clean layouts, strong typography, and experiences users actually enjoy.</p>
+                            <div class="svc-accent" style="--ac: rgba(196,154,60,0.18)"></div>
+                        </div>
+
+                        <div class="svc-card animate-card">
+                            <div class="svc-num">02</div>
+                            <h4 class="svc-title">Full Stack<br>Development</h4>
+                            <div class="svc-divider"></div>
+                            <div class="svc-tags">
+                                <span class="stag">React</span>
+                                <span class="stag">PHP / Node.js</span>
+                            </div>
+                            <p class="svc-text">End-to-end web application development — from database design and APIs to polished front-end interfaces. Built to scale, built to last.</p>
+                            <div class="svc-accent" style="--ac: rgba(80,130,255,0.12)"></div>
+                        </div>
+
+                        <div class="svc-card animate-card">
+                            <div class="svc-num">03</div>
+                            <h4 class="svc-title">WordPress<br>&amp; eCommerce</h4>
+                            <div class="svc-divider"></div>
+                            <div class="svc-tags">
+                                <span class="stag">WordPress</span>
+                                <span class="stag">WooCommerce</span>
+                            </div>
+                            <p class="svc-text">Custom themes, plugins, and complete online stores. Multi-language, multi-currency, high-performance shops that convert browsers into buyers.</p>
+                            <div class="svc-accent" style="--ac: rgba(60,200,120,0.10)"></div>
+                        </div>
+
+                        <div class="svc-card animate-card">
+                            <div class="svc-num">04</div>
+                            <h4 class="svc-title">SEO &amp; Digital<br>Marketing</h4>
+                            <div class="svc-divider"></div>
+                            <div class="svc-tags">
+                                <span class="stag">Technical SEO</span>
+                                <span class="stag">Analytics</span>
+                            </div>
+                            <p class="svc-text">Rank higher and get found. Technical SEO audits, Core Web Vitals improvements, content strategy, and Google Analytics setup — all data-driven.</p>
+                            <div class="svc-accent" style="--ac: rgba(255,160,60,0.12)"></div>
+                        </div>
+
+                        <div class="svc-card animate-card">
+                            <div class="svc-num">05</div>
+                            <h4 class="svc-title">Maintenance<br>&amp; Support</h4>
+                            <div class="svc-divider"></div>
+                            <div class="svc-tags">
+                                <span class="stag">Updates</span>
+                                <span class="stag">Security</span>
+                            </div>
+                            <p class="svc-text">Ongoing care for your website — updates, backups, security hardening, speed optimization, and a developer to call when something breaks.</p>
+                            <div class="svc-accent" style="--ac: rgba(0,200,200,0.10)"></div>
+                        </div>
+
+                        <div class="svc-card animate-card">
+                            <div class="svc-num">06</div>
+                            <h4 class="svc-title">AI Integrations<br>&amp; Automations</h4>
+                            <div class="svc-divider"></div>
+                            <div class="svc-tags">
+                                <span class="stag">AI Tools</span>
+                                <span class="stag">Workflows</span>
+                            </div>
+                            <p class="svc-text">Add intelligent features to your product — chatbots, AI pipelines, smart automations — and eliminate the repetitive work that eats your team's time.</p>
+                            <div class="svc-accent" style="--ac: rgba(180,80,255,0.12)"></div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ══════════════ RESUME / SKILLS ══ -->
+                <section id="resume" class="sec-inner">
+
+                    <div class="sec-title-block">
+                        <p class="sec-eyebrow animate-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+                            <span>Resume</span>
+                        </p>
+                        <h2 class="sec-h2 animate-up">My Skills &amp; Tech Stack</h2>
+                        <p class="sec-text animate-up">The tools and technologies I use to bring ideas to life — from concept to production.</p>
+                    </div>
+
+                    <div class="skills-grid">
+
+                        <div class="skill-cat animate-card">
+                            <div class="skill-cat-header">
+                                <span class="skill-cat-icon">⟨/⟩</span>
+                                <h5>Frontend</h5>
+                            </div>
+                            <div class="stack-pills">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>TypeScript</span>
+                                <span>React</span>
+                                <span>Vue</span>
+                                <span>Next.js</span>
+                                <span>Astro</span>
+                                <span>GSAP</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-cat animate-card">
+                            <div class="skill-cat-header">
+                                <span class="skill-cat-icon">{ }</span>
+                                <h5>Backend</h5>
+                            </div>
+                            <div class="stack-pills">
+                                <span>PHP</span>
+                                <span>Laravel</span>
+                                <span>Node.js</span>
+                                <span>MySQL</span>
+                                <span>PostgreSQL</span>
+                                <span>Firebase</span>
+                                <span>REST APIs</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-cat animate-card">
+                            <div class="skill-cat-header">
+                                <span class="skill-cat-icon">◈</span>
+                                <h5>CMS &amp; eCommerce</h5>
+                            </div>
+                            <div class="stack-pills">
+                                <span>WordPress</span>
+                                <span>WooCommerce</span>
+                                <span>Headless CMS</span>
+                                <span>Custom Themes</span>
+                                <span>Custom Plugins</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-cat animate-card">
+                            <div class="skill-cat-header">
+                                <span class="skill-cat-icon">✦</span>
+                                <h5>Tools &amp; Other</h5>
+                            </div>
+                            <div class="stack-pills">
+                                <span>Git</span>
+                                <span>Figma</span>
+                                <span>Technical SEO</span>
+                                <span>AI APIs</span>
+                                <span>Make / Zapier</span>
+                                <span>Analytics</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="resume-cv-cta animate-up">
+                        <a href="#contact" class="btn-primary">Start a Project →</a>
+                    </div>
+
+                </section>
+
+                <!-- ══════════════ CONTACT ══ -->
+                <section id="contact" class="sec-inner">
+
+                    <div class="sec-title-block">
+                        <p class="sec-eyebrow animate-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+                            <span>Contact</span>
+                        </p>
+                        <h2 class="sec-h2 animate-up">Let's start a project together</h2>
+                        <p class="sec-text animate-up">Have a project in mind? Looking for a developer who actually cares about the outcome? Let's talk.</p>
+                    </div>
+
+                    <div class="contact-layout">
+
+                        <div class="contact-info animate-up">
+                            <div class="ci-item">
+                                <small>Email</small>
+                                <a href="mailto:ristotoldsep@gmail.com" class="ci-email">ristotoldsep@gmail.com</a>
+                            </div>
+                            <div class="ci-item">
+                                <small>Location</small>
+                                <span>Tallinn, Estonia</span>
+                            </div>
+                            <div class="ci-socials">
+                                <a href="https://www.linkedin.com/in/risto-toldsep" target="_blank" rel="noopener" class="soc-btn" title="LinkedIn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                </a>
+                                <a href="https://github.com/ristotoldsep" target="_blank" rel="noopener" class="soc-btn" title="GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                                <a href="https://www.instagram.com/ristotoldsep/" target="_blank" rel="noopener" class="soc-btn" title="Instagram">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                </a>
+                                <a href="https://www.facebook.com/risto.toldsep/" target="_blank" rel="noopener" class="soc-btn" title="Facebook">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <form class="contact-form animate-up" id="contact-form" method="POST" data-netlify="true">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Send Message →</button>
+                        </form>
+
+                    </div>
+
+                </section>
+
+                <!-- ══════════════ CTA FULL ══ -->
+                <section class="cta-full sec-inner">
+                    <div class="cta-full-inner">
+                        <p class="cta-full-eyebrow animate-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+                            <span>Get in touch</span>
+                        </p>
+                        <h2 class="cta-full-title animate-up">Want to know more about me, tell me about your <em>project</em>, or just say hello?</h2>
+                        <p class="cta-full-body animate-up">Drop me a line and I'll get back to you as soon as possible.</p>
+                        <div class="cta-full-actions animate-up">
+                            <a href="mailto:ristotoldsep@gmail.com" class="btn-primary">Drop me a Line →</a>
+                            <a href="https://www.linkedin.com/in/risto-toldsep" target="_blank" rel="noopener" class="btn-ghost">Connect on LinkedIn →</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <span class="footer-logo">RT</span>
+                    <span class="footer-copy">© <span id="year"></span> Risto Tõldsep. All rights reserved.</span>
+                    <a href="#home" class="footer-top">↑ Top</a>
+                </footer>
+
+            </main>
+        </div><!-- /.main-wrap -->
+
+    </div><!-- /.site-layout -->
+
+    <!-- GSAP + Lenis CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
 </html>
