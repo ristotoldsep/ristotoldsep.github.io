@@ -4,25 +4,31 @@ import '../styles/main.scss';
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string;
+  lang?: string;
+  ogTitle?: string;
 }
 
 const {
-  title = 'Risto Tõldsep — Full Stack Developer',
-  description = 'Risto Tõldsep — Full Stack Web Developer based in Tallinn, Estonia. 5+ years building web apps, eCommerce, AI tools and more.',
+  title = 'Risto Tõldsep - Full Stack Developer',
+  description = 'Risto Tõldsep - Full Stack Web Developer based in Tallinn, Estonia. 5+ years building web apps, eCommerce, AI tools and more.',
+  keywords = 'risto toldsep, freelance web developer, full stack developer, portfolio, wordpress, react, seo, ai, automation',
+  lang = 'en',
+  ogTitle = title,
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="risto tõldsep, freelance web developer, full stack developer, portfolio, wordpress, react, seo, ai, automation" />
+  <meta name="keywords" content={keywords} />
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="icon" href="/images/logo.webp" type="image/png">
   <meta property="og:image" content="/images/coverphoto.jpg" />
-  <meta property="og:title" content={title} />
+  <meta property="og:title" content={ogTitle} />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

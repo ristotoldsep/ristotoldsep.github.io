@@ -188,7 +188,7 @@ function initMobileSidebar(): void {
   if (overlay) overlay.addEventListener('click', closeMobileMenu);
   document.addEventListener('keydown', (e: KeyboardEvent) => { if (e.key === 'Escape') closeMobileMenu(); });
 
-  document.querySelectorAll('.topnav-link, .sidebar-cta, .sidebar-nav-link').forEach(el => {
+  document.querySelectorAll('.topnav-link, .sidebar-cta, .sidebar-nav-link, .lang-switch').forEach(el => {
     el.addEventListener('click', () => { if (window.innerWidth <= 860) closeMobileMenu(); });
   });
 }

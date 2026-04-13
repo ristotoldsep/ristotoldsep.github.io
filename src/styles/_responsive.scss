@@ -1,7 +1,16 @@
 /* ── Mobile ──────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
     :root { --sidebar-w: 252px; }
+}
+
+@media (max-width: 1199px) {
     .topnav-cv { display: none; }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .topnav-link {
+        padding-inline: 12px;
+    }
 }
 
 @media (max-width: 860px) {
@@ -9,7 +18,6 @@
 
     .mobile-toggle  { display: flex; }
     .topnav-list    { display: none; }
-    .topnav-cv      { display: none; }
     .topnav-logo    { display: block; }
     .topnav-pill    { display: none; }
     .mobile-profile { display: block; }
@@ -26,6 +34,7 @@
     }
 
     .main-wrap { margin-left: 0; }
+    .topnav-right { gap: 10px; }
 
     .sidebar {
         left: 0;

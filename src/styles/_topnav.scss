@@ -97,7 +97,39 @@
 .topnav-right {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
+}
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.05);
+    transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+.lang-switch:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255,255,255,0.22);
+    background: rgba(255,255,255,0.09);
+}
+.lang-switch-flag {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.04);
+}
+.lang-switch-flag--et {
+    background: linear-gradient(to bottom, #3d8bfd 0 33.33%, #101010 33.33% 66.66%, #ffffff 66.66% 100%);
+}
+.lang-switch-flag--en {
+    background:
+        linear-gradient(to right, transparent 0 32%, #fff 32% 40%, #c8102e 40% 60%, #fff 60% 68%, transparent 68% 100%),
+        linear-gradient(to bottom, transparent 0 32%, #fff 32% 40%, #c8102e 40% 60%, #fff 60% 68%, transparent 68% 100%),
+        #012169;
 }
 .topnav-cv {
     font-size: 0.72rem;
@@ -165,4 +197,3 @@
     transition: opacity 0.35s;
 }
 .mobile-overlay.show { opacity: 1; pointer-events: all; }
-

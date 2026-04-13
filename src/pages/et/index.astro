@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomePage from '../../components/pages/HomePage.astro';
+import { siteCopy } from '../../i18n/site';
+---
+
+<BaseLayout
+  lang={siteCopy.et.meta.lang}
+  title={siteCopy.et.meta.title}
+  description={siteCopy.et.meta.description}
+  keywords={siteCopy.et.meta.keywords}
+  ogTitle={siteCopy.et.meta.ogTitle}
+>
+  <HomePage copy={siteCopy.et} />
+</BaseLayout>

@@ -1,7 +1,14 @@
 ---
+import type { SiteCopy } from '../../i18n/site';
+
+interface Props {
+  copy: SiteCopy;
+}
+
+const { copy } = Astro.props;
 ---
 <footer class="footer">
   <span class="footer-logo">RT</span>
-  <span class="footer-copy">© <span id="year"></span> Risto Tõldsep. All rights reserved.</span>
-  <a href="#home" class="footer-top">↑ Top</a>
+  <span class="footer-copy">© <span id="year"></span> {copy.footer.copy}</span>
+  <a href="#home" class="footer-top">↑ {copy.footer.top}</a>
 </footer>

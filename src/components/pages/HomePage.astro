@@ -1,0 +1,51 @@
+---
+import Cursor from '../global/Cursor.astro';
+import BackgroundLayers from '../global/BackgroundLayers.astro';
+import Preloader from '../global/Preloader.astro';
+import MobileOverlay from '../global/MobileOverlay.astro';
+import Sidebar from '../layout/Sidebar.astro';
+import TopNav from '../layout/TopNav.astro';
+import SectionHome from '../sections/SectionHome.astro';
+import MobileProfile from '../sections/MobileProfile.astro';
+import MarqueeStrip from '../sections/MarqueeStrip.astro';
+import SectionWork from '../sections/SectionWork.astro';
+import SectionAgency from '../sections/SectionAgency.astro';
+import SectionAbout from '../sections/SectionAbout.astro';
+import SectionSkills from '../sections/SectionSkills.astro';
+import SectionContact from '../sections/SectionContact.astro';
+import SectionCtaFull from '../sections/SectionCtaFull.astro';
+import Footer from '../sections/Footer.astro';
+import type { SiteCopy } from '../../i18n/site';
+
+interface Props {
+  copy: SiteCopy;
+}
+
+const { copy } = Astro.props;
+---
+
+<Cursor />
+<BackgroundLayers />
+<Preloader />
+
+<div class="site-layout">
+  <Sidebar copy={copy} />
+
+  <div class="main-wrap" id="mainWrap">
+    <TopNav copy={copy} />
+    <MobileOverlay />
+
+    <main class="content" id="content">
+      <SectionHome copy={copy} />
+      <MobileProfile copy={copy} />
+      <MarqueeStrip copy={copy} />
+      <SectionWork copy={copy} />
+      <SectionAgency copy={copy} />
+      <SectionAbout copy={copy} />
+      <SectionSkills copy={copy} />
+      <SectionContact copy={copy} />
+      <SectionCtaFull copy={copy} />
+      <Footer copy={copy} />
+    </main>
+  </div>
+</div>
