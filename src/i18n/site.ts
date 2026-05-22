@@ -183,6 +183,11 @@ export const workProjectMeta = [
     tags: ['WooCommerce', 'Custom Theme', 'eCommerce'],
     href: 'https://serenesleep.ee/',
   },
+  {
+    image: '/images/kutimetsa.avif',
+    tags: ['WordPress', 'ACF Blocks', 'Tailwind'],
+    href: 'https://kutimetsa.hausers.ee/',
+  },
 ];
 
 export const agencyMeta = [
@@ -300,6 +305,13 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           imageAlt: 'Serene Sleep - Luxury Bedding',
           description:
             'Custom WooCommerce e-store for luxury silk bedding - premium brand identity, refined UX, and OEKO-TEX certified product showcase built for conversion.',
+          cta: 'Visit Site ->',
+        },
+        {
+          name: 'Kütimetsa',
+          imageAlt: 'Kütimetsa - Real Estate Development',
+          description:
+            'Sales landing page for a boutique 12-home townhouse development in Peetri - designed from scratch and built as a custom WordPress theme with ACF blocks, Tailwind CSS, and a Vite-built per-block asset pipeline. Conversion-focused and pixel-perfect.',
           cta: 'Visit Site ->',
         },
       ],
@@ -520,6 +532,13 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           imageAlt: 'Serene Sleep - luksuslik voodipesu',
           description:
             'Kohandatud WooCommerce e-pood luksuslikule siidvoodipesule - premium brändiidentiteet, läbimõeldud kasutuskogemus ja OEKO-TEX sertifikaadiga toodete esitlus, loodud müüki toetama.',
+          cta: 'Ava leht ->',
+        },
+        {
+          name: 'Kütimetsa',
+          imageAlt: 'Kütimetsa - kinnisvaraarendus',
+          description:
+            'Müügileht 12 ridaelamu kodu boutique-arendusele Peetris - täielikult ise nullist disainitud ja ehitatud kohandatud WordPressi teemana ACF plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu eraldi. Müügile suunatud ja pikslitäpne.',
           cta: 'Ava leht ->',
         },
       ],
