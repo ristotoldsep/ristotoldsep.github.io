@@ -159,6 +159,11 @@ export const socialLinks: SocialLink[] = [
 
 export const workProjectMeta = [
   {
+    image: '/images/projects/clarte.avif',
+    tags: ['WooCommerce', 'ACF Blocks', 'Tailwind'],
+    href: 'https://clarte.ee/',
+  },
+  {
     image: '/images/uusloo.webp',
     tags: ['Laravel', 'Vue', 'Inertia.js'],
     href: 'https://uusloo.hausers.ee/',
@@ -272,6 +277,13 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       title: 'Check out some of my featured projects',
       githubCta: 'View All Projects on GitHub ->',
       projects: [
+        {
+          name: 'Clarte',
+          imageAlt: 'Clarte - Premium Skincare WooCommerce Store',
+          description:
+            'Custom WooCommerce store for a premium skincare brand - fully custom WordPress theme with ACF Gutenberg blocks, Tailwind CSS, and a Vite-built per-block asset pipeline. Features GSAP animations, Swiper sliders, and Lenis smooth scrolling for a polished, conversion-focused shopping experience.',
+          cta: 'Visit Site ->',
+        },
         {
           name: 'Uusloo',
           imageAlt: 'Uusloo - Full Stack Laravel and Vue',
@@ -499,6 +511,13 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       title: 'Vaata mõningaid minu esile tõstetud projekte',
       githubCta: 'Vaata kõiki projekte GitHubis ->',
       projects: [
+        {
+          name: 'Clarte',
+          imageAlt: 'Clarte - premium nahahoolduse WooCommerce e-pood',
+          description:
+            'Kohandatud WooCommerce e-pood premium nahahoolduse brändile - täielikult kohandatud WordPressi teema ACF Gutenbergi plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu. Sisaldab GSAP animatsioone, Swiperi slaidereid ja Lenise sujuvat kerimist viimistletud ostlemikogemuse tagamiseks.',
+          cta: 'Ava leht ->',
+        },
         {
           name: 'Uusloo',
           imageAlt: 'Uusloo - Full Stack Laravel ja Vue',
