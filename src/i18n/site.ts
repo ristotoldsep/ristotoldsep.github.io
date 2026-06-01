@@ -388,7 +388,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
         },
         {
           title: 'SEO, AEO, GEO &amp;<br>Digital Marketing',
-          text: 'Rank higher and get found — in search engines and AI tools. Technical SEO audits, Core Web Vitals improvements, full analytics setup (GTM, GA4, Google Search Console, Microsoft Clarity, Meta Pixel with custom event tracking), and Google &amp; Meta ad campaigns. AEO (Answer Engine Optimization) puts your content in AI answer boxes and voice search results; GEO (Generative Engine Optimization) gets tools like ChatGPT and Perplexity to surface and cite your business. All data-driven.',
+          text: 'Rank higher and get found — in search engines and AI tools. Technical SEO audits, Core Web Vitals improvements, full analytics setup (GTM, GA4, Google Search Console, Microsoft Clarity, Meta Pixel with custom event tracking), and Google & Meta ad campaigns. AEO (Answer Engine Optimization) puts your content in AI answer boxes and voice search results; GEO (Generative Engine Optimization) gets tools like ChatGPT and Perplexity to surface and cite your business. All data-driven.',
           tags: ['Technical SEO', 'AEO / GEO'],
         },
         {
