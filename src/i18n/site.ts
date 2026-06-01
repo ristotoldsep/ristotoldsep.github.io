@@ -281,7 +281,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: 'Clarte',
           imageAlt: 'Clarte - Premium Skincare WooCommerce Store',
           description:
-            'Custom WooCommerce store for a premium skincare brand - fully custom WordPress theme with ACF Gutenberg blocks, Tailwind CSS, and a Vite-built per-block asset pipeline. Features GSAP animations, Swiper sliders, and Lenis smooth scrolling for a polished, conversion-focused shopping experience.',
+            'Custom WooCommerce store for a premium skincare brand - fully custom WordPress theme with ACF Gutenberg blocks, Tailwind CSS, and a Vite-built per-block asset pipeline. Features GSAP animations, Swiper sliders, and Lenis smooth scrolling. Integrated GTM, GA4, Microsoft Clarity, and Meta Pixel with custom event tracking for lead generation and customer behaviour analysis.',
           cta: 'Visit Site ->',
         },
         {
@@ -387,9 +387,9 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           tags: ['WordPress', 'WooCommerce'],
         },
         {
-          title: 'SEO &amp; Digital<br>Marketing',
-          text: 'Rank higher and get found. Technical SEO audits, Core Web Vitals improvements, content strategy, and Google Analytics setup - all data-driven.',
-          tags: ['Technical SEO', 'Analytics'],
+          title: 'SEO, AEO &amp;<br>GEO',
+          text: 'Rank higher and get found — in search engines and AI tools. Technical SEO audits, Core Web Vitals improvements, and full analytics setup (GTM, GA4, Microsoft Clarity, Meta Pixel with custom event tracking). AEO (Answer Engine Optimization) puts your content in AI answer boxes and voice search results; GEO (Generative Engine Optimization) gets tools like ChatGPT and Perplexity to surface and cite your business. All data-driven.',
+          tags: ['Technical SEO', 'AEO / GEO'],
         },
         {
           title: 'Maintenance<br>&amp; Support',
@@ -515,7 +515,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: 'Clarte',
           imageAlt: 'Clarte - premium nahahoolduse WooCommerce e-pood',
           description:
-            'Kohandatud WooCommerce e-pood premium nahahoolduse brändile - täielikult kohandatud WordPressi teema ACF Gutenbergi plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu. Sisaldab GSAP animatsioone, Swiperi slaidereid ja Lenise sujuvat kerimist viimistletud ostlemikogemuse tagamiseks.',
+            'Kohandatud WooCommerce e-pood premium nahahoolduse brändile - täielikult kohandatud WordPressi teema ACF Gutenbergi plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu. Sisaldab GSAP animatsioone, Swiperi slaidereid ja Lenise sujuvat kerimist. Integreeritud GTM, GA4, Microsoft Clarity ja Meta Pixel kohandatud sündmusejälgimisega müügivihjete genereerimiseks ja kliendiharjumuste analüüsimiseks.',
           cta: 'Ava leht ->',
         },
         {
@@ -621,9 +621,9 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           tags: ['WordPress', 'WooCommerce'],
         },
         {
-          title: 'SEO ja digitaalne<br>turundus',
-          text: 'Tõuse otsingus kõrgemale ja ole leitav. Tehnilised SEO auditid, Core Web Vitals parandused, sisustrateegia ja Google Analyticsi seadistus - kõik andmepõhiselt.',
-          tags: ['Technical SEO', 'Analytics'],
+          title: 'SEO, AEO &amp;<br>GEO',
+          text: 'Tõuse otsingutulemustes kõrgemale ja ole leitav — ka tehisintellektis. Tehnilised SEO auditid, Core Web Vitals parandused ja terviklik analüütika seadistus (GTM, GA4, Microsoft Clarity, Meta Pixel kohandatud sündmusejälgimisega). AEO (Answer Engine Optimization) toob sinu sisu tehisintellekti vastuseboksidesse ja häälotsingutesse; GEO (Generative Engine Optimization) tagab, et tööriistad nagu ChatGPT ja Perplexity sinu ettevõtet esile tõstavad ja tsiteerivad. Kõik andmepõhiselt.',
+          tags: ['Technical SEO', 'AEO / GEO'],
         },
         {
           title: 'Hooldus<br>&amp; tugi',
