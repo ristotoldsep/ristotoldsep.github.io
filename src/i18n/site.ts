@@ -281,7 +281,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: 'Clarte',
           imageAlt: 'Clarte - Premium Skincare WooCommerce Store',
           description:
-            'Custom WooCommerce store for a premium skincare brand - fully custom WordPress theme with ACF Gutenberg blocks, Tailwind CSS, and a Vite-built per-block asset pipeline. Features GSAP animations, Swiper sliders, and Lenis smooth scrolling. Integrated GTM, GA4, Google Search Console, Microsoft Clarity, and Meta Pixel with custom event tracking for lead generation and customer behaviour analysis.',
+            'Custom WooCommerce store for a premium skincare brand - fully custom WordPress theme with ACF Gutenberg blocks, Tailwind CSS, and a Vite-built per-block asset pipeline. Features GSAP animations, Swiper sliders, and Lenis smooth scrolling. Fully multilingual via WPML (content, strings, and media) for international reach. Integrated GTM, GA4, Google Search Console, Microsoft Clarity, and Meta Pixel with custom event tracking for lead generation and customer behaviour analysis.',
           cta: 'Visit Site ->',
         },
         {
@@ -515,7 +515,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: 'Clarte',
           imageAlt: 'Clarte - premium nahahoolduse WooCommerce e-pood',
           description:
-            'Kohandatud WooCommerce e-pood premium nahahoolduse brändile - täielikult kohandatud WordPressi teema ACF Gutenbergi plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu. Sisaldab GSAP animatsioone, Swiperi slaidereid ja Lenise sujuvat kerimist. Integreeritud GTM, GA4, Google Search Console, Microsoft Clarity ja Meta Pixel kohandatud sündmusejälgimisega müügivihjete genereerimiseks ja kliendiharjumuste analüüsimiseks.',
+            'Kohandatud WooCommerce e-pood premium nahahoolduse brändile - täielikult kohandatud WordPressi teema ACF Gutenbergi plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu. Sisaldab GSAP animatsioone, Swiperi slaidereid ja Lenise sujuvat kerimist. Täielikult mitmekeelne WPML-i kaudu (sisu, stringid ja meedia), et jõuda rahvusvahelise publikuni. Integreeritud GTM, GA4, Google Search Console, Microsoft Clarity ja Meta Pixel kohandatud sündmusejälgimisega müügivihjete genereerimiseks ja kliendiharjumuste analüüsimiseks.',
           cta: 'Ava leht ->',
         },
         {
