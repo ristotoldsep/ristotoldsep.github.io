@@ -193,6 +193,11 @@ export const workProjectMeta = [
     tags: ['WordPress', 'ACF Blocks', 'Tailwind'],
     href: 'https://kutimetsa.hausers.ee/',
   },
+  {
+    image: '/images/projects/paavli.webp',
+    tags: ['WordPress', 'ACF Blocks', 'GSAP'],
+    href: 'https://paavli.ee/',
+  },
 ];
 
 export const agencyMeta = [
@@ -324,6 +329,13 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           imageAlt: 'Kütimetsa - Real Estate Development',
           description:
             'Sales landing page for a boutique 12-home townhouse development in Peetri - designed from scratch and built as a custom WordPress theme with ACF blocks, Tailwind CSS, and a Vite-built per-block asset pipeline. Conversion-focused and pixel-perfect.',
+          cta: 'Visit Site ->',
+        },
+        {
+          name: 'Paavli Kvartal',
+          imageAlt: 'Paavli Kvartal - Creative Business Quarter in Tallinn',
+          description:
+            'Custom WordPress theme for a creative business quarter in North Tallinn - built with ACF Gutenberg blocks, Tailwind CSS, and a Vite-powered per-block asset pipeline. Features custom post types for companies, rental spaces, and events, a filterable interactive map, GSAP animations, Swiper sliders, and Lenis smooth scrolling.',
           cta: 'Visit Site ->',
         },
       ],
@@ -558,6 +570,13 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           imageAlt: 'Kütimetsa - kinnisvaraarendus',
           description:
             'Müügileht 12 ridaelamu kodu boutique-arendusele Peetris - täielikult ise nullist disainitud ja ehitatud kohandatud WordPressi teemana ACF plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu eraldi. Müügile suunatud ja pikslitäpne.',
+          cta: 'Ava leht ->',
+        },
+        {
+          name: 'Paavli Kvartal',
+          imageAlt: 'Paavli Kvartal - loomemajanduse kvartal Tallinnas',
+          description:
+            'Kohandatud WordPressi teema Põhja-Tallinna loomemajanduse kvartalile - ehitatud ACF Gutenbergi plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu. Sisaldab kohandatud postitüüpe ettevõtete, rendipindade ja sündmuste jaoks, filtreeritavat interaktiivset kaarti, GSAP animatsioone, Swiperi slaidereid ja Lenise sujuvat kerimist.',
           cta: 'Ava leht ->',
         },
       ],
