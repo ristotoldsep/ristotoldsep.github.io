@@ -335,7 +335,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: 'Paavli Kvartal',
           imageAlt: 'Paavli Kvartal - Creative Business Quarter in Tallinn',
           description:
-            'Custom WordPress theme for a creative business quarter in North Tallinn - built with ACF Gutenberg blocks, Tailwind CSS, and a Vite-powered per-block asset pipeline. Features custom post types for companies, rental spaces, and events, a filterable interactive map, GSAP animations, Swiper sliders, and Lenis smooth scrolling.',
+            'Custom WordPress theme for a creative business quarter in North Tallinn - built with ACF Gutenberg blocks, Tailwind CSS, and a Vite-powered per-block asset pipeline. Features custom post types for companies, rental spaces, and events, a filterable interactive map, GSAP animations, Swiper sliders, and a full-page section-snapping scroll experience driven by Lenis. I also built a custom event-importer plugin that scrapes the cultural centre\'s programme by reconstructing the source site\'s Next.js data stream and smart-syncs events into a custom post type twice daily.',
           cta: 'Visit Site ->',
         },
       ],
@@ -576,7 +576,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: 'Paavli Kvartal',
           imageAlt: 'Paavli Kvartal - loomemajanduse kvartal Tallinnas',
           description:
-            'Kohandatud WordPressi teema Põhja-Tallinna loomemajanduse kvartalile - ehitatud ACF Gutenbergi plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu. Sisaldab kohandatud postitüüpe ettevõtete, rendipindade ja sündmuste jaoks, filtreeritavat interaktiivset kaarti, GSAP animatsioone, Swiperi slaidereid ja Lenise sujuvat kerimist.',
+            'Kohandatud WordPressi teema Põhja-Tallinna loomemajanduse kvartalile - ehitatud ACF Gutenbergi plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu. Sisaldab kohandatud postitüüpe ettevõtete, rendipindade ja sündmuste jaoks, filtreeritavat interaktiivset kaarti, GSAP animatsioone, Swiperi slaidereid ning Lenisel põhinevat täisekraani sektsioonide kaupa kerimise lahendust. Lõin ka kohandatud sündmuste impordi plugina, mis kogub kultuurikeskuse programmi, taastades lähtesaidi Next.js andmevoo, ja sünkroonib sündmused nutikalt kaks korda päevas kohandatud postitüüpi.',
           cta: 'Ava leht ->',
         },
       ],
