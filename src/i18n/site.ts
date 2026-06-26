@@ -307,7 +307,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: 'Ribaana Horm',
           imageAlt: 'Ribaana Horm - Real Estate',
           description:
-            'Fully custom PHP WordPress theme for an Estonian real estate broker - built with ACF blocks and Tailwind CSS, conversion-focused and pixel-perfect.',
+            'Fully custom PHP WordPress theme for an Estonian real estate broker - built with ACF blocks and Tailwind CSS, conversion-focused and pixel-perfect. I also built a custom KV.ee integration plugin that imports the broker\'s property listings daily from the KV.ee XML feed into a custom post type - mapping prices, areas, location, and galleries into ACF fields, auto-setting featured images, archiving removed listings, and powering an AJAX-filterable listings block on the site.',
           cta: 'Visit Site ->',
         },
         {
@@ -548,7 +548,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: 'Ribaana Horm',
           imageAlt: 'Ribaana Horm - kinnisvara',
           description:
-            'Täielikult kohandatud PHP WordPressi teema Eesti kinnisvaramaaklerile - ehitatud ACF plokkide ja Tailwind CSS-iga, konversioonile suunatud ja pikslitäpne.',
+            'Täielikult kohandatud PHP WordPressi teema Eesti kinnisvaramaaklerile - ehitatud ACF plokkide ja Tailwind CSS-iga, konversioonile suunatud ja pikslitäpne. Lõin ka kohandatud KV.ee integratsiooni plugina, mis impordib maakleri kinnisvarakuulutused iga päev KV.ee XML-voost kohandatud postitüüpi - kaardistades hinnad, pindalad, asukoha ja galeriid ACF väljadesse, seades automaatselt esipildi, arhiveerides eemaldatud kuulutused ning toites saidil AJAX-iga filtreeritavat kuulutuste blokki.',
           cta: 'Ava leht ->',
         },
         {
