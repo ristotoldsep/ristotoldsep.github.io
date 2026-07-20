@@ -1,0 +1,48 @@
+# Risto Tõldsep — Full Stack Web Developer
+
+> Risto Tõldsep is a Full Stack Web Developer based in Tallinn, Estonia, with 5+ years of hands-on experience building web applications, eCommerce stores, WordPress/WooCommerce sites, custom CMS platforms, REST APIs, and AI-powered automations. He works both full-time (currently at the Tallinn agency Reaktiiv) and as a freelancer, and holds a BSc in Computer Systems Engineering from Tallinn University of Technology (TalTech).
+
+## Overview
+
+- **Name:** Risto Tõldsep
+- **Role:** Full Stack Web Developer
+- **Location:** Tallinn, Estonia
+- **Experience:** 5+ years full-time; 250+ projects worked on
+- **Availability:** Open for freelance projects
+- **Languages:** English, Estonian
+- **Website:** https://ristotoldsep.eu (English) / https://ristotoldsep.eu/et/ (Estonian)
+
+## Services
+
+- **Web Design & UI/UX** — conversion-focused interfaces designed from scratch (custom design, Figma).
+- **Full Stack Development** — end-to-end web apps from database and APIs to polished front ends (React, PHP, Node.js, Laravel).
+- **WordPress & eCommerce** — custom themes, plugins, and multi-language / multi-currency WooCommerce stores.
+- **SEO, AEO & GEO** — technical SEO audits, Core Web Vitals, analytics setup (GTM, GA4, Google Search Console, Microsoft Clarity, Meta Pixel), plus Answer Engine Optimization and Generative Engine Optimization so content is surfaced and cited by tools like ChatGPT and Perplexity. Google & Meta ad campaigns.
+- **Maintenance & Support** — updates, backups, security hardening, and speed optimization.
+- **API Integrations & Automations** — AI solutions, pipelines, and smart workflows (n8n, Zapier, AI APIs) that eliminate repetitive work.
+
+## Tech Stack
+
+- **Frontend:** HTML5, CSS3, JavaScript, TypeScript, React, Vue, Next.js, Astro, GSAP
+- **Backend:** PHP, Laravel, Node.js, MySQL, PostgreSQL, Firebase, REST APIs
+- **CMS & eCommerce:** WordPress, WooCommerce, headless CMS, custom themes, custom plugins
+- **Tools:** Git, Figma, Technical SEO, AI APIs, n8n, Zapier, Analytics
+
+## Selected Projects
+
+- **Clarte** (https://clarte.ee/) — custom WooCommerce store for a premium skincare brand; custom WordPress theme with ACF Gutenberg blocks, Tailwind CSS, Vite per-block asset pipeline, GSAP, Swiper, Lenis, WPML multilingual, Mailchimp API newsletter integration, and full analytics tracking.
+- **Uusloo** (https://uusloo.hausers.ee/) — full stack site with a Laravel backend and Vue frontend connected via Inertia.js.
+- **Snabb** (https://snabb.xyz/) — unified parking, car wash & EV charging platform with custom PHP-built Elementor widgets; 85,000+ users, 250+ locations.
+- **Ribaana Horm** (https://ribaanahorm.ee/) — custom WordPress theme for an Estonian real estate broker with ACF blocks, Tailwind, and a custom KV.ee XML-feed importer plugin.
+- **QiNutritionist** (https://qinutritionist.com/) — multi-language (EN/ET/ES) static Astro site with a git-based CMS and automated GitHub Actions deploys.
+- **Serene Sleep** (https://serenesleep.ee/) — custom WooCommerce store for luxury silk bedding.
+- **Kütimetsa** (https://kutimetsa.hausers.ee/) — sales landing page for a boutique townhouse development; custom WordPress theme with ACF blocks and Tailwind.
+- **Paavli Kvartal** (https://paavli.ee/) — custom WordPress theme for a creative business quarter in Tallinn with custom post types, filterable interactive map, GSAP, and a custom event-importer plugin.
+
+## Contact
+
+- **Email:** ristotoldsep@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/risto-toldsep
+- **GitHub:** https://github.com/ristotoldsep
+- **Instagram:** https://www.instagram.com/ristotoldsep/
+- **Facebook:** https://www.facebook.com/risto.toldsep/

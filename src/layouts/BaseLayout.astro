@@ -1,5 +1,6 @@
 ---
 import '../styles/main.scss';
+import { socialLinks } from '../i18n/site';
 
 interface Props {
   title?: string;
@@ -16,6 +17,99 @@ const {
   lang = 'en',
   ogTitle = title,
 } = Astro.props;
+
+// Canonical site origin (configured in astro.config.mjs)
+const SITE = Astro.site ?? new URL('https://ristotoldsep.eu');
+const canonicalURL = new URL(Astro.url.pathname, SITE);
+
+// The OG/social share image is a lightweight version of the sidebar portrait (.sidebar-photo)
+const PROFILE_IMAGE = '/og-image.jpg';
+const ogImage = new URL(PROFILE_IMAGE, SITE).href;
+
+// Language alternates (hreflang) — English at "/", Estonian at "/et/"
+const alternates = [
+  { hreflang: 'en', href: new URL('/', SITE).href },
+  { hreflang: 'et', href: new URL('/et/', SITE).href },
+  { hreflang: 'x-default', href: new URL('/', SITE).href },
+];
+
+const ogLocale = lang === 'et' ? 'et_EE' : 'en_US';
+const ogLocaleAlt = lang === 'et' ? 'en_US' : 'et_EE';
+
+// Structured data (JSON-LD) — Person + WebSite + ProfilePage as a single @graph.
+// Powers rich results in Google and helps AI answer engines (AEO/GEO) cite the site.
+const personId = `${SITE.origin}/#person`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': personId,
+      name: 'Risto Tõldsep',
+      alternateName: 'Risto Toldsep',
+      url: SITE.origin,
+      image: ogImage,
+      jobTitle: 'Full Stack Web Developer',
+      description:
+        'Full Stack Web Developer based in Tallinn, Estonia, with 5+ years building web apps, eCommerce stores, WordPress/WooCommerce sites, and AI-powered automations.',
+      email: 'mailto:ristotoldsep@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Tallinn',
+        addressCountry: 'EE',
+      },
+      alumniOf: {
+        '@type': 'CollegeOrUniversity',
+        name: 'Tallinn University of Technology (TalTech)',
+      },
+      worksFor: {
+        '@type': 'Organization',
+        name: 'Reaktiiv',
+        url: 'https://reaktiiv.com',
+      },
+      knowsAbout: [
+        'Full Stack Web Development',
+        'WordPress',
+        'WooCommerce',
+        'React',
+        'Vue',
+        'Laravel',
+        'PHP',
+        'Astro',
+        'JavaScript',
+        'TypeScript',
+        'Technical SEO',
+        'AEO',
+        'GEO',
+        'AI Integrations',
+        'API Integrations',
+        'eCommerce',
+        'Automation',
+      ],
+      sameAs: socialLinks.map((link) => link.href),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.origin}/#website`,
+      url: SITE.origin,
+      name: 'Risto Tõldsep — Full Stack Developer',
+      description,
+      inLanguage: ['en', 'et'],
+      publisher: { '@id': personId },
+    },
+    {
+      '@type': 'ProfilePage',
+      '@id': `${canonicalURL.href}#profilepage`,
+      url: canonicalURL.href,
+      name: title,
+      description,
+      inLanguage: lang,
+      isPartOf: { '@id': `${SITE.origin}/#website` },
+      about: { '@id': personId },
+      mainEntity: { '@id': personId },
+    },
+  ],
+};
 ---
 
 <!DOCTYPE html>
@@ -23,16 +117,49 @@ const {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content={keywords} />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="icon" href="/images/logo.webp" type="image/png">
-  <meta property="og:image" content="/images/coverphoto.jpg" />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content="Risto Tõldsep" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <link rel="canonical" href={canonicalURL.href} />
+  {alternates.map((alt) => (
+    <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+  ))}
+
+  <!-- Icons -->
+  <link rel="icon" href="/images/logo.webp" type="image/webp" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/aa_profile_pic.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Risto Tõldsep" />
   <meta property="og:title" content={ogTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL.href} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:alt" content="Risto Tõldsep - Full Stack Developer" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="972" />
+  <meta property="og:locale" content={ogLocale} />
+  <meta property="og:locale:alternate" content={ogLocaleAlt} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={ogTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image:alt" content="Risto Tõldsep - Full Stack Developer" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </head>
 <body>
   <slot />
