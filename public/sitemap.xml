@@ -19,10 +19,4 @@
     <xhtml:link rel="alternate" hreflang="et" href="https://ristotoldsep.eu/et/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ristotoldsep.eu/" />
   </url>
-  <url>
-    <loc>https://ristotoldsep.eu/Resume-RistoToldsep.pdf</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.60</priority>
-  </url>
 </urlset>
