@@ -26,7 +26,9 @@
 - **Frontend:** HTML5, CSS3, JavaScript, TypeScript, React, Vue, Next.js, Astro, GSAP
 - **Backend:** PHP, Laravel, Node.js, MySQL, PostgreSQL, Firebase, REST APIs
 - **CMS & eCommerce:** WordPress, WooCommerce, headless CMS, custom themes, custom plugins
-- **Tools:** Git, Figma, Technical SEO, AI APIs, n8n, Zapier, Analytics
+- **Tools:** Git, Jira, Bitbucket, Figma, Technical SEO, AI APIs, n8n, Zapier, Analytics
+- **Expertise:** Web Applications, Web Development, Full-Stack Development, Front-end Development, Back-End Web Development, Web Design
+- **Leadership:** Team Leadership, Team Management, Strategic Planning
 
 ## Selected Projects
 
