@@ -174,6 +174,11 @@ export const workProjectMeta = [
     href: 'https://snabb.xyz/',
   },
   {
+    image: '/images/projects/pilleriin.webp',
+    tags: ['WordPress', 'AI Chatbot', 'WooCommerce'],
+    href: 'https://pilleriin.com/',
+  },
+  {
     image: '/images/ribaana.webp',
     tags: ['WordPress', 'ACF', 'Tailwind'],
     href: 'https://ribaanahorm.ee/',
@@ -187,11 +192,6 @@ export const workProjectMeta = [
     image: '/images/serenesleep.webp',
     tags: ['WooCommerce', 'Custom Theme', 'eCommerce'],
     href: 'https://serenesleep.ee/',
-  },
-  {
-    image: '/images/kutimetsa.avif',
-    tags: ['WordPress', 'ACF Blocks', 'Tailwind'],
-    href: 'https://kutimetsa.hausers.ee/',
   },
   {
     image: '/images/projects/paavli.webp',
@@ -304,6 +304,13 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           cta: 'Visit Site ->',
         },
         {
+          name: 'PR Permanent PMU',
+          imageAlt: 'PR Permanent PMU - Permanent Makeup Studio',
+          description:
+            'Fully custom WordPress theme for a permanent makeup studio in Tallinn - ACF Gutenberg blocks, Tailwind CSS and a Vite per-block asset pipeline, with GSAP, Swiper and Lenis. Trilingual (ET/EN/RU) via WPML, a WooCommerce shop for PMU trainings and online courses with Montonio payments, a live Instagram feed, and a Mailchimp-connected newsletter that emails a first-time client coupon automatically. I also developed the custom AI chatbot plugin the site runs on - a multi-provider widget (Claude, GPT or Gemini) that indexes the site into its own knowledge base, answers visitors in their own language around the clock, captures leads through a scripted quick-reply flow, stores every conversation in wp-admin with analytics and ratings, and reports the questions its knowledge base could not answer. The theme feeds it live business data, the real price list and the FAQ, so it never invents prices.',
+          cta: 'Visit Site ->',
+        },
+        {
           name: 'Ribaana Horm',
           imageAlt: 'Ribaana Horm - Real Estate',
           description:
@@ -322,13 +329,6 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           imageAlt: 'Serene Sleep - Luxury Bedding',
           description:
             'Custom WooCommerce e-store for luxury silk bedding - premium brand identity, refined UX, and OEKO-TEX certified product showcase built for conversion.',
-          cta: 'Visit Site ->',
-        },
-        {
-          name: 'Kütimetsa',
-          imageAlt: 'Kütimetsa - Real Estate Development',
-          description:
-            'Sales landing page for a boutique 12-home townhouse development in Peetri - designed from scratch and built as a custom WordPress theme with ACF blocks, Tailwind CSS, and a Vite-built per-block asset pipeline. Conversion-focused and pixel-perfect.',
           cta: 'Visit Site ->',
         },
         {
@@ -547,6 +547,13 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           cta: 'Ava leht ->',
         },
         {
+          name: 'PR Permanent PMU',
+          imageAlt: 'PR Permanent PMU - püsimeigistuudio',
+          description:
+            'Täielikult kohandatud WordPressi teema Tallinna püsimeigistuudiole - ACF Gutenbergi plokid, Tailwind CSS ja Vite põhine plokipõhine varade konveier koos GSAP-i, Swiperi ja Lenisega. Kolmkeelne (ET/EN/RU) WPML-i kaudu, WooCommerce e-pood püsimeigikoolituste ja e-kursuste müügiks Montonio maksetega, elav Instagrami feed ning Mailchimpiga ühendatud uudiskirjavorm, mis saadab uuele kliendile automaatselt sooduskupongi. Arendasin ka kohandatud AI vestlusroboti plugina, mida leht kasutab - mitme pakkujaga vidin (Claude, GPT või Gemini), mis indekseerib saidi sisu oma teadmusbaasi, vastab külastajatele nende endi keeles ööpäeva ringi, kogub kontakte skripteeritud kiirvastuste voo kaudu, salvestab kõik vestlused wp-admini koos statistika ja hinnangutega ning raporteerib küsimused, millele teadmusbaas vastust ei andnud. Teema söödab robotile ette äriüksuse andmed, päris hinnakirja ja KKK, nii et see ei mõtle hindu välja.',
+          cta: 'Ava leht ->',
+        },
+        {
           name: 'Ribaana Horm',
           imageAlt: 'Ribaana Horm - kinnisvara',
           description:
@@ -565,13 +572,6 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           imageAlt: 'Serene Sleep - luksuslik voodipesu',
           description:
             'Kohandatud WooCommerce e-pood luksuslikule siidvoodipesule - premium brändiidentiteet, läbimõeldud kasutuskogemus ja OEKO-TEX sertifikaadiga toodete esitlus, loodud müüki toetama.',
-          cta: 'Ava leht ->',
-        },
-        {
-          name: 'Kütimetsa',
-          imageAlt: 'Kütimetsa - kinnisvaraarendus',
-          description:
-            'Müügileht 12 ridaelamu kodu boutique-arendusele Peetris - täielikult ise nullist disainitud ja ehitatud kohandatud WordPressi teemana ACF plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu eraldi. Müügile suunatud ja pikslitäpne.',
           cta: 'Ava leht ->',
         },
         {
