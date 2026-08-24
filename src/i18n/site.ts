@@ -175,7 +175,7 @@ export const workProjectMeta = [
   },
   {
     image: '/images/projects/pilleriin.webp',
-    tags: ['WordPress', 'AI Chatbot', 'WooCommerce'],
+    tags: ['WordPress', 'AI Chatbot', 'WooCommerce', 'Google Ads'],
     href: 'https://pilleriin.com/',
   },
   {
@@ -307,7 +307,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: 'PR Permanent PMU',
           imageAlt: 'PR Permanent PMU - Permanent Makeup Studio',
           description:
-            'Fully custom WordPress theme for a permanent makeup studio in Tallinn - ACF Gutenberg blocks, Tailwind CSS and a Vite per-block asset pipeline, with GSAP, Swiper and Lenis. Trilingual (ET/EN/RU) via WPML, a WooCommerce shop for PMU trainings and online courses with Montonio payments, a live Instagram feed, and a Mailchimp-connected newsletter that emails a first-time client coupon automatically. I also developed the custom AI chatbot plugin the site runs on - a multi-provider widget (Claude, GPT or Gemini) that indexes the site into its own knowledge base, answers visitors in their own language around the clock, captures leads through a scripted quick-reply flow, stores every conversation in wp-admin with analytics and ratings, and reports the questions its knowledge base could not answer. The theme feeds it live business data, the real price list and the FAQ, so it never invents prices.',
+            'Fully custom WordPress theme for a permanent makeup studio in Tallinn - ACF Gutenberg blocks, Tailwind CSS and a Vite per-block asset pipeline, with GSAP, Swiper and Lenis. Trilingual (ET/EN/RU) via WPML, a WooCommerce shop for PMU trainings and online courses with Montonio payments, a live Instagram feed, and a Mailchimp-connected newsletter that emails a first-time client coupon automatically. I also developed the custom AI chatbot plugin the site runs on - a multi-provider widget (Claude, GPT or Gemini) that indexes the site into its own knowledge base, answers visitors in their own language around the clock, captures leads through a scripted quick-reply flow, stores every conversation in wp-admin with analytics and ratings, and reports the questions its knowledge base could not answer. The theme feeds it live business data, the real price list and the FAQ, so it never invents prices. On the marketing side I set up and run the studio\'s Google Ads campaigns, with the measurement behind them: a Google Tag Manager container fed by a GTM4WP enhanced-ecommerce dataLayer, GA4 with custom ecommerce event tracking, and Google Ads conversion tracking on training and course purchases, backed by a Conversion Linker for ad-click attribution and gated by Google Consent Mode through the Complianz cookie banner.',
           cta: 'Visit Site ->',
         },
         {
@@ -423,7 +423,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
         { icon: '⟨/⟩', title: 'Frontend', items: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Vue', 'Next.js', 'Astro', 'GSAP'] },
         { icon: '{ }', title: 'Backend', items: ['PHP', 'Laravel', 'Node.js', 'MySQL', 'PostgreSQL', 'Firebase', 'REST APIs'] },
         { icon: '◈', title: 'CMS &amp; eCommerce', items: ['WordPress', 'WooCommerce', 'Headless CMS', 'Custom Themes', 'Custom Plugins'] },
-        { icon: '✦', title: 'Tools &amp; Other', items: ['Git', 'Jira', 'Bitbucket', 'Figma', 'Technical SEO', 'AI APIs', 'n8n', 'Zapier', 'Analytics'] },
+        { icon: '✦', title: 'Tools &amp; Other', items: ['Git', 'Jira', 'Bitbucket', 'Figma', 'Technical SEO', 'AI APIs', 'n8n', 'Zapier', 'Analytics', 'Google Ads'] },
         { icon: '◎', title: 'Expertise', items: ['Web Applications', 'Web Development', 'Full-Stack Development', 'Front-end Development', 'Back-End Web Development', 'Web Design'] },
         { icon: '✧', title: 'Leadership &amp; Strategy', items: ['Team Leadership', 'Team Management', 'Strategic Planning'] },
       ],
@@ -550,7 +550,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           name: 'PR Permanent PMU',
           imageAlt: 'PR Permanent PMU - püsimeigistuudio',
           description:
-            'Täielikult kohandatud WordPressi teema Tallinna püsimeigistuudiole - ACF Gutenbergi plokid, Tailwind CSS ja Vite põhine plokipõhine varade konveier koos GSAP-i, Swiperi ja Lenisega. Kolmkeelne (ET/EN/RU) WPML-i kaudu, WooCommerce e-pood püsimeigikoolituste ja e-kursuste müügiks Montonio maksetega, elav Instagrami feed ning Mailchimpiga ühendatud uudiskirjavorm, mis saadab uuele kliendile automaatselt sooduskupongi. Arendasin ka kohandatud AI vestlusroboti plugina, mida leht kasutab - mitme pakkujaga vidin (Claude, GPT või Gemini), mis indekseerib saidi sisu oma teadmusbaasi, vastab külastajatele nende endi keeles ööpäeva ringi, kogub kontakte skripteeritud kiirvastuste voo kaudu, salvestab kõik vestlused wp-admini koos statistika ja hinnangutega ning raporteerib küsimused, millele teadmusbaas vastust ei andnud. Teema söödab robotile ette äriüksuse andmed, päris hinnakirja ja KKK, nii et see ei mõtle hindu välja.',
+            'Täielikult kohandatud WordPressi teema Tallinna püsimeigistuudiole - ACF Gutenbergi plokid, Tailwind CSS ja Vite põhine plokipõhine varade konveier koos GSAP-i, Swiperi ja Lenisega. Kolmkeelne (ET/EN/RU) WPML-i kaudu, WooCommerce e-pood püsimeigikoolituste ja e-kursuste müügiks Montonio maksetega, elav Instagrami feed ning Mailchimpiga ühendatud uudiskirjavorm, mis saadab uuele kliendile automaatselt sooduskupongi. Arendasin ka kohandatud AI vestlusroboti plugina, mida leht kasutab - mitme pakkujaga vidin (Claude, GPT või Gemini), mis indekseerib saidi sisu oma teadmusbaasi, vastab külastajatele nende endi keeles ööpäeva ringi, kogub kontakte skripteeritud kiirvastuste voo kaudu, salvestab kõik vestlused wp-admini koos statistika ja hinnangutega ning raporteerib küsimused, millele teadmusbaas vastust ei andnud. Teema söödab robotile ette äriüksuse andmed, päris hinnakirja ja KKK, nii et see ei mõtle hindu välja. Turunduse poolel seadistasin ja haldan stuudio Google Adsi kampaaniaid koos kogu mõõtmisega: Google Tag Manageri konteiner, mida toidab GTM4WP täiendatud e-kaubanduse dataLayer, GA4 kohandatud e-kaubanduse sündmuste jälgimisega ning Google Adsi konversioonide jälgimine koolituste ja kursuste ostudelt, mida toetab Conversion Linker reklaamiklikkide atributsiooniks ja mis on Google Consent Mode\'i kaudu Complianzi küpsiseteatega lubadega seotud.',
           cta: 'Ava leht ->',
         },
         {
@@ -666,7 +666,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
         { icon: '⟨/⟩', title: 'Frontend', items: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Vue', 'Next.js', 'Astro', 'GSAP'] },
         { icon: '{ }', title: 'Backend', items: ['PHP', 'Laravel', 'Node.js', 'MySQL', 'PostgreSQL', 'Firebase', 'REST APIs'] },
         { icon: '◈', title: 'CMS ja e-kaubandus', items: ['WordPress', 'WooCommerce', 'Headless CMS', 'Custom Themes', 'Custom Plugins'] },
-        { icon: '✦', title: 'Tööriistad ja muu', items: ['Git', 'Jira', 'Bitbucket', 'Figma', 'Technical SEO', 'AI APIs', 'n8n', 'Zapier', 'Analytics'] },
+        { icon: '✦', title: 'Tööriistad ja muu', items: ['Git', 'Jira', 'Bitbucket', 'Figma', 'Technical SEO', 'AI APIs', 'n8n', 'Zapier', 'Analytics', 'Google Ads'] },
         { icon: '◎', title: 'Valdkonnad', items: ['Veebirakendused', 'Veebiarendus', 'Full-Stack arendus', 'Front-end arendus', 'Back-end arendus', 'Veebidisain'] },
         { icon: '✧', title: 'Juhtimine ja strateegia', items: ['Tiimi eestvedamine', 'Meeskonna juhtimine', 'Strateegiline planeerimine'] },
       ],
