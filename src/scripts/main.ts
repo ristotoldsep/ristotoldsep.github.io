@@ -16,6 +16,7 @@ gsap.ticker.add((time: number) => { lenis.raf(time * 1000); });
 gsap.ticker.lagSmoothing(0);
 
 function revealHero(): void {
+  if (!document.querySelector('.sec-main .animate-up')) return;
   gsap.to('.sec-main .animate-up', {
     y: 0,
     opacity: 1,
@@ -207,11 +208,10 @@ function initMobileSidebar(): void {
 }
 
 function initActiveNav(): void {
-  if (!document.getElementById('home')) return;
-  const sections = ['home', 'skills', 'contact'];
-  const links    = document.querySelectorAll<HTMLElement>('.topnav-link');
-  const pill     = document.getElementById('topnavPill');
-  const list     = document.getElementById('topnavList');
+  const links = document.querySelectorAll<HTMLElement>('.topnav-link');
+  const pill  = document.getElementById('topnavPill');
+  const list  = document.getElementById('topnavList');
+  if (!links.length || !pill || !list) return;
 
   function movePillTo(el: HTMLElement) {
     if (!pill || !list) return;
@@ -223,39 +223,64 @@ function initActiveNav(): void {
     pill.style.opacity = '1';
   }
 
-  links.forEach(link => {
-    link.addEventListener('mouseenter', () => movePillTo(link));
-  });
-  if (list) {
-    list.addEventListener('mouseleave', () => {
-      const active = document.querySelector<HTMLElement>('.topnav-link.active') || links[0];
-      if (active) movePillTo(active);
-    });
+  function restPill() {
+    const active = document.querySelector<HTMLElement>('.topnav-link.active');
+    if (active) movePillTo(active);
+    else if (pill) pill.style.opacity = '0';
   }
 
-  const update = () => {
-    const scrollY = window.scrollY || document.documentElement.scrollTop;
-    let active = sections[0];
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top + window.scrollY - 120 <= scrollY) active = id;
-    });
-    links.forEach(link => {
-      const href = link.getAttribute('href')?.replace('#', '');
-      link.classList.toggle('active', href === active);
-    });
-    const activeLink = document.querySelector<HTMLElement>('.topnav-link.active');
-    if (activeLink) movePillTo(activeLink);
-  };
+  links.forEach(link => link.addEventListener('mouseenter', () => movePillTo(link)));
+  list.addEventListener('mouseleave', restPill);
+  window.addEventListener('resize', restPill);
 
-  window.addEventListener('scroll', update, { passive: true });
-  lenis.on('scroll', update);
+  // Route links: the deepest matching path wins, so /work/clarte/ highlights
+  // Work rather than Home. The bare home path only counts on an exact match,
+  // otherwise it would match every page.
+  const path = window.location.pathname;
+  let routeMatch: HTMLElement | null = null;
+  let matchLength = 0;
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#')) return;
+    const target = new URL(href, window.location.origin).pathname;
+    const isHomeLink = target === '/' || /^\/[a-z]{2}\/$/.test(target);
+    const hit = isHomeLink ? path === target : path.startsWith(target);
+    if (hit && target.length > matchLength) {
+      routeMatch = link;
+      matchLength = target.length;
+    }
+  });
 
-  setTimeout(() => {
-    update();
-    const activeLink = document.querySelector<HTMLElement>('.topnav-link.active') || links[0];
-    if (activeLink) movePillTo(activeLink);
-  }, 100);
+  if (routeMatch) {
+    links.forEach(link => link.classList.toggle('active', link === routeMatch));
+  }
+
+  // Scroll spy only applies to the in-page anchors, which exist on the homepage.
+  const anchors = Array.from(links).filter(l => l.getAttribute('href')?.startsWith('#'));
+  const hasSections = anchors.some(l => document.getElementById(l.getAttribute('href')!.slice(1)));
+
+  if (hasSections && !routeMatch) {
+    const update = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      let active = anchors[0]?.getAttribute('href')?.slice(1) ?? '';
+      anchors.forEach(link => {
+        const id = link.getAttribute('href')!.slice(1);
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top + window.scrollY - 120 <= scrollY) active = id;
+      });
+      links.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${active}`);
+      });
+      restPill();
+    };
+
+    window.addEventListener('scroll', update, { passive: true });
+    lenis.on('scroll', update);
+    setTimeout(update, 100);
+    return;
+  }
+
+  setTimeout(restPill, 100);
 }
 
 function initSmoothAnchors(): void {

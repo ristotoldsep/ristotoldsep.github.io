@@ -1,8 +1,7 @@
 /* ── Sub-page header, breadcrumbs and long-form content ──────── */
 
 .page-header {
-    padding: clamp(40px,6vw,72px) clamp(28px,5vw,72px) clamp(28px,4vw,48px);
-    max-width: 980px;
+    padding: clamp(48px,7vw,88px) clamp(28px,5vw,72px) clamp(28px,4vw,48px);
 }
 
 .breadcrumbs { margin-bottom: 20px; }
@@ -30,6 +29,7 @@
 .breadcrumbs [aria-current='page'] { color: var(--text-dim); }
 
 .page-h1 {
+    max-width: 20ch;
     font-size: clamp(1.9rem, 3.6vw, 3.1rem);
     font-weight: 800;
     line-height: 1.12;
@@ -47,11 +47,9 @@
 
 /* Section wrapper for sub-page body content */
 .page-section {
-    padding: clamp(40px,5vw,64px) clamp(28px,5vw,72px);
+    padding: clamp(48px,6vw,80px) clamp(28px,5vw,72px);
     border-top: 1px solid var(--border);
-    max-width: 1180px;
 }
-.page-section--tight { max-width: 860px; }
 
 .page-h2 {
     font-size: clamp(1.4rem, 2.2vw, 1.9rem);
@@ -173,7 +171,7 @@
 /* Highlights */
 .page-highlights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 18px;
 }
 .page-highlight {
@@ -246,7 +244,7 @@
 /* Card grids for index pages */
 .page-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 .page-card {
