@@ -36,7 +36,9 @@ function initPreloader(): void {
     if (fill) fill.style.width = progress + '%';
   }, 120);
 
-  function done() {
+  // Arrow function rather than a declaration so the null check on
+  // `preloader` above still narrows inside the closure.
+  const done = () => {
     clearInterval(fillInterval);
     if (fill) fill.style.width = '100%';
 
@@ -57,7 +59,7 @@ function initPreloader(): void {
         delay: 0.1,
       });
     }, 300);
-  }
+  };
 
   const MIN = sessionStorage.getItem('rt-preloaded') ? 0 : 600;
   sessionStorage.setItem('rt-preloaded', '1');

@@ -1,11 +1,13 @@
 ---
-import { serviceAccents, type SiteCopy } from '../../i18n/site';
+import type { SiteCopy } from '../../i18n/site';
+import { allServices } from '../../data/services';
 
 interface Props {
   copy: SiteCopy;
 }
 
 const { copy } = Astro.props;
+const locale = copy.locale;
 ---
 <section id="about" class="sec-inner">
 
@@ -62,18 +64,21 @@ const { copy } = Astro.props;
   </div>
 
   <div class="services-grid">
-    {copy.about.services.map((service, index) => (
+    {allServices.map((service, index) => {
+      const t = service.i18n[locale];
+      return (
       <div class="svc-card animate-card">
         <div class="svc-num">{`0${index + 1}`}</div>
-        <h3 class="svc-title" set:html={service.title}></h3>
+        <h3 class="svc-title" set:html={t.cardTitle}></h3>
         <div class="svc-divider"></div>
         <div class="svc-tags">
-          {service.tags.map((tag) => <span class="stag">{tag}</span>)}
+          {service.cardTags.map((tag) => <span class="stag">{tag}</span>)}
         </div>
-        <p class="svc-text">{service.text}</p>
-        <div class="svc-accent" style={`--ac: ${serviceAccents[index]}`}></div>
+        <p class="svc-text">{t.summary}</p>
+        <div class="svc-accent" style={`--ac: ${service.accent}`}></div>
       </div>
-    ))}
+      );
+    })}
 
   </div>
 

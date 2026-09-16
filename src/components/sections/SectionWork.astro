@@ -1,11 +1,14 @@
 ---
-import { workProjectMeta, type SiteCopy } from '../../i18n/site';
+import type { SiteCopy } from '../../i18n/site';
+import { publishedProjects } from '../../data/projects';
 
 interface Props {
   copy: SiteCopy;
 }
 
 const { copy } = Astro.props;
+const locale = copy.locale;
+const items = publishedProjects();
 ---
 <section id="work" class="sec-inner">
 
@@ -18,21 +21,24 @@ const { copy } = Astro.props;
   </div>
 
   <div class="gallery-grid">
-    {copy.work.projects.map((project, index) => (
+    {items.map((project, index) => {
+      const t = project.i18n[locale];
+      return (
       <figure class="gallery-item animate-card">
         <div class="gallery-img-wrap">
-          <img src={workProjectMeta[index].image} alt={project.imageAlt} loading="lazy">
+          <img src={project.cover.src} alt={t.imageAlt} loading="lazy">
         </div>
         <figcaption class:list={['gallery-caption', index % 2 === 1 && 'gallery-caption--alt']}>
-          <h3>{project.name}</h3>
+          <h3>{t.name ?? project.name}</h3>
           <div class="card-tags">
-            {workProjectMeta[index].tags.map((tag) => <span class="rtag">{tag}</span>)}
+            {project.cardTags.map((tag) => <span class="rtag">{tag}</span>)}
           </div>
-          <p>{project.description}</p>
-          <a href={workProjectMeta[index].href} target="_blank" rel="noopener" class="gallery-link">{project.cta}</a>
+          <p>{t.cardDescription}</p>
+          <a href={project.liveUrl} target="_blank" rel="noopener" class="gallery-link">{t.cta}</a>
         </figcaption>
       </figure>
-    ))}
+      );
+    })}
 
   </div>
 

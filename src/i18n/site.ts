@@ -56,12 +56,6 @@ export interface SiteCopy {
     eyebrow: string;
     title: string;
     githubCta: string;
-    projects: Array<{
-      name: string;
-      imageAlt: string;
-      description: string;
-      cta: string;
-    }>;
   };
   agency: {
     eyebrow: string;
@@ -83,11 +77,6 @@ export interface SiteCopy {
     info: Array<{ label: string; value: string; type?: 'text' | 'email' | 'badge' }>;
     servicesEyebrow: string;
     servicesTitle: string;
-    services: Array<{
-      title: string;
-      text: string;
-      tags: string[];
-    }>;
   };
   skills: {
     eyebrow: string;
@@ -157,61 +146,9 @@ export const socialLinks: SocialLink[] = [
   },
 ];
 
-export const workProjectMeta = [
-  {
-    image: '/images/projects/clarte.avif',
-    tags: ['WooCommerce', 'ACF Blocks', 'Tailwind'],
-    href: 'https://clarte.ee/',
-  },
-  {
-    image: '/images/uusloo.webp',
-    tags: ['Laravel', 'Vue', 'Inertia.js'],
-    href: 'https://uusloo.hausers.ee/',
-  },
-  {
-    image: '/images/snabb.webp',
-    tags: ['WordPress', 'Elementor', 'PHP'],
-    href: 'https://snabb.xyz/',
-  },
-  {
-    image: '/images/projects/pilleriin.webp',
-    tags: ['WordPress', 'AI Chatbot', 'WooCommerce', 'Google Ads'],
-    href: 'https://pilleriin.com/',
-  },
-  {
-    image: '/images/ribaana.webp',
-    tags: ['WordPress', 'ACF', 'Tailwind'],
-    href: 'https://ribaanahorm.ee/',
-  },
-  {
-    image: '/images/qi.webp',
-    tags: ['Astro', 'Decap CMS', 'GSAP'],
-    href: 'https://qinutritionist.com/',
-  },
-  {
-    image: '/images/serenesleep.webp',
-    tags: ['WooCommerce', 'Custom Theme', 'eCommerce'],
-    href: 'https://serenesleep.ee/',
-  },
-  {
-    image: '/images/projects/paavli.webp',
-    tags: ['WordPress', 'ACF Blocks', 'GSAP'],
-    href: 'https://paavli.ee/',
-  },
-];
-
 export const agencyMeta = [
   { name: 'Reaktiiv', href: 'https://reaktiiv.com/tood/' },
   { name: 'vDisain', href: 'https://vdisain.ee/referentsid/' },
-];
-
-export const serviceAccents = [
-  'rgba(196,154,60,0.18)',
-  'rgba(80,130,255,0.12)',
-  'rgba(60,200,120,0.10)',
-  'rgba(255,160,60,0.12)',
-  'rgba(0,200,200,0.10)',
-  'rgba(180,80,255,0.12)',
 ];
 
 export const siteCopy: Record<Locale, SiteCopy> = {
@@ -281,64 +218,6 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       eyebrow: 'Portfolio',
       title: 'Check out some of my featured projects',
       githubCta: 'View All Projects on GitHub ->',
-      projects: [
-        {
-          name: 'Clarte',
-          imageAlt: 'Clarte - Premium Skincare WooCommerce Store',
-          description:
-            'Custom WooCommerce store for a premium skincare brand - fully custom WordPress theme with ACF Gutenberg blocks, Tailwind CSS, and a Vite-built per-block asset pipeline. Features GSAP animations, Swiper sliders, and Lenis smooth scrolling. Fully multilingual via WPML (content, strings, and media) for international reach. I also built a Mailchimp API integration for the newsletter signup form, subscribing customers directly to the mailing list. Integrated GTM, GA4, Google Search Console, Microsoft Clarity, and Meta Pixel with custom event tracking for lead generation and customer behaviour analysis.',
-          cta: 'Visit Site ->',
-        },
-        {
-          name: 'Uusloo',
-          imageAlt: 'Uusloo - Full Stack Laravel and Vue',
-          description:
-            'Full stack custom website built with a Laravel backend and Vue frontend connected via Inertia - seamless SPA experience with server-side power.',
-          cta: 'Visit Site ->',
-        },
-        {
-          name: 'Snabb',
-          imageAlt: 'Snabb - Parking and EV App',
-          description:
-            'Unified parking, car wash & EV charging platform - custom Elementor widgets built with PHP for a seamless drag-and-drop editing experience. 85,000+ users, 250+ locations.',
-          cta: 'Visit Site ->',
-        },
-        {
-          name: 'PR Permanent PMU',
-          imageAlt: 'PR Permanent PMU - Permanent Makeup Studio',
-          description:
-            'Fully custom WordPress theme for a permanent makeup studio in Tallinn - ACF Gutenberg blocks, Tailwind CSS and a Vite per-block asset pipeline, with GSAP, Swiper and Lenis. Trilingual (ET/EN/RU) via WPML, a WooCommerce shop for PMU trainings and online courses with Montonio payments, a live Instagram feed, and a Mailchimp-connected newsletter that emails a first-time client coupon automatically. I also developed the custom AI chatbot plugin the site runs on - a multi-provider widget (Claude, GPT or Gemini) that indexes the site into its own knowledge base, answers visitors in their own language around the clock, captures leads through a scripted quick-reply flow, stores every conversation in wp-admin with analytics and ratings, and reports the questions its knowledge base could not answer. The theme feeds it live business data, the real price list and the FAQ, so it never invents prices. On the marketing side I set up and run the studio\'s Google Ads campaigns, with the measurement behind them: a Google Tag Manager container fed by a GTM4WP enhanced-ecommerce dataLayer, GA4 with custom ecommerce event tracking, and Google Ads conversion tracking on training and course purchases, backed by a Conversion Linker for ad-click attribution and gated by Google Consent Mode through the Complianz cookie banner.',
-          cta: 'Visit Site ->',
-        },
-        {
-          name: 'Ribaana Horm',
-          imageAlt: 'Ribaana Horm - Real Estate',
-          description:
-            'Fully custom PHP WordPress theme for an Estonian real estate broker - built with ACF blocks and Tailwind CSS, conversion-focused and pixel-perfect. I also built a custom KV.ee integration plugin that imports the broker\'s property listings daily from the KV.ee XML feed into a custom post type - mapping prices, areas, location, and galleries into ACF fields, auto-setting featured images, archiving removed listings, and powering an AJAX-filterable listings block on the site.',
-          cta: 'Visit Site ->',
-        },
-        {
-          name: 'QiNutritionist',
-          imageAlt: 'QiNutritionist - Wellness',
-          description:
-            'Multi-language static site (EN/ET/ES) with a git-based CMS for client content editing and automated deploys via GitHub Actions.',
-          cta: 'Visit Site ->',
-        },
-        {
-          name: 'Serene Sleep',
-          imageAlt: 'Serene Sleep - Luxury Bedding',
-          description:
-            'Custom WooCommerce e-store for luxury silk bedding - premium brand identity, refined UX, and OEKO-TEX certified product showcase built for conversion.',
-          cta: 'Visit Site ->',
-        },
-        {
-          name: 'Paavli Kvartal',
-          imageAlt: 'Paavli Kvartal - Creative Business Quarter in Tallinn',
-          description:
-            'Custom WordPress theme for a creative business quarter in North Tallinn - built with ACF Gutenberg blocks, Tailwind CSS, and a Vite-powered per-block asset pipeline. Features custom post types for companies, rental spaces, and events, a filterable interactive map, GSAP animations, Swiper sliders, and a full-page section-snapping scroll experience driven by Lenis. I also built a custom event-importer plugin that scrapes the cultural centre\'s programme by reconstructing the source site\'s Next.js data stream and smart-syncs events into a custom post type twice daily.',
-          cta: 'Visit Site ->',
-        },
-      ],
     },
     agency: {
       eyebrow: 'Agency Work',
@@ -382,38 +261,6 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       ],
       servicesEyebrow: 'Services',
       servicesTitle: 'What I can do for you',
-      services: [
-        {
-          title: 'Web Design<br>&amp; UI/UX',
-          text: 'Beautiful, conversion-focused interfaces designed from scratch. Clean layouts, strong typography, and experiences users actually enjoy.',
-          tags: ['Custom Design', 'Figma'],
-        },
-        {
-          title: 'Full Stack<br>Development',
-          text: 'End-to-end web application development - from database design and APIs to polished front-end interfaces. Built to scale, built to last.',
-          tags: ['React', 'PHP / Node.js'],
-        },
-        {
-          title: 'WordPress<br>&amp; eCommerce',
-          text: 'Custom themes, plugins, and complete online stores. Multi-language, multi-currency, high-performance shops that convert browsers into buyers.',
-          tags: ['WordPress', 'WooCommerce'],
-        },
-        {
-          title: 'SEO, AEO, GEO &amp;<br>Digital Marketing',
-          text: 'Rank higher and get found — in search engines and AI tools. Technical SEO audits, Core Web Vitals improvements, full analytics setup (GTM, GA4, Google Search Console, Microsoft Clarity, Meta Pixel with custom event tracking), and Google & Meta ad campaigns. AEO (Answer Engine Optimization) puts your content in AI answer boxes and voice search results; GEO (Generative Engine Optimization) gets tools like ChatGPT and Perplexity to surface and cite your business. All data-driven.',
-          tags: ['Technical SEO', 'AEO / GEO'],
-        },
-        {
-          title: 'Maintenance<br>&amp; Support',
-          text: 'Ongoing care for your website - updates, backups, security hardening, speed optimization, and a developer to call when something breaks.',
-          tags: ['Updates', 'Security'],
-        },
-        {
-          title: 'API Integrations<br>&amp; Automations',
-          text: "AI solutions, pipelines, smart workflows with digital tools and integrations. Eliminate the repetitive work that eats your team's time.",
-          tags: ['AI Tools', 'Workflows'],
-        },
-      ],
     },
     skills: {
       eyebrow: 'Resume',
@@ -524,64 +371,6 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       eyebrow: 'Portfoolio',
       title: 'Vaata mõningaid minu esile tõstetud projekte',
       githubCta: 'Vaata kõiki projekte GitHubis ->',
-      projects: [
-        {
-          name: 'Clarte',
-          imageAlt: 'Clarte - premium nahahoolduse WooCommerce e-pood',
-          description:
-            'Kohandatud WooCommerce e-pood premium nahahoolduse brändile - täielikult kohandatud WordPressi teema ACF Gutenbergi plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu. Sisaldab GSAP animatsioone, Swiperi slaidereid ja Lenise sujuvat kerimist. Täielikult mitmekeelne WPML-i kaudu (sisu, stringid ja meedia), et jõuda rahvusvahelise publikuni. Lõin ka Mailchimpi API integratsiooni uudiskirja registreerimisvormile, mis lisab kliendid otse meililisti. Integreeritud GTM, GA4, Google Search Console, Microsoft Clarity ja Meta Pixel kohandatud sündmusejälgimisega müügivihjete genereerimiseks ja kliendiharjumuste analüüsimiseks.',
-          cta: 'Ava leht ->',
-        },
-        {
-          name: 'Uusloo',
-          imageAlt: 'Uusloo - Full Stack Laravel ja Vue',
-          description:
-            'Täislahendusena loodud veebileht Laraveli backendiga ja Vue frontendiga, ühendatud Inertia kaudu - sujuv SPA kogemus koos serveripoole võimekusega.',
-          cta: 'Ava leht ->',
-        },
-        {
-          name: 'Snabb',
-          imageAlt: 'Snabb - parkimise ja EV rakendus',
-          description:
-            'Ühtne parkimise, autopesu ja elektriautode laadimise platvorm - PHP-ga ehitatud kohandatud Elementor vidinad sujuvaks drag-and-drop halduseks. 85 000+ kasutajat, 250+ asukohta.',
-          cta: 'Ava leht ->',
-        },
-        {
-          name: 'PR Permanent PMU',
-          imageAlt: 'PR Permanent PMU - püsimeigistuudio',
-          description:
-            'Täielikult kohandatud WordPressi teema Tallinna püsimeigistuudiole - ACF Gutenbergi plokid, Tailwind CSS ja Vite põhine plokipõhine varade konveier koos GSAP-i, Swiperi ja Lenisega. Kolmkeelne (ET/EN/RU) WPML-i kaudu, WooCommerce e-pood püsimeigikoolituste ja e-kursuste müügiks Montonio maksetega, elav Instagrami feed ning Mailchimpiga ühendatud uudiskirjavorm, mis saadab uuele kliendile automaatselt sooduskupongi. Arendasin ka kohandatud AI vestlusroboti plugina, mida leht kasutab - mitme pakkujaga vidin (Claude, GPT või Gemini), mis indekseerib saidi sisu oma teadmusbaasi, vastab külastajatele nende endi keeles ööpäeva ringi, kogub kontakte skripteeritud kiirvastuste voo kaudu, salvestab kõik vestlused wp-admini koos statistika ja hinnangutega ning raporteerib küsimused, millele teadmusbaas vastust ei andnud. Teema söödab robotile ette äriüksuse andmed, päris hinnakirja ja KKK, nii et see ei mõtle hindu välja. Turunduse poolel seadistasin ja haldan stuudio Google Adsi kampaaniaid koos kogu mõõtmisega: Google Tag Manageri konteiner, mida toidab GTM4WP täiendatud e-kaubanduse dataLayer, GA4 kohandatud e-kaubanduse sündmuste jälgimisega ning Google Adsi konversioonide jälgimine koolituste ja kursuste ostudelt, mida toetab Conversion Linker reklaamiklikkide atributsiooniks ja mis on Google Consent Mode\'i kaudu Complianzi küpsiseteatega lubadega seotud.',
-          cta: 'Ava leht ->',
-        },
-        {
-          name: 'Ribaana Horm',
-          imageAlt: 'Ribaana Horm - kinnisvara',
-          description:
-            'Täielikult kohandatud PHP WordPressi teema Eesti kinnisvaramaaklerile - ehitatud ACF plokkide ja Tailwind CSS-iga, konversioonile suunatud ja pikslitäpne. Lõin ka kohandatud KV.ee integratsiooni plugina, mis impordib maakleri kinnisvarakuulutused iga päev KV.ee XML-voost kohandatud postitüüpi - kaardistades hinnad, pindalad, asukoha ja galeriid ACF väljadesse, seades automaatselt esipildi, arhiveerides eemaldatud kuulutused ning toites saidil AJAX-iga filtreeritavat kuulutuste blokki.',
-          cta: 'Ava leht ->',
-        },
-        {
-          name: 'QiNutritionist',
-          imageAlt: 'QiNutritionist - heaolu',
-          description:
-            'Mitmekeelne staatiline veebileht (EN/ET/ES) git-põhise CMS-iga kliendipoolseks sisuhalduseks ja automatiseeritud deploydega GitHub Actionsi kaudu.',
-          cta: 'Ava leht ->',
-        },
-        {
-          name: 'Serene Sleep',
-          imageAlt: 'Serene Sleep - luksuslik voodipesu',
-          description:
-            'Kohandatud WooCommerce e-pood luksuslikule siidvoodipesule - premium brändiidentiteet, läbimõeldud kasutuskogemus ja OEKO-TEX sertifikaadiga toodete esitlus, loodud müüki toetama.',
-          cta: 'Ava leht ->',
-        },
-        {
-          name: 'Paavli Kvartal',
-          imageAlt: 'Paavli Kvartal - loomemajanduse kvartal Tallinnas',
-          description:
-            'Kohandatud WordPressi teema Põhja-Tallinna loomemajanduse kvartalile - ehitatud ACF Gutenbergi plokkide ja Tailwind CSS-iga, kus iga ploki varad ehitatakse Vite kaudu. Sisaldab kohandatud postitüüpe ettevõtete, rendipindade ja sündmuste jaoks, filtreeritavat interaktiivset kaarti, GSAP animatsioone, Swiperi slaidereid ning Lenisel põhinevat täisekraani sektsioonide kaupa kerimise lahendust. Lõin ka kohandatud sündmuste impordi plugina, mis kogub kultuurikeskuse programmi, taastades lähtesaidi Next.js andmevoo, ja sünkroonib sündmused nutikalt kaks korda päevas kohandatud postitüüpi.',
-          cta: 'Ava leht ->',
-        },
-      ],
     },
     agency: {
       eyebrow: 'Agentuuritöö',
@@ -625,38 +414,6 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       ],
       servicesEyebrow: 'Teenused',
       servicesTitle: 'Mida saan sinu jaoks teha',
-      services: [
-        {
-          title: 'Veebidisain<br>&amp; UI/UX',
-          text: 'Kaunid ja konversioonile suunatud kasutajaliidesed, disainitud nullist. Puhtad paigutused, tugev tüpograafia ja kogemused, mida kasutajad päriselt naudivad.',
-          tags: ['Custom Design', 'Figma'],
-        },
-        {
-          title: 'Full Stack<br>arendus',
-          text: 'Veebirakenduste täistsükli arendus - alates andmebaasidest ja API-dest kuni viimistletud frontendideni. Ehitatud kasvama ja kestma.',
-          tags: ['React', 'PHP / Node.js'],
-        },
-        {
-          title: 'WordPress<br>&amp; e-kaubandus',
-          text: 'Kohandatud teemad, pluginad ja terviklikud veebipoed. Mitmekeelsed, mitme valuutaga ja suure jõudlusega lahendused, mis muudavad külastajad ostjateks.',
-          tags: ['WordPress', 'WooCommerce'],
-        },
-        {
-          title: 'SEO, AEO, GEO &amp;<br>Digital Marketing',
-          text: 'Tõuse otsingutulemustes kõrgemale ja ole leitav — ka tehisintellektis. Tehnilised SEO auditid, Core Web Vitals parandused, terviklik analüütika seadistus (GTM, GA4, Google Search Console, Microsoft Clarity, Meta Pixel kohandatud sündmusejälgimisega) ning Google ja Meta reklaamikampaaniad. AEO (Answer Engine Optimization) toob sinu sisu tehisintellekti vastuseboksidesse ja häälotsingutesse; GEO (Generative Engine Optimization) tagab, et tööriistad nagu ChatGPT ja Perplexity sinu ettevõtet esile tõstavad ja tsiteerivad. Kõik andmepõhiselt.',
-          tags: ['Technical SEO', 'AEO / GEO'],
-        },
-        {
-          title: 'Hooldus<br>&amp; tugi',
-          text: 'Sinu veebilehe pidev hooldus - uuendused, varukoopiad, turvalisuse tugevdamine, kiiruse optimeerimine ja arendaja, kellele helistada, kui midagi katki läheb.',
-          tags: ['Updates', 'Security'],
-        },
-        {
-          title: 'API integratsioonid<br>&amp; automatsioonid',
-          text: 'AI lahendused, töövood ja nutikad integratsioonid digitaalsete tööriistade vahel. Eemaldan korduva töö, mis sinu tiimi aega sööb.',
-          tags: ['AI Tools', 'Workflows'],
-        },
-      ],
     },
     skills: {
       eyebrow: 'Kokkuvõte',
