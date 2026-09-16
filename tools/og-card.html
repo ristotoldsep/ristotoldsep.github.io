@@ -38,8 +38,8 @@
 
   .inner {
     position:relative; z-index:2;
-    display:flex; align-items:center; gap:56px;
-    padding:0 76px; width:100%;
+    display:flex; align-items:center; gap:48px;
+    padding:0 72px; width:100%;
   }
 
   .photo {
@@ -61,16 +61,20 @@
   .eyebrow svg { flex-shrink:0; }
 
   h1 {
-    font-size:72px; font-weight:800;
+    overflow:visible;
+    font-size:66px; font-weight:800;
     line-height:1.04; letter-spacing:-0.035em;
     margin-bottom:22px;
   }
   h1 em {
     font-style:italic;
-    background:linear-gradient(90deg,#C49A3C 0%,#f4d06e 20%,#e06aaf 48%,#a87cfa 66%,#5fa8f8 84%,#C49A3C 100%);
+    background:linear-gradient(90deg,#C49A3C 0%,#DDB95A 50%,#C49A3C 100%);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     background-clip:text;
+    /* Italic Syne overhangs its box on the right, so the final glyph needs
+       room or background-clip crops the descender. */
+    padding-right:0.16em;
   }
 
   .sub {
