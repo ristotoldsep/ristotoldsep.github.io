@@ -1,4 +1,4 @@
-import type { Faq, I18n, Img, Locale, Metric, SeoFields } from './types';
+import type { I18n, Img, Locale, Metric, SeoFields } from './types';
 import type { ServiceId } from './services';
 
 export type ProjectId =
@@ -27,12 +27,6 @@ export interface ProjectLocaleCopy {
   role: string;
   cta: string;
   seo: SeoFields;
-  /** Deep case study fields. Filled per project as the pages are written. */
-  problem?: string[];
-  solution?: string[];
-  highlights?: Array<{ title: string; text: string }>;
-  results?: string[];
-  faq?: Faq[];
 }
 
 export interface Project {

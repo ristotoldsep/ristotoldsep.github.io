@@ -119,6 +119,34 @@ export interface SiteCopy {
     copy: string;
     top: string;
   };
+  pages: {
+    home: string;
+    workIndex: { title: string; heading: string; lede: string; eyebrow: string; metaDescription: string };
+    servicesIndex: { title: string; heading: string; lede: string; eyebrow: string; metaDescription: string };
+    project: {
+      eyebrow: string;
+      summaryLabel: string;
+      challenge: string;
+      solution: string;
+      highlights: string;
+      results: string;
+      stack: string;
+      faq: string;
+      related: string;
+      backToWork: string;
+      visitSite: string;
+      facts: { client: string; year: string; role: string; live: string; services: string };
+    };
+    service: {
+      eyebrow: string;
+      whatsIncluded: string;
+      process: string;
+      faq: string;
+      proof: string;
+      allServices: string;
+    };
+    cta: { title: string; text: string; button: string };
+  };
 }
 
 export const socialLinks: SocialLink[] = [
@@ -306,6 +334,50 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       copy: 'Risto Tõldsep. All rights reserved.',
       top: 'Top',
     },
+    pages: {
+      home: 'Home',
+      workIndex: {
+        eyebrow: 'Case Studies',
+        title: 'Web Development Case Studies | Risto Tõldsep',
+        heading: 'Websites and web apps I have designed and built',
+        lede: 'Custom WordPress and WooCommerce builds, Laravel and Vue applications, and interactive frontends for clients in Estonia and beyond. Each one below is a real project with the stack and the details.',
+        metaDescription: 'Case studies from Risto Tõldsep, a web developer and designer in Tallinn, Estonia: custom WordPress and WooCommerce stores, Laravel and Vue apps, and interactive frontends.',
+      },
+      servicesIndex: {
+        eyebrow: 'Services',
+        title: 'Web Development & Design Services in Estonia | Risto Tõldsep',
+        heading: 'What I can do for you',
+        lede: 'Design, development, eCommerce, SEO and automation, delivered by one person who does all of it rather than handing you between departments.',
+        metaDescription: 'Web design, full-stack development, WordPress and WooCommerce, technical SEO, maintenance and automation services from a freelance developer in Tallinn, Estonia.',
+      },
+      project: {
+        eyebrow: 'Case Study',
+        summaryLabel: 'In short',
+        challenge: 'The challenge',
+        solution: 'What I built',
+        highlights: 'Technical highlights',
+        results: 'Results',
+        stack: 'Tech stack',
+        faq: 'Frequently asked questions',
+        related: 'Related projects',
+        backToWork: '<- All case studies',
+        visitSite: 'Visit the live site ->',
+        facts: { client: 'Client', year: 'Year', role: 'My role', live: 'Live site', services: 'Services' },
+      },
+      service: {
+        eyebrow: 'Service',
+        whatsIncluded: "What's included",
+        process: 'How it works',
+        faq: 'Frequently asked questions',
+        proof: 'Recent work',
+        allServices: '<- All services',
+      },
+      cta: {
+        title: 'Got a project in mind?',
+        text: 'Tell me what you are building and I will tell you honestly whether I am the right person for it.',
+        button: "Let's talk ->",
+      },
+    },
   },
   et: {
     locale: 'et',
@@ -458,6 +530,50 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     footer: {
       copy: 'Risto Tõldsep. Kõik õigused kaitstud.',
       top: 'Üles',
+    },
+    pages: {
+      home: 'Avaleht',
+      workIndex: {
+        eyebrow: 'Juhtumiuuringud',
+        title: 'Tehtud tööd ja juhtumiuuringud | Risto Tõldsep',
+        heading: 'Kodulehed ja veebirakendused, mille olen disaininud ja ehitanud',
+        lede: 'Kohandatud WordPressi ja WooCommerce lahendused, Laraveli ja Vue rakendused ning interaktiivsed kasutajaliidesed Eesti ja välisklientidele. Iga töö all on päris projekt koos tehnoloogiate ja detailidega.',
+        metaDescription: 'Risto Tõldsepa tehtud tööd: kohandatud WordPressi ja WooCommerce kodulehed ja e-poed, Laraveli ja Vue rakendused ning interaktiivsed liidesed Tallinnast.',
+      },
+      servicesIndex: {
+        eyebrow: 'Teenused',
+        title: 'Veebiarenduse ja disaini teenused Eestis | Risto Tõldsep',
+        heading: 'Mida saan sinu jaoks teha',
+        lede: 'Disain, arendus, e-kaubandus, SEO ja automatiseerimine ühelt inimeselt, kes teeb neid kõiki, mitte ei suuna sind osakondade vahel edasi.',
+        metaDescription: 'Veebidisain, full-stack arendus, WordPress ja WooCommerce, tehniline SEO, hooldus ja automatiseerimine vabakutseliselt veebiarendajalt Tallinnas.',
+      },
+      project: {
+        eyebrow: 'Juhtumiuuring',
+        summaryLabel: 'Lühidalt',
+        challenge: 'Väljakutse',
+        solution: 'Mida ma ehitasin',
+        highlights: 'Tehnilised detailid',
+        results: 'Tulemused',
+        stack: 'Tehnoloogiad',
+        faq: 'Korduma kippuvad küsimused',
+        related: 'Seotud projektid',
+        backToWork: '<- Kõik tööd',
+        visitSite: 'Ava päris leht ->',
+        facts: { client: 'Klient', year: 'Aasta', role: 'Minu roll', live: 'Veebileht', services: 'Teenused' },
+      },
+      service: {
+        eyebrow: 'Teenus',
+        whatsIncluded: 'Mis sisaldub',
+        process: 'Kuidas see käib',
+        faq: 'Korduma kippuvad küsimused',
+        proof: 'Hiljutised tööd',
+        allServices: '<- Kõik teenused',
+      },
+      cta: {
+        title: 'Mõlgub mõtteid projektist?',
+        text: 'Räägi, mida ehitad, ja ütlen ausalt, kas olen selle jaoks õige inimene.',
+        button: 'Räägime ->',
+      },
     },
   },
 };

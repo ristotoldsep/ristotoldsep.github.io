@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageShell from '../../layouts/PageShell.astro';
+import PageHeader from '../layout/PageHeader.astro';
+import SectionCtaFull from '../sections/SectionCtaFull.astro';
+import Footer from '../sections/Footer.astro';
+import { siteCopy } from '../../i18n/site';
+import type { Locale } from '../../data/types';
+import { projects, type Project } from '../../data/projects';
+import { caseStudies } from '../../data/case-studies';
+import { services } from '../../data/services';
+import { alternates, routes } from '../../lib/routes';
+import { creativeWorkNode } from '../../lib/schema';
+
+interface Props {
+  project: Project;
+  locale: Locale;
+}
+
+const { project, locale } = Astro.props;
+const copy = siteCopy[locale];
+const ui = copy.pages.project;
+const t = project.i18n[locale];
+const study = caseStudies[project.id]?.[locale];
+
+const SITE = Astro.site ?? new URL('https://ristotoldsep.eu');
+const pageUrl = new URL(routes.project(locale, project.id), SITE).href;
+
+const breadcrumbs = [
+  { name: copy.pages.home, url: new URL(routes.home(locale), SITE).href },
+  { name: copy.nav.links.work, url: new URL(routes.workIndex(locale), SITE).href },
+  { name: t.name ?? project.name, url: pageUrl },
+];
+
+const related: Project[] = project.services
+  .flatMap((id) => services[id].relatedProjects)
+  .filter((id, i, all) => id !== project.id && all.indexOf(id) === i)
+  .slice(0, 3)
+  .map((id) => projects[id]);
+---
+
+<BaseLayout
+  lang={locale}
+  title={t.seo.title}
+  description={t.seo.description}
+  ogTitle={t.heading}
+  ogType="article"
+  ogImage={project.cover.src}
+  ogImageAlt={t.imageAlt}
+  ogImageType={project.cover.src.endsWith('.avif') ? 'image/avif' : 'image/webp'}
+  ogImageWidth={project.cover.width}
+  ogImageHeight={project.cover.height}
+  alternates={alternates.project(project.id)}
+  pageType="ItemPage"
+  pageNodeIdSuffix="casestudy"
+  breadcrumbs={breadcrumbs}
+  faq={study?.faq}
+  datePublished={project.publishedAt}
+  dateModified={project.updatedAt}
+  schema={[creativeWorkNode(project, locale, SITE.origin, pageUrl)]}
+>
+  <PageShell copy={copy} alternates={alternates.project(project.id)}>
+
+    <PageHeader
+      eyebrow={ui.eyebrow}
+      heading={t.heading}
+      lede={t.tagline}
+      breadcrumbs={breadcrumbs.map((c) => ({ name: c.name, url: new URL(c.url).pathname }))}
+    >
+      <div class="page-summary" style="margin-top:28px">
+        <p>{t.summary}</p>
+      </div>
+
+      <div class="page-facts">
+        <div class="page-fact">
+          <small>{ui.facts.client}</small>
+          <span>{project.client.name}</span>
+        </div>
+        <div class="page-fact">
+          <small>{ui.facts.year}</small>
+          <span>{project.year}</span>
+        </div>
+        <div class="page-fact">
+          <small>{ui.facts.role}</small>
+          <span>{t.role}</span>
+        </div>
+        {project.liveUrl && (
+          <div class="page-fact">
+            <small>{ui.facts.live}</small>
+            <a href={project.liveUrl} target="_blank" rel="noopener">{new URL(project.liveUrl).hostname}</a>
+          </div>
+        )}
+      </div>
+    </PageHeader>
+
+    <section class="page-section">
+      <figure class="page-cover">
+        <img
+          src={project.cover.src}
+          alt={t.imageAlt}
+          width={project.cover.width}
+          height={project.cover.height}
+        />
+      </figure>
+    </section>
+
+    {study?.problem && study?.problem.length > 0 && (
+      <section class="page-section page-section--tight">
+        <h2 class="page-h2">{ui.challenge}</h2>
+        <div class="page-prose">
+          {study?.problem.map((para) => <p set:html={para}></p>)}
+        </div>
+      </section>
+    )}
+
+    {study?.solution && study?.solution.length > 0 && (
+      <section class="page-section page-section--tight">
+        <h2 class="page-h2">{ui.solution}</h2>
+        <ul class="page-list">
+          {study?.solution.map((item) => <li set:html={item}></li>)}
+        </ul>
+      </section>
+    )}
+
+    {study?.highlights && study?.highlights.length > 0 && (
+      <section class="page-section">
+        <h2 class="page-h2">{ui.highlights}</h2>
+        <div class="page-highlights">
+          {study?.highlights.map((h) => (
+            <article class="page-highlight">
+              <h3 class="page-h3">{h.title}</h3>
+              <p set:html={h.text}></p>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {(project.metrics?.length || study?.results?.length) && (
+      <section class="page-section">
+        <h2 class="page-h2">{ui.results}</h2>
+        {project.metrics && project.metrics.length > 0 && (
+          <div class="page-metrics">
+            {project.metrics.map((m) => (
+              <div class="page-metric">
+                <strong>{m.value}</strong>
+                <span>{m.label[locale]}</span>
+              </div>
+            ))}
+          </div>
+        )}
+        {study?.results && study?.results.length > 0 && (
+          <ul class="page-list" style="margin-top:22px">
+            {study?.results.map((item) => <li set:html={item}></li>)}
+          </ul>
+        )}
+      </section>
+    )}
+
+    <section class="page-section page-section--tight">
+      <h2 class="page-h2">{ui.stack}</h2>
+      <div class="page-stack">
+        {project.stack.map((tech) => <span>{tech}</span>)}
+      </div>
+
+      <div class="page-actions">
+        {project.liveUrl && (
+          <a href={project.liveUrl} target="_blank" rel="noopener" class="btn-primary">{ui.visitSite}</a>
+        )}
+        <a href={routes.workIndex(locale)} class="btn-ghost">{ui.backToWork}</a>
+      </div>
+    </section>
+
+    {study?.faq && study?.faq.length > 0 && (
+      <section class="page-section">
+        <h2 class="page-h2">{ui.faq}</h2>
+        <div class="page-faq">
+          {study?.faq.map((item) => (
+            <div class="page-faq-item">
+              <h3>{item.q}</h3>
+              <p set:html={item.a}></p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {related.length > 0 && (
+      <section class="page-section">
+        <h2 class="page-h2">{ui.related}</h2>
+        <div class="page-cards">
+          {related.map((other) => {
+            const o = other.i18n[locale];
+            return (
+              <a class="page-card" href={routes.project(locale, other.id)}>
+                <div class="page-card-img">
+                  <img src={other.cover.src} alt={o.imageAlt} loading="lazy" width={other.cover.width} height={other.cover.height} />
+                </div>
+                <div class="page-card-body">
+                  <h3>{o.name ?? other.name}</h3>
+                  <p>{o.tagline}</p>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    <SectionCtaFull copy={copy} />
+    <Footer copy={copy} />
+  </PageShell>
+</BaseLayout>

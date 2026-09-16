@@ -1,0 +1,39 @@
+---
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  lede?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  breadcrumbLabel?: string;
+}
+
+const { eyebrow, heading, lede, breadcrumbs, breadcrumbLabel = 'Breadcrumb' } = Astro.props;
+---
+<header class="page-header">
+  {breadcrumbs && breadcrumbs.length > 0 && (
+    <nav class="breadcrumbs" aria-label={breadcrumbLabel}>
+      <ol>
+        {breadcrumbs.map((crumb, index) => (
+          <li>
+            {index < breadcrumbs.length - 1
+              ? <a href={crumb.url}>{crumb.name}</a>
+              : <span aria-current="page">{crumb.name}</span>}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )}
+
+  {eyebrow && (
+    <p class="sec-eyebrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+      <span>{eyebrow}</span>
+    </p>
+  )}
+
+  <h1 class="page-h1">{heading}</h1>
+
+  {lede && <p class="page-lede">{lede}</p>}
+
+  <slot />
+</header>

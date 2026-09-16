@@ -23,7 +23,7 @@ const anchor = (hash: string) => (isHome ? `#${hash}` : `${home}#${hash}`);
   <div class="topnav-nav">
     <span class="topnav-pill" id="topnavPill" aria-hidden="true"></span>
     <ul class="topnav-list" id="topnavList">
-      <li><a href={anchor('home')}    class="topnav-link active">{copy.nav.links.home}</a></li>
+      <li><a href={anchor('home')}    class:list={['topnav-link', isHome && 'active']}>{copy.nav.links.home}</a></li>
       <li><a href={anchor('work')}    class="topnav-link">{copy.nav.links.work}</a></li>
       <li><a href={anchor('about')}   class="topnav-link">{copy.nav.links.about}</a></li>
       <li><a href={anchor('skills')}  class="topnav-link">{copy.nav.links.skills}</a></li>

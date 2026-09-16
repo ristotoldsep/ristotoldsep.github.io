@@ -28,5 +28,8 @@
 @use 'cta-full';
 @use 'footer';
 
+// Sub-pages
+@use 'page';
+
 // Must be last
 @use 'responsive';
