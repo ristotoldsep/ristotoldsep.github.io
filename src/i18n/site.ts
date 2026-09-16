@@ -219,12 +219,12 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     locale: 'en',
     meta: {
       lang: 'en',
-      title: 'Risto Tõldsep - Creative Full-Stack & WordPress Developer',
+      title: 'Risto Tõldsep - WordPress Web Developer & Designer, Estonia',
       description:
-        'Risto Tõldsep is a creative full-stack and WordPress developer in Tallinn, Estonia. Custom WordPress and WooCommerce builds, interactive frontends and AI-powered web tools.',
+        'Risto Tõldsep is a freelance web developer and designer in Tallinn, Estonia. Custom websites, WordPress and WooCommerce stores, interactive frontends and AI-powered web tools.',
       keywords:
-        'risto toldsep, freelance web developer estonia, wordpress developer estonia, woocommerce developer, creative developer tallinn, veebiarendaja tallinn, full stack developer, portfolio',
-      ogTitle: 'Risto Tõldsep - Creative Full-Stack & WordPress Developer',
+        'risto toldsep, freelance web developer estonia, web designer estonia, wordpress developer estonia, woocommerce developer, custom websites, veebiarendaja tallinn, veebidisainer, kodulehe tegija, kodulehtede tegemine',
+      ogTitle: 'Risto Tõldsep - WordPress Web Developer & Designer, Estonia',
       switchLanguageLabel: 'Switch to Estonian',
     },
     nav: {
@@ -235,7 +235,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     sidebar: {
       photoAlt: 'Risto Tõldsep - Full Stack Developer',
-      role: 'Creative Full-Stack & WordPress Developer',
+      role: 'Web Developer & Designer',
       data: [
         { label: 'Specialization', value: 'Web Apps & eCommerce' },
         { label: 'Based in', value: 'Tallinn, Estonia' },
@@ -247,7 +247,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     mobileProfile: {
       photoAlt: 'Risto Tõldsep',
-      role: 'Creative Full-Stack & WordPress Developer',
+      role: 'Web Developer & Designer',
       availability: 'Open to work',
       stats: [
         { label: 'Experience', value: '5+ Years' },
@@ -258,9 +258,9 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     home: {
       eyebrow: 'Available for new projects',
-      title: '<em>WordPress</em><br>& full-stack<br>developer.',
+      title: '<em>Web developer</em><br>& designer for<br>custom websites.',
       subtitle:
-        "I'm Risto Tõldsep, a web developer in Tallinn, Estonia. 5+ years building custom WordPress and WooCommerce sites, interactive frontends, and AI-powered web tools. Full-time and freelance.",
+        "I'm Risto Tõldsep, a web developer and designer in Tallinn, Estonia. 5+ years designing and building custom websites, WordPress and WooCommerce stores, interactive frontends, and AI-powered web tools. Full-time and freelance.",
       primaryCta: 'View My Work',
       secondaryCta: "Let's Talk ->",
       scrollLabel: 'Scroll to work',
@@ -462,12 +462,12 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     locale: 'et',
     meta: {
       lang: 'et',
-      title: 'Risto Tõldsep - Loov full-stack ja WordPressi arendaja',
+      title: 'Risto Tõldsep - veebiarendaja ja disainer, kodulehed',
       description:
-        'Risto Tõldsep on Tallinnas tegutsev loov full-stack ja WordPressi arendaja. Kohandatud WordPressi ja WooCommerce lahendused, interaktiivsed liidesed ja AI-põhised veebitööriistad.',
+        'Risto Tõldsep on Tallinnas tegutsev vabakutseline veebiarendaja ja disainer. Teen kohandatud kodulehti, WordPressi ja WooCommerce e-poode, interaktiivseid liideseid ja AI-põhiseid veebilahendusi.',
       keywords:
-        'risto toldsep, veebiarendaja tallinn, wordpress arendaja eesti, woocommerce arendaja, vabakutseline veebiarendaja, kodulehe tegija, full stack arendaja, portfoolio',
-      ogTitle: 'Risto Tõldsep - Loov full-stack ja WordPressi arendaja',
+        'risto toldsep, veebiarendaja tallinn, veebidisainer, kodulehe tegija, kodulehe tegemine, kodulehtede tegemine, wordpress arendaja eesti, woocommerce arendaja, vabakutseline veebiarendaja, e-poe tegemine',
+      ogTitle: 'Risto Tõldsep - veebiarendaja ja disainer, kodulehed',
       switchLanguageLabel: 'Switch to English',
     },
     nav: {
@@ -478,7 +478,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     sidebar: {
       photoAlt: 'Risto Tõldsep - Full Stack arendaja',
-      role: 'Loov full-stack ja WordPressi arendaja',
+      role: 'Veebiarendaja ja disainer',
       data: [
         { label: 'Spetsialiseerumine', value: 'Veebirakendused ja e-kaubandus' },
         { label: 'Asukoht', value: 'Tallinn, Eesti' },
@@ -490,7 +490,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     mobileProfile: {
       photoAlt: 'Risto Tõldsep',
-      role: 'Loov full-stack ja WordPressi arendaja',
+      role: 'Veebiarendaja ja disainer',
       availability: 'Avatud uutele projektidele',
       stats: [
         { label: 'Kogemus', value: '5+ aastat' },
@@ -501,9 +501,9 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     home: {
       eyebrow: 'Avatud uutele projektidele',
-      title: '<em>WordPressi</em><br>ja full-stack<br>arendaja.',
+      title: '<em>Veebiarendaja</em><br>ja disainer, kes<br>teeb kodulehti.',
       subtitle:
-        "Olen Risto Tõldsep, veebiarendaja Tallinnas. 5+ aastat kogemust kohandatud WordPressi ja WooCommerce'i lahenduste, interaktiivsete liideste ja AI-põhiste veebitööriistade loomisel. Täiskohaga ja vabakutseliselt.",
+        "Olen Risto Tõldsep, veebiarendaja ja disainer Tallinnas. 5+ aastat kogemust kodulehtede ja e-poodide disainimisel ning arendamisel - kohandatud WordPressi ja WooCommerce'i lahendused, interaktiivsed liidesed ja AI-põhised veebitööriistad. Täiskohaga ja vabakutseliselt.",
       primaryCta: 'Vaata töid',
       secondaryCta: 'Räägime ->',
       scrollLabel: 'Keri töödeni',

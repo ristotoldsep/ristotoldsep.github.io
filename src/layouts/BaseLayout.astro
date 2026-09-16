@@ -11,9 +11,9 @@ interface Props {
 }
 
 const {
-  title = 'Risto Tõldsep - Creative Full-Stack & WordPress Developer',
-  description = 'Risto Tõldsep is a creative full-stack and WordPress developer in Tallinn, Estonia. Custom WordPress and WooCommerce builds, interactive frontends and AI-powered web tools.',
-  keywords = 'risto toldsep, freelance web developer estonia, wordpress developer estonia, woocommerce developer, creative developer tallinn, veebiarendaja tallinn, full stack developer, portfolio',
+  title = 'Risto Tõldsep - WordPress Web Developer & Designer, Estonia',
+  description = 'Risto Tõldsep is a freelance web developer and designer in Tallinn, Estonia. Custom websites, WordPress and WooCommerce stores, interactive frontends and AI-powered web tools.',
+  keywords = 'risto toldsep, freelance web developer estonia, web designer estonia, wordpress developer estonia, woocommerce developer, custom websites, veebiarendaja tallinn, veebidisainer, kodulehe tegija, kodulehtede tegemine',
   lang = 'en',
   ogTitle = title,
 } = Astro.props;
@@ -49,9 +49,9 @@ const jsonLd = {
       alternateName: 'Risto Toldsep',
       url: SITE.origin,
       image: ogImage,
-      jobTitle: 'Creative Full-Stack & WordPress Developer',
+      jobTitle: 'Web Developer & Designer',
       description:
-        'Risto Tõldsep is a creative full-stack and WordPress developer based in Tallinn, Estonia, specialising in custom WordPress and WooCommerce builds, interactive frontends, and AI-powered web tools.',
+        'Risto Tõldsep is a freelance web developer and designer based in Tallinn, Estonia, who designs and builds custom websites, WordPress and WooCommerce stores, interactive frontends, and AI-powered web tools.',
       knowsLanguage: ['et', 'en'],
       email: 'mailto:ristotoldsep@gmail.com',
       address: {
@@ -69,7 +69,10 @@ const jsonLd = {
         url: 'https://reaktiiv.com',
       },
       knowsAbout: [
+        'Web Development',
+        'Web Design',
         'Full Stack Web Development',
+        'Custom Websites',
         'WordPress',
         'WooCommerce',
         'React',
@@ -98,7 +101,7 @@ const jsonLd = {
       '@type': 'WebSite',
       '@id': `${SITE.origin}/#website`,
       url: SITE.origin,
-      name: 'Risto Tõldsep — Creative Full-Stack & WordPress Developer',
+      name: 'Risto Tõldsep — Web Developer & Designer',
       description,
       inLanguage: ['en', 'et'],
       publisher: { '@id': personId },
@@ -156,7 +159,7 @@ const jsonLd = {
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalURL.href} />
   <meta property="og:image" content={ogImage} />
-  <meta property="og:image:alt" content="Risto Tõldsep - Creative Full-Stack & WordPress Developer" />
+  <meta property="og:image:alt" content="Risto Tõldsep - Web Developer & Designer in Tallinn, Estonia" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="972" />
@@ -168,7 +171,7 @@ const jsonLd = {
   <meta name="twitter:title" content={ogTitle} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
-  <meta name="twitter:image:alt" content="Risto Tõldsep - Creative Full-Stack & WordPress Developer" />
+  <meta name="twitter:image:alt" content="Risto Tõldsep - Web Developer & Designer in Tallinn, Estonia" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
