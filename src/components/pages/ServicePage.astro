@@ -40,7 +40,6 @@ const proof: Project[] = service.relatedProjects.map((id) => projects[id]);
   ogTitle={t.heading}
   alternates={alternates.service(service.id)}
   pageType="WebPage"
-  pageNodeIdSuffix="servicepage"
   breadcrumbs={breadcrumbs.map((c) => ({ name: c.name, url: new URL(c.url, SITE).href }))}
   faq={t.faq}
   schema={[serviceNode(service, locale, SITE.origin, pageUrl)]}
