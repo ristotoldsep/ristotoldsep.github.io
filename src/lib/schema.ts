@@ -27,7 +27,7 @@ export function personNode(origin: string, image: string): SchemaNode {
     alternateName: 'Risto Toldsep',
     url: origin,
     image,
-    jobTitle: 'Web Developer & Designer',
+    jobTitle: ['Web Developer', 'Web Designer', 'Full-Stack Developer'],
     description: PERSON_DESCRIPTION,
     knowsLanguage: ['et', 'en'],
     email: 'mailto:ristotoldsep@gmail.com',

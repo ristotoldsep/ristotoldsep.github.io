@@ -17,8 +17,8 @@ export interface StandalonePageCopy {
 
 export const aboutPage: I18n<StandalonePageCopy> = {
   en: {
-    seoTitle: 'About Risto Tõldsep - Web Developer & Designer in Tallinn, Estonia',
-    seoDescription: 'Risto Tõldsep is a freelance web developer and designer in Tallinn, Estonia, with 5+ years building custom websites, WordPress and WooCommerce stores, and AI-powered web tools.',
+    seoTitle: 'About Risto Tõldsep - Full-Stack Web Developer & Designer',
+    seoDescription: 'Risto Tõldsep is a freelance web developer, designer and full-stack developer in Tallinn, Estonia, with 5+ years building custom websites, WordPress and WooCommerce stores, Laravel and Vue apps, and AI-powered web tools.',
     eyebrow: 'About',
     heading: 'Risto Tõldsep, web developer and designer in Tallinn',
     lede: 'I design and build custom websites, WordPress and WooCommerce stores, and the occasional AI tool. Full-time at a Tallinn agency, and freelance alongside it.',
@@ -87,8 +87,8 @@ export const aboutPage: I18n<StandalonePageCopy> = {
     ],
   },
   et: {
-    seoTitle: 'Risto Tõldsep - veebiarendaja ja disainer Tallinnas',
-    seoDescription: 'Risto Tõldsep on Tallinnas tegutsev vabakutseline veebiarendaja ja disainer, kellel on 5+ aastat kogemust kodulehtede, WordPressi ja WooCommerce e-poodide ning AI-lahenduste loomisel.',
+    seoTitle: 'Risto Tõldsep - full-stack veebiarendaja ja disainer',
+    seoDescription: 'Risto Tõldsep on Tallinnas tegutsev vabakutseline veebiarendaja, disainer ja full-stack arendaja, kellel on 5+ aastat kogemust kodulehtede, WordPressi ja WooCommerce e-poodide, Laraveli ja Vue rakenduste ning AI-lahenduste loomisel.',
     eyebrow: 'Minust',
     heading: 'Risto Tõldsep, veebiarendaja ja disainer Tallinnas',
     lede: 'Disainin ja ehitan kohandatud kodulehti, WordPressi ja WooCommerce e-poode ning aeg-ajalt AI-tööriistu. Täiskohaga Tallinna agentuuris ja vabakutselisena kõrvalt.',
@@ -161,7 +161,7 @@ export const aboutPage: I18n<StandalonePageCopy> = {
 export const hirePage: I18n<StandalonePageCopy> = {
   en: {
     seoTitle: 'Freelance Web Developer in Estonia | Risto Tõldsep',
-    seoDescription: 'Looking for a freelance web developer in Estonia? Risto Tõldsep designs and builds custom websites, WordPress and WooCommerce stores from Tallinn. Available for new projects.',
+    seoDescription: 'Looking for a freelance web developer in Estonia? Risto Tõldsep designs and builds custom websites, WordPress and WooCommerce stores, and full-stack web apps from Tallinn. Available for new projects.',
     eyebrow: 'Hire me',
     heading: 'Freelance web developer and designer in Estonia',
     lede: 'One person who designs it, builds it, and is still there when something needs changing.',
@@ -231,7 +231,7 @@ export const hirePage: I18n<StandalonePageCopy> = {
   },
   et: {
     seoTitle: 'Vabakutseline veebiarendaja Eestis | Risto Tõldsep',
-    seoDescription: 'Otsid vabakutselist veebiarendajat või kodulehe tegijat Eestis? Risto Tõldsep disainib ja ehitab Tallinnast kohandatud kodulehti ja WooCommerce e-poode. Avatud uutele projektidele.',
+    seoDescription: 'Otsid vabakutselist veebiarendajat või kodulehe tegijat Eestis? Risto Tõldsep disainib ja ehitab Tallinnast kohandatud kodulehti, WooCommerce e-poode ja full-stack veebirakendusi. Avatud uutele projektidele.',
     eyebrow: 'Palka mind',
     heading: 'Vabakutseline veebiarendaja ja kodulehe tegija Eestis',
     lede: 'Üks inimene, kes selle disainib, ära ehitab ja on ka siis olemas, kui midagi muuta vaja.',
