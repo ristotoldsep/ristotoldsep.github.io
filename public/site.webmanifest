@@ -1,0 +1,15 @@
+{
+  "name": "Risto Tõldsep",
+  "short_name": "Risto Tõldsep",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0a0a0a",
+  "background_color": "#070710",
+  "display": "browser",
+  "start_url": "/"
+}

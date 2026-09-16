@@ -27,7 +27,8 @@ const items = publishedProjects();
       return (
       <figure class="gallery-item animate-card">
         <div class="gallery-img-wrap">
-          <img src={project.cover.src} alt={t.imageAlt} loading="lazy">
+          <img src={project.cover.src} alt={t.imageAlt} loading="lazy" decoding="async"
+               width={project.cover.width} height={project.cover.height}>
         </div>
         <figcaption class:list={['gallery-caption', index % 2 === 1 && 'gallery-caption--alt']}>
           <h3><a href={routes.project(locale, project.id)} class="gallery-title-link">{t.name ?? project.name}</a></h3>
