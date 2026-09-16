@@ -174,6 +174,26 @@ and off-site mentions all naming both the project and him.
 
 ---
 
+## IndexNow
+
+The site supports IndexNow, which pushes changed URLs straight to Bing, Yandex,
+Seznam and Naver instead of waiting to be crawled. Google does not participate.
+
+```bash
+npm run build
+npm run indexnow                        # everything in the sitemap
+npm run indexnow -- /blog/new-post/     # just what changed
+npm run indexnow -- --dry-run           # show what would be sent
+```
+
+It is deliberately not part of `npm run build`. IndexNow is for pages that
+actually changed, and resubmitting all 38 URLs on every deploy is what gets a
+host throttled. Run it when you publish or substantially rewrite something.
+
+The key lives at `public/<key>.txt` and is public by design.
+
+---
+
 ## Tracking
 
 Re-run the prompts in [geo-baseline.md](geo-baseline.md) every four to eight

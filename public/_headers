@@ -20,3 +20,7 @@
 /et/llms-full.txt
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
+
+/f1834e5d9531807fcf0ffb8fd47eb8fd.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400
