@@ -3,6 +3,7 @@ import '../styles/main.scss';
 import type { Locale, Faq } from '../data/types';
 import type { Alternates } from '../lib/routes';
 import Analytics from '../components/global/Analytics.astro';
+import AnalyticsNoscript from '../components/global/AnalyticsNoscript.astro';
 import {
   buildGraph,
   breadcrumbNode,
@@ -176,6 +177,7 @@ const jsonLd = buildGraph([
   <Analytics />
 </head>
 <body>
+  <AnalyticsNoscript />
   <slot />
   <script>
     import { initAll } from '../scripts/main';

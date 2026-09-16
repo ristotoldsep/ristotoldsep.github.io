@@ -1,16 +1,41 @@
 ---
-// Analytics is opt-in via env so dev and preview traffic stays out of the data.
-// Set PUBLIC_PLAUSIBLE_DOMAIN (recommended: no cookie banner needed) or
-// PUBLIC_GA4_ID in the Netlify build environment.
-const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+// Analytics is opt-in through the build environment so dev and deploy-preview
+// traffic never lands in the data, and the site ships no tracking until a
+// variable exists.
+//
+// Astro only exposes variables prefixed PUBLIC_ to client code. A
+// NEXT_PUBLIC_* name is a Next.js convention and will be silently ignored here.
+//
+// Set ONE of these in Netlify, then trigger a deploy (env vars apply at build
+// time, so an existing deploy will not pick them up):
+//
+//   PUBLIC_GTM_ID          GTM-XXXXXXX     Tag Manager, tags managed in the UI
+//   PUBLIC_GA4_ID          G-XXXXXXXXXX    GA4 directly, no Tag Manager
+//   PUBLIC_PLAUSIBLE_DOMAIN ristotoldsep.eu  Plausible, paid, no cookie banner
+//
+// GTM and GA4 set cookies, so an EU visitor needs a consent mechanism. Consent
+// Mode is configured inside the GTM container rather than here.
+const gtmId = import.meta.env.PUBLIC_GTM_ID;
 const ga4Id = import.meta.env.PUBLIC_GA4_ID;
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
 const enabled = import.meta.env.PROD;
 ---
-{enabled && plausibleDomain && (
-  <script is:inline defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js"></script>
+{enabled && gtmId && (
+  <script is:inline define:vars={{ gtmId }}>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', gtmId);
+  </script>
 )}
 
-{enabled && ga4Id && (
+{enabled && !gtmId && ga4Id && (
   <Fragment>
     <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
     <script is:inline define:vars={{ ga4Id }}>
@@ -20,4 +45,8 @@ const enabled = import.meta.env.PROD;
       gtag('config', ga4Id);
     </script>
   </Fragment>
+)}
+
+{enabled && plausibleDomain && (
+  <script is:inline defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js"></script>
 )}
