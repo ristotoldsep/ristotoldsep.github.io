@@ -89,6 +89,16 @@ const related: Project[] = project.services
             <a href={project.liveUrl} target="_blank" rel="noopener">{new URL(project.liveUrl).hostname}</a>
           </div>
         )}
+        {project.services.length > 0 && (
+          <div class="page-fact page-fact--wide">
+            <small>{ui.facts.services}</small>
+            <span class="page-fact-links">
+              {project.services.map((id) => (
+                <a href={routes.service(locale, id)}>{services[id].i18n[locale].name}</a>
+              ))}
+            </span>
+          </div>
+        )}
       </div>
     </PageHeader>
 

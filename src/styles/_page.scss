@@ -323,3 +323,18 @@
     align-items: center;
 }
 .gallery-link--muted { color: var(--text-muted); }
+
+.page-fact--wide { grid-column: 1 / -1; }
+.page-fact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+}
+.page-fact-links a {
+    font-size: 0.9rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s var(--ease-out);
+}
+.page-fact-links a:hover { border-bottom-color: var(--accent); }
