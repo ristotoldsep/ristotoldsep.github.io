@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1584px; height:396px; overflow:hidden; }
+  body {
+    font-family:'Syne', sans-serif;
+    background:#070710;
+    color:#EDE8DD;
+    position:relative;
+  }
+
+  .grid {
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:66px 66px;
+  }
+  .glow-a {
+    position:absolute; width:900px; height:900px;
+    left:-260px; top:-430px;
+    background:radial-gradient(circle, rgba(196,154,60,0.22) 0%, transparent 62%);
+  }
+  .glow-b {
+    position:absolute; width:760px; height:760px;
+    right:-200px; bottom:-380px;
+    background:radial-gradient(circle, rgba(80,130,255,0.15) 0%, transparent 62%);
+  }
+
+  /* LinkedIn drops the profile photo over the lower left of the banner and
+     crops the sides on mobile, so everything lives right of centre and clear
+     of the bottom edge. */
+  .copy {
+    position:absolute; z-index:3;
+    left:420px; right:88px; top:50%;
+    transform:translateY(-50%);
+  }
+
+  .eyebrow {
+    display:inline-flex; align-items:center; gap:11px;
+    font-size:19px; font-weight:600;
+    letter-spacing:0.2em; text-transform:uppercase;
+    color:#C49A3C; margin-bottom:18px;
+  }
+  .eyebrow svg { flex-shrink:0; }
+
+  h1 {
+    white-space:nowrap;
+    font-size:52px; font-weight:800;
+    line-height:1.08; letter-spacing:-0.035em;
+    margin-bottom:14px;
+  }
+  h1 em {
+    font-style:italic;
+    background:linear-gradient(90deg,#C49A3C 0%,#DDB95A 50%,#C49A3C 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    padding-right:0.16em;
+  }
+
+  .sub {
+    font-size:24px; line-height:1.4;
+    color:rgba(237,232,221,0.78);
+  }
+  .sub b { color:#EDE8DD; font-weight:600; }
+
+  .url {
+    position:absolute; z-index:3;
+    right:90px; bottom:30px;
+    font-size:20px; font-weight:600;
+    letter-spacing:0.08em;
+    color:rgba(237,232,221,0.42);
+  }
+
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow-a"></div>
+  <div class="glow-b"></div>
+
+  <div class="copy">
+    <p class="eyebrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+      <span>Tallinn, Estonia &nbsp;&middot;&nbsp; Open for freelance</span>
+    </p>
+    <h1>Web developer &amp; <em>designer</em></h1>
+    <p class="sub">Custom websites, <b>WordPress &amp; WooCommerce</b>, full-stack web apps</p>
+  </div>
+
+  <div class="url">ristotoldsep.eu</div>
+</body>
+</html>
