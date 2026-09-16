@@ -130,6 +130,9 @@ const jsonLd = buildGraph([
   <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
   <meta name="theme-color" content="#0a0a0a" />
 
+  <!-- Bing Webmaster Tools. Verification tokens are public by design. -->
+  <meta name="msvalidate.01" content="B5C188C2291CA74D24B7957BFD106C4B" />
+
   <link rel="canonical" href={canonicalURL.href} />
   {hreflangs.map((alt) => (
     <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
