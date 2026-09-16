@@ -2,6 +2,7 @@
 import '../styles/main.scss';
 import type { Locale, Faq } from '../data/types';
 import type { Alternates } from '../lib/routes';
+import Analytics from '../components/global/Analytics.astro';
 import {
   buildGraph,
   breadcrumbNode,
@@ -165,6 +166,8 @@ const jsonLd = buildGraph([
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <Analytics />
 </head>
 <body>
   <slot />

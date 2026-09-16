@@ -1,0 +1,23 @@
+---
+// Analytics is opt-in via env so dev and preview traffic stays out of the data.
+// Set PUBLIC_PLAUSIBLE_DOMAIN (recommended: no cookie banner needed) or
+// PUBLIC_GA4_ID in the Netlify build environment.
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+const ga4Id = import.meta.env.PUBLIC_GA4_ID;
+const enabled = import.meta.env.PROD;
+---
+{enabled && plausibleDomain && (
+  <script is:inline defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js"></script>
+)}
+
+{enabled && ga4Id && (
+  <Fragment>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+    <script is:inline define:vars={{ ga4Id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', ga4Id);
+    </script>
+  </Fragment>
+)}
