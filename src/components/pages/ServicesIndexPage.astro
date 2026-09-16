@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageShell from '../../layouts/PageShell.astro';
+import PageHeader from '../layout/PageHeader.astro';
+import SectionCtaFull from '../sections/SectionCtaFull.astro';
+import Footer from '../sections/Footer.astro';
+import { siteCopy } from '../../i18n/site';
+import type { Locale } from '../../data/types';
+import { allServices } from '../../data/services';
+import { alternates, routes } from '../../lib/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = siteCopy[locale];
+const ui = copy.pages.servicesIndex;
+
+const SITE = Astro.site ?? new URL('https://ristotoldsep.eu');
+const breadcrumbs = [
+  { name: copy.pages.home, url: routes.home(locale) },
+  { name: ui.eyebrow, url: routes.servicesIndex(locale) },
+];
+---
+
+<BaseLayout
+  lang={locale}
+  title={ui.title}
+  description={ui.metaDescription}
+  ogTitle={ui.heading}
+  alternates={alternates.servicesIndex()}
+  pageType="CollectionPage"
+  pageNodeIdSuffix="servicelist"
+  breadcrumbs={breadcrumbs.map((c) => ({ name: c.name, url: new URL(c.url, SITE).href }))}
+>
+  <PageShell copy={copy} alternates={alternates.servicesIndex()}>
+    <PageHeader eyebrow={ui.eyebrow} heading={ui.heading} lede={ui.lede} breadcrumbs={breadcrumbs} />
+
+    <section class="page-section">
+      <div class="page-cards">
+        {allServices.map((service) => {
+          const t = service.i18n[locale];
+          return (
+            <a class="page-card" href={routes.service(locale, service.id)}>
+              <div class="page-card-body">
+                <div class="page-card-tags">
+                  {service.cardTags.map((tag) => <span>{tag}</span>)}
+                </div>
+                <h2>{t.name}</h2>
+                <p>{t.summary}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+
+    <SectionCtaFull copy={copy} />
+    <Footer copy={copy} />
+  </PageShell>
+</BaseLayout>

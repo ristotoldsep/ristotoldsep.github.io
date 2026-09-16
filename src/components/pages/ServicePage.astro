@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageShell from '../../layouts/PageShell.astro';
+import PageHeader from '../layout/PageHeader.astro';
+import SectionCtaFull from '../sections/SectionCtaFull.astro';
+import Footer from '../sections/Footer.astro';
+import { siteCopy } from '../../i18n/site';
+import type { Locale } from '../../data/types';
+import { projects, type Project } from '../../data/projects';
+import type { Service } from '../../data/services';
+import { alternates, routes } from '../../lib/routes';
+import { serviceNode } from '../../lib/schema';
+
+interface Props {
+  service: Service;
+  locale: Locale;
+}
+
+const { service, locale } = Astro.props;
+const copy = siteCopy[locale];
+const ui = copy.pages.service;
+const t = service.i18n[locale];
+
+const SITE = Astro.site ?? new URL('https://ristotoldsep.eu');
+const pageUrl = new URL(routes.service(locale, service.id), SITE).href;
+
+const breadcrumbs = [
+  { name: copy.pages.home, url: routes.home(locale) },
+  { name: copy.pages.servicesIndex.eyebrow, url: routes.servicesIndex(locale) },
+  { name: t.name, url: routes.service(locale, service.id) },
+];
+
+const proof: Project[] = service.relatedProjects.map((id) => projects[id]);
+---
+
+<BaseLayout
+  lang={locale}
+  title={t.seo.title}
+  description={t.seo.description}
+  ogTitle={t.heading}
+  alternates={alternates.service(service.id)}
+  pageType="WebPage"
+  pageNodeIdSuffix="servicepage"
+  breadcrumbs={breadcrumbs.map((c) => ({ name: c.name, url: new URL(c.url, SITE).href }))}
+  faq={t.faq}
+  schema={[serviceNode(service, locale, SITE.origin, pageUrl)]}
+>
+  <PageShell copy={copy} alternates={alternates.service(service.id)}>
+
+    <PageHeader
+      eyebrow={ui.eyebrow}
+      heading={t.heading}
+      breadcrumbs={breadcrumbs}
+    >
+      <div class="page-summary" style="margin-top:28px">
+        <p>{t.summary}</p>
+      </div>
+
+      <div class="page-actions">
+        <a href={`${routes.home(locale)}#contact`} class="btn-primary">{copy.pages.cta.button}</a>
+        <a href={routes.servicesIndex(locale)} class="btn-ghost">{ui.allServices}</a>
+      </div>
+    </PageHeader>
+
+    {t.intro && t.intro.length > 0 && (
+      <section class="page-section page-section--tight">
+        <div class="page-prose">
+          {t.intro.map((para) => <p set:html={para}></p>)}
+        </div>
+      </section>
+    )}
+
+    {t.deliverables && t.deliverables.length > 0 && (
+      <section class="page-section page-section--tight">
+        <h2 class="page-h2">{ui.whatsIncluded}</h2>
+        <ul class="page-list">
+          {t.deliverables.map((item) => <li set:html={item}></li>)}
+        </ul>
+      </section>
+    )}
+
+    {t.process && t.process.length > 0 && (
+      <section class="page-section">
+        <h2 class="page-h2">{ui.process}</h2>
+        <div class="page-highlights">
+          {t.process.map((step, index) => (
+            <article class="page-highlight">
+              <div class="svc-num">{`0${index + 1}`}</div>
+              <h3 class="page-h3">{step.title}</h3>
+              <p set:html={step.text}></p>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {proof.length > 0 && (
+      <section class="page-section">
+        <h2 class="page-h2">{ui.proof}</h2>
+        <div class="page-cards">
+          {proof.map((project) => {
+            const p = project.i18n[locale];
+            return (
+              <a class="page-card" href={routes.project(locale, project.id)}>
+                <div class="page-card-img">
+                  <img src={project.cover.src} alt={p.imageAlt} loading="lazy" width={project.cover.width} height={project.cover.height} />
+                </div>
+                <div class="page-card-body">
+                  <h3>{p.name ?? project.name}</h3>
+                  <p>{p.tagline}</p>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    {t.faq && t.faq.length > 0 && (
+      <section class="page-section">
+        <h2 class="page-h2">{ui.faq}</h2>
+        <div class="page-faq">
+          {t.faq.map((item) => (
+            <div class="page-faq-item">
+              <h3>{item.q}</h3>
+              <p set:html={item.a}></p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <SectionCtaFull copy={copy} />
+    <Footer copy={copy} />
+  </PageShell>
+</BaseLayout>
