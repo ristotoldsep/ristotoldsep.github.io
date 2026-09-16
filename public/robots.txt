@@ -1,5 +1,6 @@
 # Risto Tõldsep — https://ristotoldsep.eu
-# AI/LLM guide: https://ristotoldsep.eu/llms.txt
+# AI/LLM guide: https://ristotoldsep.eu/llms.txt (Estonian: /et/llms.txt)
+# Full text:    https://ristotoldsep.eu/llms-full.txt
 
 User-agent: *
 Allow: /
@@ -29,4 +30,16 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://ristotoldsep.eu/sitemap.xml
+User-agent: Bingbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://ristotoldsep.eu/sitemap-index.xml

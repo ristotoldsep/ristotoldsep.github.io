@@ -9,3 +9,10 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# @astrojs/sitemap emits /sitemap-index.xml. The old hand-written
+# /sitemap.xml is already submitted to Search Console, so keep it resolving.
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301
