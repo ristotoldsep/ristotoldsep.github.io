@@ -1,4 +1,13 @@
 /* ── Preloader ───────────────────────────────────────────────── */
+
+/* Only JS can dismiss the preloader, so never show it when JS is absent
+   or when the visitor has asked for reduced motion. */
+html:not(.js) .preloader { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    .preloader { display: none; }
+}
+
 .preloader {
     position: fixed;
     inset: 0;

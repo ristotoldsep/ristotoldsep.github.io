@@ -15,10 +15,20 @@ lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time: number) => { lenis.raf(time * 1000); });
 gsap.ticker.lagSmoothing(0);
 
+function revealHero(): void {
+  gsap.to('.sec-main .animate-up', {
+    y: 0,
+    opacity: 1,
+    duration: 1.0,
+    ease: 'power3.out',
+    stagger: 0.14,
+  });
+}
+
 function initPreloader(): void {
   const preloader = document.getElementById('preloader');
   const fill      = document.getElementById('preloaderFill');
-  if (!preloader) return;
+  if (!preloader) { revealHero(); return; }
 
   let progress = 0;
   const fillInterval = setInterval(() => {
@@ -49,7 +59,8 @@ function initPreloader(): void {
     }, 300);
   }
 
-  const MIN = 1500;
+  const MIN = sessionStorage.getItem('rt-preloaded') ? 0 : 600;
+  sessionStorage.setItem('rt-preloaded', '1');
   const start = Date.now();
 
   if (document.readyState === 'complete') {
@@ -194,6 +205,7 @@ function initMobileSidebar(): void {
 }
 
 function initActiveNav(): void {
+  if (!document.getElementById('home')) return;
   const sections = ['home', 'work', 'about', 'skills', 'contact'];
   const links    = document.querySelectorAll<HTMLElement>('.topnav-link');
   const pill     = document.getElementById('topnavPill');
@@ -292,6 +304,7 @@ function initRotatingButton(): void {
 }
 
 export function initAll(): void {
+  clearTimeout((window as unknown as { __rtReveal?: number }).__rtReveal);
   initPreloader();
   initSpotlight();
   initCursor();

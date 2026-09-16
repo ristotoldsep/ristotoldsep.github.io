@@ -65,7 +65,7 @@ const { copy } = Astro.props;
     {copy.about.services.map((service, index) => (
       <div class="svc-card animate-card">
         <div class="svc-num">{`0${index + 1}`}</div>
-        <h4 class="svc-title" set:html={service.title}></h4>
+        <h3 class="svc-title" set:html={service.title}></h3>
         <div class="svc-divider"></div>
         <div class="svc-tags">
           {service.tags.map((tag) => <span class="stag">{tag}</span>)}

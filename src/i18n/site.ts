@@ -219,12 +219,12 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     locale: 'en',
     meta: {
       lang: 'en',
-      title: 'Risto Tõldsep - Full Stack Developer',
+      title: 'Risto Tõldsep - Creative Full-Stack & WordPress Developer',
       description:
-        'Risto Tõldsep - Full Stack Web Developer based in Tallinn, Estonia. 5+ years building web apps, eCommerce, AI tools and more.',
+        'Risto Tõldsep is a creative full-stack and WordPress developer in Tallinn, Estonia. Custom WordPress and WooCommerce builds, interactive frontends and AI-powered web tools.',
       keywords:
-        'risto toldsep, freelance web developer, full stack developer, portfolio, wordpress, react, seo, ai, automation',
-      ogTitle: 'Risto Tõldsep - Full Stack Developer',
+        'risto toldsep, freelance web developer estonia, wordpress developer estonia, woocommerce developer, creative developer tallinn, veebiarendaja tallinn, full stack developer, portfolio',
+      ogTitle: 'Risto Tõldsep - Creative Full-Stack & WordPress Developer',
       switchLanguageLabel: 'Switch to Estonian',
     },
     nav: {
@@ -235,7 +235,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     sidebar: {
       photoAlt: 'Risto Tõldsep - Full Stack Developer',
-      role: 'Full Stack Developer',
+      role: 'Creative Full-Stack & WordPress Developer',
       data: [
         { label: 'Specialization', value: 'Web Apps & eCommerce' },
         { label: 'Based in', value: 'Tallinn, Estonia' },
@@ -247,7 +247,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     mobileProfile: {
       photoAlt: 'Risto Tõldsep',
-      role: 'Full Stack Developer',
+      role: 'Creative Full-Stack & WordPress Developer',
       availability: 'Open to work',
       stats: [
         { label: 'Experience', value: '5+ Years' },
@@ -258,9 +258,9 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     home: {
       eyebrow: 'Available for new projects',
-      title: 'I build powerful<br>web <em>experiences.</em>',
+      title: '<em>WordPress</em><br>& full-stack<br>developer.',
       subtitle:
-        '5+ years crafting fast, scalable, and beautiful web applications - from sleek marketing sites to complex eCommerce platforms and AI-powered tools. Full-time and freelance.',
+        "I'm Risto Tõldsep, a web developer in Tallinn, Estonia. 5+ years building custom WordPress and WooCommerce sites, interactive frontends, and AI-powered web tools. Full-time and freelance.",
       primaryCta: 'View My Work',
       secondaryCta: "Let's Talk ->",
       scrollLabel: 'Scroll to work',
@@ -462,12 +462,12 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     locale: 'et',
     meta: {
       lang: 'et',
-      title: 'Risto Tõldsep - Full Stack arendaja',
+      title: 'Risto Tõldsep - Loov full-stack ja WordPressi arendaja',
       description:
-        'Risto Tõldsep - Tallinnas tegutsev Full Stack veebiarendaja. 5+ aastat kogemust veebirakenduste, e-poe lahenduste, AI tööriistade ja muu loomisel.',
+        'Risto Tõldsep on Tallinnas tegutsev loov full-stack ja WordPressi arendaja. Kohandatud WordPressi ja WooCommerce lahendused, interaktiivsed liidesed ja AI-põhised veebitööriistad.',
       keywords:
-        'risto toldsep, veebiarendaja, full stack arendaja, portfoolio, wordpress, react, seo, tehisintellekt, automatiseerimine',
-      ogTitle: 'Risto Tõldsep - Full Stack arendaja',
+        'risto toldsep, veebiarendaja tallinn, wordpress arendaja eesti, woocommerce arendaja, vabakutseline veebiarendaja, kodulehe tegija, full stack arendaja, portfoolio',
+      ogTitle: 'Risto Tõldsep - Loov full-stack ja WordPressi arendaja',
       switchLanguageLabel: 'Switch to English',
     },
     nav: {
@@ -478,7 +478,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     sidebar: {
       photoAlt: 'Risto Tõldsep - Full Stack arendaja',
-      role: 'Full Stack arendaja',
+      role: 'Loov full-stack ja WordPressi arendaja',
       data: [
         { label: 'Spetsialiseerumine', value: 'Veebirakendused ja e-kaubandus' },
         { label: 'Asukoht', value: 'Tallinn, Eesti' },
@@ -490,7 +490,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     mobileProfile: {
       photoAlt: 'Risto Tõldsep',
-      role: 'Full Stack arendaja',
+      role: 'Loov full-stack ja WordPressi arendaja',
       availability: 'Avatud uutele projektidele',
       stats: [
         { label: 'Kogemus', value: '5+ aastat' },
@@ -501,9 +501,9 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     home: {
       eyebrow: 'Avatud uutele projektidele',
-      title: 'Loon võimsaid<br>veebi- <em>kogemusi.</em>',
+      title: '<em>WordPressi</em><br>ja full-stack<br>arendaja.',
       subtitle:
-        '5+ aastat kogemust kiirete, skaleeruvate ja visuaalselt läbimõeldud veebilahenduste loomisel - alates turunduslehtedest kuni keerukate e-kaubanduse platvormide ja AI tööriistadeni. Täiskohaga ja vabakutseliselt.',
+        "Olen Risto Tõldsep, veebiarendaja Tallinnas. 5+ aastat kogemust kohandatud WordPressi ja WooCommerce'i lahenduste, interaktiivsete liideste ja AI-põhiste veebitööriistade loomisel. Täiskohaga ja vabakutseliselt.",
       primaryCta: 'Vaata töid',
       secondaryCta: 'Räägime ->',
       scrollLabel: 'Keri töödeni',

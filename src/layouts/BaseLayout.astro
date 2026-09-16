@@ -11,9 +11,9 @@ interface Props {
 }
 
 const {
-  title = 'Risto Tõldsep - Full Stack Developer',
-  description = 'Risto Tõldsep - Full Stack Web Developer based in Tallinn, Estonia. 5+ years building web apps, eCommerce, AI tools and more.',
-  keywords = 'risto toldsep, freelance web developer, full stack developer, portfolio, wordpress, react, seo, ai, automation',
+  title = 'Risto Tõldsep - Creative Full-Stack & WordPress Developer',
+  description = 'Risto Tõldsep is a creative full-stack and WordPress developer in Tallinn, Estonia. Custom WordPress and WooCommerce builds, interactive frontends and AI-powered web tools.',
+  keywords = 'risto toldsep, freelance web developer estonia, wordpress developer estonia, woocommerce developer, creative developer tallinn, veebiarendaja tallinn, full stack developer, portfolio',
   lang = 'en',
   ogTitle = title,
 } = Astro.props;
@@ -49,9 +49,10 @@ const jsonLd = {
       alternateName: 'Risto Toldsep',
       url: SITE.origin,
       image: ogImage,
-      jobTitle: 'Full Stack Web Developer',
+      jobTitle: 'Creative Full-Stack & WordPress Developer',
       description:
-        'Full Stack Web Developer based in Tallinn, Estonia, with 5+ years building web apps, eCommerce stores, WordPress/WooCommerce sites, and AI-powered automations.',
+        'Risto Tõldsep is a creative full-stack and WordPress developer based in Tallinn, Estonia, specialising in custom WordPress and WooCommerce builds, interactive frontends, and AI-powered web tools.',
+      knowsLanguage: ['et', 'en'],
       email: 'mailto:ristotoldsep@gmail.com',
       address: {
         '@type': 'PostalAddress',
@@ -97,7 +98,7 @@ const jsonLd = {
       '@type': 'WebSite',
       '@id': `${SITE.origin}/#website`,
       url: SITE.origin,
-      name: 'Risto Tõldsep — Full Stack Developer',
+      name: 'Risto Tõldsep — Creative Full-Stack & WordPress Developer',
       description,
       inLanguage: ['en', 'et'],
       publisher: { '@id': personId },
@@ -122,6 +123,16 @@ const jsonLd = {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script is:inline>
+    (function () {
+      var root = document.documentElement;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      root.classList.add('js');
+      // If the bundle never runs, drop back to the visible base state.
+      window.__rtReveal = setTimeout(function () { root.classList.remove('js'); }, 4000);
+    })();
+  </script>
   <title>{title}</title>
   <meta name="description" content={description} />
   <meta name="keywords" content={keywords} />
@@ -145,7 +156,7 @@ const jsonLd = {
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalURL.href} />
   <meta property="og:image" content={ogImage} />
-  <meta property="og:image:alt" content="Risto Tõldsep - Full Stack Developer" />
+  <meta property="og:image:alt" content="Risto Tõldsep - Creative Full-Stack & WordPress Developer" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="972" />
@@ -157,7 +168,7 @@ const jsonLd = {
   <meta name="twitter:title" content={ogTitle} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
-  <meta name="twitter:image:alt" content="Risto Tõldsep - Full Stack Developer" />
+  <meta name="twitter:image:alt" content="Risto Tõldsep - Creative Full-Stack & WordPress Developer" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

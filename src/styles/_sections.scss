@@ -48,11 +48,27 @@
     max-width: 520px;
 }
 
-/* Animate states */
+/* Animate states.
+   Base state is visible so the page still renders when JS never runs.
+   The hidden state is opt-in via the .js class that the head script adds. */
 .animate-up,
 .animate-card {
+    opacity: 1;
+    transform: none;
+}
+
+html.js .animate-up,
+html.js .animate-card {
     opacity: 0;
     transform: translateY(50px);
 }
-.animate-card { transform: translateY(70px); }
+html.js .animate-card { transform: translateY(70px); }
+
+@media (prefers-reduced-motion: reduce) {
+    html.js .animate-up,
+    html.js .animate-card {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
 

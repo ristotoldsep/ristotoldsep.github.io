@@ -24,7 +24,7 @@ const { copy } = Astro.props;
           <img src={workProjectMeta[index].image} alt={project.imageAlt} loading="lazy">
         </div>
         <figcaption class:list={['gallery-caption', index % 2 === 1 && 'gallery-caption--alt']}>
-          <h5>{project.name}</h5>
+          <h3>{project.name}</h3>
           <div class="card-tags">
             {workProjectMeta[index].tags.map((tag) => <span class="rtag">{tag}</span>)}
           </div>

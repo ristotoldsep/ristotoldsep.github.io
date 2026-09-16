@@ -23,7 +23,7 @@ const { copy } = Astro.props;
       <div class="skill-cat animate-card">
         <div class="skill-cat-header">
           <span class="skill-cat-icon">{category.icon}</span>
-          <h5 set:html={category.title}></h5>
+          <h3 set:html={category.title}></h3>
         </div>
         <div class="stack-pills">
           {category.items.map((item) => <span>{item}</span>)}

@@ -24,7 +24,7 @@ const { copy } = Astro.props;
         <div class="agency-card-glow" style={index === 0 ? 'background:radial-gradient(circle,rgba(80,130,255,0.22) 0%,transparent 70%)' : 'background:radial-gradient(circle,rgba(196,154,60,0.18) 0%,transparent 70%)'}></div>
         <span class="agency-num">{`0${index + 1}`}</span>
         <div class="agency-head">
-          <h4>{agencyMeta[index].name}</h4>
+          <h3>{agencyMeta[index].name}</h3>
           <span class:list={['agency-badge', index === 1 && 'agency-badge--past']}>{item.badge}</span>
         </div>
         <p class="agency-desc">{item.description}</p>
