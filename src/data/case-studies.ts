@@ -318,4 +318,323 @@ export const caseStudies: Partial<Record<ProjectId, I18n<CaseStudyCopy>>> = {
     },
   },
 
+  snabb: {
+    en: {
+      problem: [
+        'Snabb unifies three services that customers normally deal with separately: parking, car wash and EV charging, across more than 250 locations for over 85,000 users. The marketing site has to explain all three clearly without becoming three sites bolted together.',
+        'The team also needed to keep the site current themselves. Locations change, offers change, and a platform at that scale cannot wait on a developer for every page edit.',
+      ],
+      solution: [
+        'Custom Elementor widgets written in PHP, so the marketing team edits complex, on-brand sections by drag and drop.',
+        'Each widget encapsulates its own layout and data handling rather than being assembled from generic containers, which keeps the design consistent no matter who edits the page.',
+        'A structure that presents parking, car wash and charging as one coherent product rather than three separate pitches.',
+      ],
+      highlights: [
+        {
+          title: 'Custom widgets instead of generic blocks',
+          text: 'Elementor is fast to edit and easy to wreck. Building the sections as proper PHP widgets means the editing experience stays drag-and-drop while the markup, spacing and behaviour stay under control.',
+        },
+        {
+          title: 'Built for a team, not a developer',
+          text: 'The widgets expose only the controls that should be editable. Someone updating a location list cannot accidentally break the layout, which is what makes self-service editing actually work at this scale.',
+        },
+      ],
+      results: [
+        'The marketing team edits the site without developer involvement, on a platform serving 85,000+ users across 250+ locations.',
+      ],
+      faq: [
+        {
+          q: 'Is Elementor a reasonable choice for a large site?',
+          a: 'It can be, if you build custom widgets rather than assembling pages from generic containers. That keeps the drag-and-drop editing the client wants while keeping the markup and design system under developer control.',
+        },
+      ],
+    },
+    et: {
+      problem: [
+        'Snabb ühendab kolm teenust, millega kliendid tavaliselt eraldi tegelevad: parkimine, autopesu ja elektriauto laadimine, enam kui 250 asukohas ja üle 85 000 kasutaja jaoks. Turundusleht peab kõiki kolme selgelt selgitama, muutumata kolmeks kokku poogitud saidiks.',
+        'Tiim pidi saama saiti ka ise ajakohasena hoida. Asukohad muutuvad, pakkumised muutuvad, ja selles mahus platvorm ei saa iga lehemuudatuse pärast arendajat oodata.',
+      ],
+      solution: [
+        'PHP-s kirjutatud kohandatud Elementori vidinad, nii et turundustiim muudab keerukaid brändikohaseid sektsioone lohistades.',
+        'Iga vidin kapseldab oma küljenduse ja andmetöötluse, mitte ei ole kokku pandud üldistest konteineritest, mis hoiab disaini ühtsena sõltumata sellest, kes lehte muudab.',
+        'Struktuur, mis esitleb parkimist, autopesu ja laadimist ühe tervikliku tootena, mitte kolme eraldi pakkumisena.',
+      ],
+      highlights: [
+        {
+          title: 'Kohandatud vidinad üldiste plokkide asemel',
+          text: 'Elementorit on kiire muuta ja lihtne ära rikkuda. Sektsioonide ehitamine korralike PHP vidinatena hoiab muutmiskogemuse lohistatavana, aga markup, vahed ja käitumine kontrolli all.',
+        },
+        {
+          title: 'Ehitatud tiimile, mitte arendajale',
+          text: 'Vidinad näitavad ainult neid seadeid, mida tohib muuta. Asukohtade nimekirja uuendaja ei saa kogemata küljendust lõhkuda, ja just see paneb iseteeninduse selles mahus päriselt tööle.',
+        },
+      ],
+      results: [
+        'Turundustiim muudab saiti ilma arendaja abita platvormil, mis teenindab 85 000+ kasutajat 250+ asukohas.',
+      ],
+      faq: [
+        {
+          q: 'Kas Elementor sobib suurele saidile?',
+          a: 'Võib küll, kui ehitad kohandatud vidinad, mitte ei pane lehti kokku üldistest konteineritest. Nii säilib kliendi soovitud lohistatav muutmine, aga markup ja disainisüsteem jäävad arendaja kontrolli alla.',
+        },
+      ],
+    },
+  },
+
+  'ribaana-horm': {
+    en: {
+      problem: [
+        'An Estonian real estate broker already publishes every listing on KV.ee, the national property portal. Duplicating all of it by hand on a personal site is work nobody sustains, and a personal site with stale listings is worse than none.',
+        'The site also had to convert. A broker competing with the portal itself needs a page that makes someone choose them specifically, not just another list of flats.',
+      ],
+      solution: [
+        'A fully custom PHP WordPress theme built with ACF blocks and Tailwind CSS, designed for conversion rather than as a listings dump.',
+        'A custom KV.ee integration plugin that imports the broker’s listings daily from the KV.ee XML feed into a dedicated custom post type.',
+        'An AJAX-filterable listings block so visitors narrow down without a page reload.',
+      ],
+      highlights: [
+        {
+          title: 'Daily import from the KV.ee XML feed',
+          text: 'The plugin maps prices, areas, location and galleries straight into ACF fields and sets the featured image automatically, so a new listing on KV.ee appears on the broker’s own site without anyone retyping it.',
+        },
+        {
+          title: 'Removed listings get archived, not orphaned',
+          text: 'When a property disappears from the feed the plugin archives it rather than leaving a dead page behind. That matters for both visitors and for not accumulating thin, outdated URLs.',
+        },
+        {
+          title: 'Filtering without reloads',
+          text: 'The listings block filters over AJAX, so narrowing by price or area feels immediate rather than reloading the page for each choice.',
+        },
+      ],
+      faq: [
+        {
+          q: 'Can you sync property listings from KV.ee automatically?',
+          a: 'Yes. KV.ee publishes an XML feed, and I built a plugin that reads it daily, maps each field into ACF, sets featured images and archives listings that have been removed. The broker keeps working in KV.ee and their own site follows along.',
+        },
+        {
+          q: 'Why have your own site if everything is on the portal anyway?',
+          a: 'Because the portal sells the property and your own site sells you. It is where a client checks whether they want to work with this particular broker, which is a different job from listing a flat.',
+        },
+      ],
+    },
+    et: {
+      problem: [
+        'Eesti kinnisvaramaakler avaldab niikuinii kõik kuulutused KV.ee-s, üleriigilises kinnisvaraportaalis. Nende käsitsi dubleerimine oma lehel on töö, mida keegi kaua ei tee, ja aegunud kuulutustega isiklik leht on halvem kui üldse mitte midagi.',
+        'Leht pidi ka konverteerima. Maakler, kes konkureerib portaaliga endaga, vajab lehte, mis paneb inimese valima just teda, mitte järjekordset korterite nimekirja.',
+      ],
+      solution: [
+        'Täielikult kohandatud PHP WordPressi teema ACF plokkide ja Tailwind CSS-iga, disainitud konversiooniks, mitte kuulutuste hunnikuks.',
+        'Kohandatud KV.ee integratsiooni plugin, mis impordib maakleri kuulutused iga päev KV.ee XML-voost eraldi kohandatud postitüüpi.',
+        'AJAX-iga filtreeritav kuulutuste plokk, et külastaja saaks valikut kitsendada ilma lehe uuesti laadimiseta.',
+      ],
+      highlights: [
+        {
+          title: 'Igapäevane import KV.ee XML-voost',
+          text: 'Plugin kaardistab hinnad, pindalad, asukoha ja galeriid otse ACF väljadesse ning seab esipildi automaatselt, nii et uus kuulutus KV.ee-s ilmub maakleri enda lehele ilma ümbertrükkimiseta.',
+        },
+        {
+          title: 'Eemaldatud kuulutused arhiveeritakse, ei jää rippuma',
+          text: 'Kui objekt voost kaob, arhiveerib plugin selle, mitte ei jäta maha surnud lehte. See on oluline nii külastaja jaoks kui ka selleks, et ei koguneks õhukesi aegunud URL-e.',
+        },
+        {
+          title: 'Filtreerimine ilma laadimiseta',
+          text: 'Kuulutuste plokk filtreerib AJAX-iga, nii et hinna või pindala järgi kitsendamine tundub kohene, mitte ei lae iga valiku peale lehte uuesti.',
+        },
+      ],
+      faq: [
+        {
+          q: 'Kas kinnisvarakuulutusi saab KV.ee-st automaatselt sünkroonida?',
+          a: 'Jah. KV.ee avaldab XML-voo ja ma ehitasin plugina, mis loeb seda iga päev, kaardistab iga välja ACF-i, seab esipildid ja arhiveerib eemaldatud kuulutused. Maakler töötab edasi KV.ee-s ja tema enda leht järgneb.',
+        },
+        {
+          q: 'Milleks oma leht, kui kõik on niikuinii portaalis?',
+          a: 'Sest portaal müüb objekti ja sinu enda leht müüb sind. Seal otsustab klient, kas ta tahab just selle maakleriga koostööd teha, ja see on hoopis teine ülesanne kui korteri kuulutamine.',
+        },
+      ],
+    },
+  },
+
+  'serene-sleep': {
+    en: {
+      problem: [
+        'Serene Sleep sells luxury silk bedding, a category where the product photograph and the certification do most of the selling. A generic store template makes a €200 duvet cover look like a €20 one.',
+      ],
+      solution: [
+        'A custom WooCommerce theme built around the product imagery rather than around a template’s default grid.',
+        'A premium brand identity carried consistently through typography, spacing and product presentation.',
+        'An OEKO-TEX certification showcase placed where it supports the purchase decision rather than buried in a tab.',
+      ],
+      highlights: [
+        {
+          title: 'Product presentation as the design',
+          text: 'In this category the imagery is the argument. The layout gives photography room to work rather than squeezing it into a template’s fixed thumbnail grid.',
+        },
+        {
+          title: 'Certification as a conversion element',
+          text: 'OEKO-TEX certification is a real reason to trust the price. Surfacing it in the product flow rather than in a footer link treats it as the selling point it is.',
+        },
+      ],
+      faq: [
+        {
+          q: 'Does design really change conversion for a premium product?',
+          a: 'For a premium physical product it is most of the argument. The buyer cannot touch the fabric, so presentation and proof of quality are doing the work the product would do in a shop.',
+        },
+      ],
+    },
+    et: {
+      problem: [
+        'Serene Sleep müüb luksuslikku siidvoodipesu, kategoorias, kus tootefoto ja sertifikaat teevad suurema osa müügitööst ära. Üldine poemall paneb 200-eurose tekikoti välja nägema nagu 20-eurose.',
+      ],
+      solution: [
+        'Kohandatud WooCommerce’i teema, mis on ehitatud tootepiltide, mitte malli vaikimisi võrgustiku ümber.',
+        'Premium brändiidentiteet, mis kandub järjepidevalt läbi tüpograafia, vahede ja tooteesitluse.',
+        'OEKO-TEX sertifikaadi esitlus kohas, kus see toetab ostuotsust, mitte ei ole peidetud sakivahesse.',
+      ],
+      highlights: [
+        {
+          title: 'Tooteesitlus ongi disain',
+          text: 'Selles kategoorias on pilt argument. Küljendus annab fotograafiale ruumi töötada, mitte ei suru seda malli fikseeritud pisipiltide võrku.',
+        },
+        {
+          title: 'Sertifikaat kui konversioonielement',
+          text: 'OEKO-TEX sertifikaat on päris põhjus hinda usaldada. Selle toomine ostuteekonda, mitte jaluse linki, kohtleb seda müügiargumendina, nagu ta on.',
+        },
+      ],
+      faq: [
+        {
+          q: 'Kas disain päriselt muudab premium toote konversiooni?',
+          a: 'Premium füüsilise toote puhul on see suurem osa argumendist. Ostja ei saa kangast katsuda, seega teevad esitlus ja kvaliteeditõend seda tööd, mida poes teeks toode ise.',
+        },
+      ],
+    },
+  },
+
+  uusloo: {
+    en: {
+      problem: [
+        'Uusloo needed a site that feels as responsive as an app while keeping server-rendered routing, without the overhead of building and maintaining a separate API and a separate frontend application.',
+      ],
+      solution: [
+        'A Laravel backend handling routing, data and business logic.',
+        'A Vue frontend for the interface.',
+        'Inertia.js joining the two, so pages are Vue components but routing and data still come from Laravel.',
+      ],
+      highlights: [
+        {
+          title: 'SPA feel without a separate API',
+          text: 'Inertia lets Laravel controllers return Vue pages directly. You get client-side navigation without building, versioning and securing a REST API that only your own frontend ever calls.',
+        },
+        {
+          title: 'One codebase, one deploy',
+          text: 'Backend and frontend live and ship together, which for a project this size is considerably less to operate than two applications.',
+        },
+      ],
+      faq: [
+        {
+          q: 'When would you use Inertia instead of a REST API?',
+          a: 'When the only consumer of the API is your own frontend. Inertia removes a whole layer you would otherwise build and maintain for no external benefit. If you need a public API or a mobile client too, that calculation changes.',
+        },
+      ],
+    },
+    et: {
+      problem: [
+        'Uusloo vajas lehte, mis tundub sama kiire kui rakendus, aga säilitab serveripoolse marsruutimise, ilma et peaks ehitama ja üleval pidama eraldi API-t ja eraldi frontend-rakendust.',
+      ],
+      solution: [
+        'Laraveli backend, mis tegeleb marsruutimise, andmete ja äriloogikaga.',
+        'Vue frontend kasutajaliidese jaoks.',
+        'Inertia.js, mis need kaks ühendab, nii et lehed on Vue komponendid, aga marsruutimine ja andmed tulevad endiselt Laravelist.',
+      ],
+      highlights: [
+        {
+          title: 'SPA tunnetus ilma eraldi API-ta',
+          text: 'Inertia lubab Laraveli kontrolleritel tagastada otse Vue lehti. Saad kliendipoolse navigeerimise ilma, et peaksid ehitama, versioonima ja turvama REST API-t, mida kasutab ainult sinu enda frontend.',
+        },
+        {
+          title: 'Üks koodibaas, üks deploy',
+          text: 'Backend ja frontend elavad ja lähevad tootmisse koos, mida on selle suurusega projekti puhul märksa vähem hallata kui kahte rakendust.',
+        },
+      ],
+      faq: [
+        {
+          q: 'Millal kasutada Inertiat REST API asemel?',
+          a: 'Siis, kui API ainus tarbija on sinu enda frontend. Inertia võtab ära terve kihi, mida sa muidu ehitaksid ja hooldaksid ilma igasuguse välise kasuta. Kui vajad ka avalikku API-t või mobiiliklienti, muutub see arvutus.',
+        },
+      ],
+    },
+  },
+
+  qinutritionist: {
+    en: {
+      problem: [
+        'QiNutritionist serves clients in three languages, English, Estonian and Spanish, and the owner needed to edit content without a developer. A full CMS would be overkill for a site of this size, and hosting one is ongoing cost and ongoing security surface.',
+      ],
+      solution: [
+        'A static site built with Astro, so pages are plain HTML with no server to maintain or patch.',
+        'Three fully separate language versions rather than machine-translated variants.',
+        'A git-based CMS, so the client edits through an admin interface while every change lands as a commit.',
+        'Automated deploys through GitHub Actions, triggered by those commits.',
+      ],
+      highlights: [
+        {
+          title: 'A CMS with no database',
+          text: 'Content lives in the repository. The client gets a normal editing interface, and every edit is a commit with full history, so a bad change is reverted rather than restored from backup.',
+        },
+        {
+          title: 'Static output, so nothing to patch',
+          text: 'There is no PHP, no database and no plugin surface. For a small business site that removes an entire category of maintenance and an entire category of vulnerability.',
+        },
+        {
+          title: 'Deploys on commit',
+          text: 'GitHub Actions rebuilds and publishes when content changes, so the client never waits on a developer to see an edit go live.',
+        },
+      ],
+      faq: [
+        {
+          q: 'Can a static site have a CMS?',
+          a: 'Yes. A git-based CMS gives the client a normal admin interface, but instead of writing to a database it commits to the repository and triggers a rebuild. You get editing without running a server.',
+        },
+        {
+          q: 'Is a static site cheaper to run than WordPress?',
+          a: 'Usually, yes, and the bigger saving is maintenance. No database, no plugin updates, no security patching. The tradeoff is that genuinely dynamic features need a different approach.',
+        },
+      ],
+    },
+    et: {
+      problem: [
+        'QiNutritionist teenindab kliente kolmes keeles, inglise, eesti ja hispaania, ning omanik pidi saama sisu muuta ilma arendajata. Täismahus CMS oleks selle suurusega saidi jaoks liiast ning selle üleval pidamine tähendab püsikulu ja püsivat turvariski.',
+      ],
+      solution: [
+        'Astroga ehitatud staatiline sait, nii et lehed on tavaline HTML ja ei ole serverit, mida hooldada ega paigata.',
+        'Kolm täiesti eraldi keeleversiooni, mitte masintõlgitud variandid.',
+        'Git-põhine CMS, nii et klient muudab sisu haldusliideses, aga iga muudatus jõuab kohale commitina.',
+        'Automaatsed deployd GitHub Actionsi kaudu, mille käivitavad needsamad commitid.',
+      ],
+      highlights: [
+        {
+          title: 'CMS ilma andmebaasita',
+          text: 'Sisu elab repositooriumis. Klient saab tavalise muutmisliidese ja iga muudatus on commit täieliku ajalooga, nii et halva muudatuse saab tagasi kerida, mitte varukoopiast taastada.',
+        },
+        {
+          title: 'Staatiline väljund, seega pole midagi paigata',
+          text: 'Ei ole PHP-d, andmebaasi ega pluginate rünnakupinda. Väikeettevõtte lehe puhul kaob sellega terve kategooria hooldust ja terve kategooria haavatavusi.',
+        },
+        {
+          title: 'Deploy commiti peale',
+          text: 'GitHub Actions ehitab ja avaldab uuesti, kui sisu muutub, nii et klient ei oota kunagi arendajat, et muudatus live’i jõuaks.',
+        },
+      ],
+      faq: [
+        {
+          q: 'Kas staatilisel saidil saab CMS olla?',
+          a: 'Jah. Git-põhine CMS annab kliendile tavalise haldusliidese, aga andmebaasi kirjutamise asemel teeb commiti repositooriumi ja käivitab uue ehituse. Saad sisuhalduse ilma serverit pidamata.',
+        },
+        {
+          q: 'Kas staatiline sait on odavam üleval pidada kui WordPress?',
+          a: 'Tavaliselt küll, ja suurem kokkuhoid on hoolduses. Ei ole andmebaasi, pluginate uuendusi ega turvapaikamist. Vastukaaluks vajavad päriselt dünaamilised funktsioonid teistsugust lähenemist.',
+        },
+      ],
+    },
+  },
+
 };
