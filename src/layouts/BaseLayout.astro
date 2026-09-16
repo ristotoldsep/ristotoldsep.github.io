@@ -51,7 +51,7 @@ const {
   ogImageAlt = 'Risto Tõldsep - Web Developer & Designer in Tallinn, Estonia',
   ogImageType = 'image/jpeg',
   ogImageWidth = 1200,
-  ogImageHeight = 972,
+  ogImageHeight = 630,
   alternates,
   canonical,
   noindex = false,
@@ -69,8 +69,10 @@ const {
 const SITE = Astro.site ?? new URL('https://ristotoldsep.eu');
 const canonicalURL = new URL(canonical ?? Astro.url.pathname, SITE);
 
-// The default OG/social image is a lightweight version of the sidebar portrait
+// og-image.jpg is the 1.91:1 social card; the Person schema keeps a real
+// portrait, since that field should be a photograph rather than a banner.
 const ogImageURL = new URL(ogImage ?? '/og-image.jpg', SITE).href;
+const portraitURL = new URL('/portrait.jpg', SITE).href;
 
 const hreflangs = [
   { hreflang: 'en', href: new URL(alternates.en, SITE).href },
@@ -85,7 +87,7 @@ const ogLocaleAlt = lang === 'et' ? 'en_US' : 'et_EE';
 // site-wide; every page contributes its own page node plus whatever extra
 // entities it describes, all pointing back at the same #person.
 const jsonLd = buildGraph([
-  personNode(SITE.origin, ogImageURL),
+  personNode(SITE.origin, portraitURL),
   websiteNode(SITE.origin, description),
   pageNode({
     origin: SITE.origin,

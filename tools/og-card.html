@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1200px; height:630px; overflow:hidden; }
+  body {
+    font-family:'Syne', sans-serif;
+    background:#070710;
+    color:#EDE8DD;
+    position:relative;
+    display:flex;
+    align-items:center;
+  }
+
+  /* Same grid + glow treatment as the site background */
+  .grid {
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:72px 72px;
+  }
+  .glow-a {
+    position:absolute; width:720px; height:720px;
+    left:-180px; top:-260px;
+    background:radial-gradient(circle, rgba(196,154,60,0.20) 0%, transparent 65%);
+  }
+  .glow-b {
+    position:absolute; width:640px; height:640px;
+    right:-150px; bottom:-280px;
+    background:radial-gradient(circle, rgba(80,130,255,0.16) 0%, transparent 65%);
+  }
+
+  .inner {
+    position:relative; z-index:2;
+    display:flex; align-items:center; gap:56px;
+    padding:0 76px; width:100%;
+  }
+
+  .photo {
+    width:236px; height:236px; flex-shrink:0;
+    border-radius:50%;
+    object-fit:cover; object-position:top center;
+    border:3px solid rgba(196,154,60,0.45);
+    box-shadow:0 0 0 12px rgba(196,154,60,0.07), 0 24px 60px rgba(0,0,0,0.55);
+  }
+
+  .copy { min-width:0; }
+
+  .eyebrow {
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:20px; font-weight:600;
+    letter-spacing:0.18em; text-transform:uppercase;
+    color:#C49A3C; margin-bottom:20px;
+  }
+  .eyebrow svg { flex-shrink:0; }
+
+  h1 {
+    font-size:72px; font-weight:800;
+    line-height:1.04; letter-spacing:-0.035em;
+    margin-bottom:22px;
+  }
+  h1 em {
+    font-style:italic;
+    background:linear-gradient(90deg,#C49A3C 0%,#f4d06e 20%,#e06aaf 48%,#a87cfa 66%,#5fa8f8 84%,#C49A3C 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+
+  .sub {
+    font-size:31px; line-height:1.4;
+    color:rgba(237,232,221,0.88);
+    margin-bottom:32px;
+  }
+
+  .tags { display:flex; flex-wrap:wrap; gap:10px; }
+  .tags span {
+    font-size:20px; font-weight:600;
+    letter-spacing:0.04em;
+    padding:11px 22px;
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:999px;
+    color:rgba(237,232,221,0.82);
+  }
+
+  .url {
+    position:absolute; z-index:3;
+    right:76px; bottom:44px;
+    font-size:22px; font-weight:600;
+    letter-spacing:0.08em;
+    color:rgba(237,232,221,0.45);
+  }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow-a"></div>
+  <div class="glow-b"></div>
+
+  <div class="inner">
+    <img class="photo" src="../public/portrait.jpg" alt="">
+    <div class="copy">
+      <p class="eyebrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+        <span>Tallinn, Estonia</span>
+      </p>
+      <h1>Risto <em>Tõldsep</em></h1>
+      <p class="sub">Web developer &amp; designer for custom websites</p>
+      <div class="tags">
+        <span>WordPress</span>
+        <span>WooCommerce</span>
+        <span>Web design</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="url">ristotoldsep.eu</div>
+</body>
+</html>

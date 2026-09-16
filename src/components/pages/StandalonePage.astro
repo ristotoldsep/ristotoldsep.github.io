@@ -35,7 +35,7 @@ const {
 
 const copy = siteCopy[locale];
 const SITE = Astro.site ?? new URL('https://ristotoldsep.eu');
-const ogImageURL = new URL('/og-image.jpg', SITE).href;
+const portraitURL = new URL('/portrait.jpg', SITE).href;
 
 const breadcrumbs = [
   { name: copy.pages.home, url: routes.home(locale) },
@@ -43,7 +43,7 @@ const breadcrumbs = [
 ];
 
 const extraSchema: SchemaNode[] = includeBusinessSchema
-  ? [businessNode(SITE.origin, ogImageURL)]
+  ? [businessNode(SITE.origin, portraitURL)]
   : [];
 
 const featured = publishedProjects().filter((p) => p.featured).slice(0, 3);
