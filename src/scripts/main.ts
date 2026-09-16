@@ -208,7 +208,7 @@ function initMobileSidebar(): void {
 
 function initActiveNav(): void {
   if (!document.getElementById('home')) return;
-  const sections = ['home', 'work', 'about', 'skills', 'contact'];
+  const sections = ['home', 'skills', 'contact'];
   const links    = document.querySelectorAll<HTMLElement>('.topnav-link');
   const pill     = document.getElementById('topnavPill');
   const list     = document.getElementById('topnavList');

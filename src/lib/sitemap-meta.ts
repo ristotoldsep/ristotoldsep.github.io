@@ -28,6 +28,8 @@ function buildIndex(): Map<string, SitemapEntry> {
   add(alternates.home(), { changefreq: 'monthly', priority: 1.0, lastmod: today });
   add(alternates.workIndex(), { changefreq: 'monthly', priority: 0.9, lastmod: today });
   add(alternates.servicesIndex(), { changefreq: 'monthly', priority: 0.9, lastmod: today });
+  add(alternates.about(), { changefreq: 'monthly', priority: 0.9, lastmod: today });
+  add(alternates.hire(), { changefreq: 'monthly', priority: 0.95, lastmod: today });
 
   for (const project of publishedProjects()) {
     add(alternates.project(project.id), {

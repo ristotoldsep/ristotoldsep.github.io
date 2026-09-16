@@ -26,6 +26,7 @@ export interface SiteCopy {
       about: string;
       skills: string;
       contact: string;
+      services: string;
     };
     contactCta: string;
     openMenuLabel: string;
@@ -135,6 +136,7 @@ export interface SiteCopy {
       related: string;
       backToWork: string;
       visitSite: string;
+      readCaseStudy: string;
       facts: { client: string; year: string; role: string; live: string; services: string };
     };
     service: {
@@ -196,12 +198,12 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     nav: {
       homeAriaLabel: 'Home',
-      links: { home: 'Home', work: 'Work', about: 'About', skills: 'Skills', contact: 'Contact' },
+      links: { home: 'Home', work: 'Work', services: 'Services', about: 'About', skills: 'Skills', contact: 'Contact' },
       contactCta: 'Get in Touch',
       openMenuLabel: 'Open menu',
     },
     sidebar: {
-      photoAlt: 'Risto Tõldsep - Full Stack Developer',
+      photoAlt: 'Risto Tõldsep - web developer and designer in Tallinn, Estonia',
       role: 'Web Developer & Designer',
       data: [
         { label: 'Specialization', value: 'Web Apps & eCommerce' },
@@ -362,6 +364,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
         related: 'Related projects',
         backToWork: '<- All case studies',
         visitSite: 'Visit the live site ->',
+        readCaseStudy: 'Read case study ->',
         facts: { client: 'Client', year: 'Year', role: 'My role', live: 'Live site', services: 'Services' },
       },
       service: {
@@ -393,12 +396,12 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     nav: {
       homeAriaLabel: 'Avaleht',
-      links: { home: 'Avaleht', work: 'Tööd', about: 'Minust', skills: 'Oskused', contact: 'Kontakt' },
+      links: { home: 'Avaleht', work: 'Tööd', services: 'Teenused', about: 'Minust', skills: 'Oskused', contact: 'Kontakt' },
       contactCta: 'Võta ühendust',
       openMenuLabel: 'Ava menüü',
     },
     sidebar: {
-      photoAlt: 'Risto Tõldsep - Full Stack arendaja',
+      photoAlt: 'Risto Tõldsep - veebiarendaja ja disainer Tallinnas',
       role: 'Veebiarendaja ja disainer',
       data: [
         { label: 'Spetsialiseerumine', value: 'Veebirakendused ja e-kaubandus' },
@@ -559,6 +562,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
         related: 'Seotud projektid',
         backToWork: '<- Kõik tööd',
         visitSite: 'Ava päris leht ->',
+        readCaseStudy: 'Loe juhtumiuuringut ->',
         facts: { client: 'Klient', year: 'Aasta', role: 'Minu roll', live: 'Veebileht', services: 'Teenused' },
       },
       service: {

@@ -1,0 +1,14 @@
+---
+import StandalonePage from '../../../components/pages/StandalonePage.astro';
+import { aboutPage } from '../../../data/standalone';
+import { alternates, routes } from '../../../lib/routes';
+---
+<StandalonePage
+  copy={aboutPage.et}
+  locale="et"
+  alternates={alternates.about()}
+  path={routes.about('et')}
+  pageType="AboutPage"
+  showOffer={false}
+  includeBusinessSchema={true}
+/>

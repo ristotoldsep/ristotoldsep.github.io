@@ -1,0 +1,14 @@
+---
+import StandalonePage from '../../components/pages/StandalonePage.astro';
+import { hirePage } from '../../data/standalone';
+import { alternates, routes } from '../../lib/routes';
+---
+<StandalonePage
+  copy={hirePage.en}
+  locale="en"
+  alternates={alternates.hire()}
+  path={routes.hire('en')}
+  pageType="WebPage"
+  showOffer={true}
+  includeBusinessSchema={false}
+/>

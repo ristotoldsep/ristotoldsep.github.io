@@ -1,6 +1,7 @@
 ---
 import type { SiteCopy } from '../../i18n/site';
 import { publishedProjects } from '../../data/projects';
+import { routes } from '../../lib/routes';
 
 interface Props {
   copy: SiteCopy;
@@ -29,12 +30,15 @@ const items = publishedProjects();
           <img src={project.cover.src} alt={t.imageAlt} loading="lazy">
         </div>
         <figcaption class:list={['gallery-caption', index % 2 === 1 && 'gallery-caption--alt']}>
-          <h3>{t.name ?? project.name}</h3>
+          <h3><a href={routes.project(locale, project.id)} class="gallery-title-link">{t.name ?? project.name}</a></h3>
           <div class="card-tags">
             {project.cardTags.map((tag) => <span class="rtag">{tag}</span>)}
           </div>
           <p>{t.cardDescription}</p>
-          <a href={project.liveUrl} target="_blank" rel="noopener" class="gallery-link">{t.cta}</a>
+          <div class="gallery-links">
+            <a href={routes.project(locale, project.id)} class="gallery-link">{copy.pages.project.readCaseStudy}</a>
+            <a href={project.liveUrl} target="_blank" rel="noopener" class="gallery-link gallery-link--muted">{t.cta}</a>
+          </div>
         </figcaption>
       </figure>
       );
@@ -43,6 +47,7 @@ const items = publishedProjects();
   </div>
 
   <div class="sec-cta animate-up">
+    <a href={routes.workIndex(locale)} class="btn-primary">{copy.pages.workIndex.eyebrow}</a>
     <a href="https://github.com/ristotoldsep" target="_blank" rel="noopener" class="btn-outline">{copy.work.githubCta}</a>
   </div>
 

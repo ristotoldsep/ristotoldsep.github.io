@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageShell from '../../layouts/PageShell.astro';
+import PageHeader from '../layout/PageHeader.astro';
+import SectionCtaFull from '../sections/SectionCtaFull.astro';
+import Footer from '../sections/Footer.astro';
+import { siteCopy, socialLinks } from '../../i18n/site';
+import type { Locale } from '../../data/types';
+import type { StandalonePageCopy } from '../../data/standalone';
+import { publishedProjects } from '../../data/projects';
+import { allServices } from '../../data/services';
+import { routes, type Alternates } from '../../lib/routes';
+import { businessNode, type SchemaNode } from '../../lib/schema';
+
+interface Props {
+  copy: StandalonePageCopy;
+  locale: Locale;
+  alternates: Alternates;
+  path: string;
+  pageType?: 'AboutPage' | 'WebPage';
+  /** The hire page is a sales page, so it lists services and proof. */
+  showOffer?: boolean;
+  includeBusinessSchema?: boolean;
+}
+
+const {
+  copy: page,
+  locale,
+  alternates: alts,
+  path,
+  pageType = 'WebPage',
+  showOffer = false,
+  includeBusinessSchema = false,
+} = Astro.props;
+
+const copy = siteCopy[locale];
+const SITE = Astro.site ?? new URL('https://ristotoldsep.eu');
+const ogImageURL = new URL('/og-image.jpg', SITE).href;
+
+const breadcrumbs = [
+  { name: copy.pages.home, url: routes.home(locale) },
+  { name: page.eyebrow, url: path },
+];
+
+const extraSchema: SchemaNode[] = includeBusinessSchema
+  ? [businessNode(SITE.origin, ogImageURL)]
+  : [];
+
+const featured = publishedProjects().filter((p) => p.featured).slice(0, 3);
+---
+
+<BaseLayout
+  lang={locale}
+  title={page.seoTitle}
+  description={page.seoDescription}
+  ogTitle={page.heading}
+  alternates={alts}
+  pageType={pageType}
+  pageNodeIdSuffix={pageType === 'AboutPage' ? 'aboutpage' : 'page'}
+  breadcrumbs={breadcrumbs.map((c) => ({ name: c.name, url: new URL(c.url, SITE).href }))}
+  faq={page.faq}
+  schema={extraSchema}
+>
+  <PageShell copy={copy} alternates={alts}>
+
+    <PageHeader eyebrow={page.eyebrow} heading={page.heading} lede={page.lede} breadcrumbs={breadcrumbs}>
+      <div class="page-summary" style="margin-top:28px">
+        <p>{page.summary}</p>
+      </div>
+
+      <div class="page-facts">
+        {page.facts.map((fact) => (
+          <div class="page-fact">
+            <small>{fact.label}</small>
+            <span>{fact.value}</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="page-actions">
+        <a href={`${routes.home(locale)}#contact`} class="btn-primary">{copy.pages.cta.button}</a>
+        <a href={routes.workIndex(locale)} class="btn-ghost">{copy.nav.links.work}</a>
+      </div>
+    </PageHeader>
+
+    {page.sections.map((section) => (
+      <section class="page-section page-section--tight">
+        <h2 class="page-h2">{section.title}</h2>
+        <div class="page-prose">
+          <p set:html={section.text}></p>
+        </div>
+      </section>
+    ))}
+
+    {showOffer && (
+      <section class="page-section">
+        <h2 class="page-h2">{copy.pages.servicesIndex.heading}</h2>
+        <div class="page-cards">
+          {allServices.map((service) => {
+            const s = service.i18n[locale];
+            return (
+              <a class="page-card" href={routes.service(locale, service.id)}>
+                <div class="page-card-body">
+                  <h3>{s.name}</h3>
+                  <p>{s.summary}</p>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    {showOffer && featured.length > 0 && (
+      <section class="page-section">
+        <h2 class="page-h2">{copy.pages.service.proof}</h2>
+        <div class="page-cards">
+          {featured.map((project) => {
+            const p = project.i18n[locale];
+            return (
+              <a class="page-card" href={routes.project(locale, project.id)}>
+                <div class="page-card-img">
+                  <img src={project.cover.src} alt={p.imageAlt} loading="lazy" width={project.cover.width} height={project.cover.height} />
+                </div>
+                <div class="page-card-body">
+                  <h3>{p.name ?? project.name}</h3>
+                  <p>{p.tagline}</p>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    {!showOffer && (
+      <section class="page-section page-section--tight">
+        <h2 class="page-h2">{copy.contact.title}</h2>
+        <div class="page-stack">
+          {socialLinks.map((link) => (
+            <a href={link.href} target="_blank" rel="noopener me"><span>{link.title}</span></a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="page-section">
+      <h2 class="page-h2">{copy.pages.service.faq}</h2>
+      <div class="page-faq">
+        {page.faq.map((item) => (
+          <div class="page-faq-item">
+            <h3>{item.q}</h3>
+            <p set:html={item.a}></p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <SectionCtaFull copy={copy} />
+    <Footer copy={copy} />
+  </PageShell>
+</BaseLayout>
