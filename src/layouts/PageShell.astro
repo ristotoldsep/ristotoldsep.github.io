@@ -1,0 +1,38 @@
+---
+import Cursor from '../components/global/Cursor.astro';
+import BackgroundLayers from '../components/global/BackgroundLayers.astro';
+import Preloader from '../components/global/Preloader.astro';
+import MobileOverlay from '../components/global/MobileOverlay.astro';
+import Sidebar from '../components/layout/Sidebar.astro';
+import TopNav from '../components/layout/TopNav.astro';
+import type { SiteCopy } from '../i18n/site';
+import type { Alternates } from '../lib/routes';
+
+interface Props {
+  copy: SiteCopy;
+  alternates: Alternates;
+  /** Homepage only. Every other page would be hiding readable content
+   *  behind an overlay that only JS can remove. */
+  preloader?: boolean;
+  /** On the homepage the nav points at in-page anchors, elsewhere at routes. */
+  isHome?: boolean;
+}
+
+const { copy, alternates, preloader = false, isHome = false } = Astro.props;
+---
+<Cursor />
+<BackgroundLayers />
+{preloader && <Preloader />}
+
+<div class="site-layout">
+  <Sidebar copy={copy} isHome={isHome} />
+
+  <div class="main-wrap" id="mainWrap">
+    <TopNav copy={copy} alternates={alternates} isHome={isHome} />
+    <MobileOverlay />
+
+    <main class="content" id="content">
+      <slot />
+    </main>
+  </div>
+</div>

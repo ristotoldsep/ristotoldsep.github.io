@@ -1,4 +1,6 @@
-export type Locale = 'en' | 'et';
+import type { Locale } from '../data/types';
+
+export type { Locale };
 
 export interface SocialLink {
   href: string;

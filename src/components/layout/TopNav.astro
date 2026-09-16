@@ -1,31 +1,40 @@
 ---
 import type { SiteCopy } from '../../i18n/site';
+import { routes, otherLocale, type Alternates } from '../../lib/routes';
 
 interface Props {
   copy: SiteCopy;
+  alternates: Alternates;
+  isHome?: boolean;
 }
 
-const { copy } = Astro.props;
-const switchHref = copy.locale === 'en' ? '/et/' : '/';
-const flagClass = copy.locale === 'en' ? 'lang-switch-flag--et' : 'lang-switch-flag--en';
+const { copy, alternates, isHome = false } = Astro.props;
+const locale = copy.locale;
+// Point at this page's counterpart, not the other homepage, so the switcher
+// agrees with the hreflang tags.
+const switchHref = alternates[otherLocale(locale)];
+const flagClass = locale === 'en' ? 'lang-switch-flag--et' : 'lang-switch-flag--en';
+const home = routes.home(locale);
+// In-page anchors only work on the homepage; elsewhere they must be absolute.
+const anchor = (hash: string) => (isHome ? `#${hash}` : `${home}#${hash}`);
 ---
 <nav class="topnav" id="topnav">
-  <a href="#home" class="topnav-logo" aria-label={copy.nav.homeAriaLabel}>RT</a>
+  <a href={isHome ? '#home' : home} class="topnav-logo" aria-label={copy.nav.homeAriaLabel}>RT</a>
   <div class="topnav-nav">
     <span class="topnav-pill" id="topnavPill" aria-hidden="true"></span>
     <ul class="topnav-list" id="topnavList">
-      <li><a href="#home"    class="topnav-link active">{copy.nav.links.home}</a></li>
-      <li><a href="#work"    class="topnav-link">{copy.nav.links.work}</a></li>
-      <li><a href="#about"   class="topnav-link">{copy.nav.links.about}</a></li>
-      <li><a href="#skills"  class="topnav-link">{copy.nav.links.skills}</a></li>
-      <li><a href="#contact" class="topnav-link">{copy.nav.links.contact}</a></li>
+      <li><a href={anchor('home')}    class="topnav-link active">{copy.nav.links.home}</a></li>
+      <li><a href={anchor('work')}    class="topnav-link">{copy.nav.links.work}</a></li>
+      <li><a href={anchor('about')}   class="topnav-link">{copy.nav.links.about}</a></li>
+      <li><a href={anchor('skills')}  class="topnav-link">{copy.nav.links.skills}</a></li>
+      <li><a href={anchor('contact')} class="topnav-link">{copy.nav.links.contact}</a></li>
     </ul>
   </div>
   <div class="topnav-right">
     <a href={switchHref} class="lang-switch" aria-label={copy.meta.switchLanguageLabel}>
       <span class:list={['lang-switch-flag', flagClass]} aria-hidden="true"></span>
     </a>
-    <a href="#contact" class="topnav-cv">{copy.nav.contactCta}</a>
+    <a href={anchor('contact')} class="topnav-cv">{copy.nav.contactCta}</a>
     <button class="mobile-toggle" id="mobileToggle" aria-label={copy.nav.openMenuLabel}>
       <span></span><span></span>
     </button>

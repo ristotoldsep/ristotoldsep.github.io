@@ -2,14 +2,21 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HomePage from '../components/pages/HomePage.astro';
 import { siteCopy } from '../i18n/site';
+import { alternates } from '../lib/routes';
+
+const copy = siteCopy.en;
+const alts = alternates.home();
 ---
 
 <BaseLayout
-  lang={siteCopy.en.meta.lang}
-  title={siteCopy.en.meta.title}
-  description={siteCopy.en.meta.description}
-  keywords={siteCopy.en.meta.keywords}
-  ogTitle={siteCopy.en.meta.ogTitle}
+  lang={copy.meta.lang}
+  title={copy.meta.title}
+  description={copy.meta.description}
+  keywords={copy.meta.keywords}
+  ogTitle={copy.meta.ogTitle}
+  alternates={alts}
+  pageType="ProfilePage"
+  pageNodeIdSuffix="profilepage"
 >
-  <HomePage copy={siteCopy.en} />
+  <HomePage copy={copy} alternates={alts} />
 </BaseLayout>

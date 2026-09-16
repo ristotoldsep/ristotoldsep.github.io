@@ -1,11 +1,15 @@
 ---
 import { socialLinks, type SiteCopy } from '../../i18n/site';
+import { routes } from '../../lib/routes';
 
 interface Props {
   copy: SiteCopy;
+  isHome?: boolean;
 }
 
-const { copy } = Astro.props;
+const { copy, isHome = false } = Astro.props;
+const home = routes.home(copy.locale);
+const anchor = (hash: string) => (isHome ? `#${hash}` : `${home}#${hash}`);
 ---
 <aside class="sidebar" id="sidebar" data-lenis-prevent>
   <div class="sidebar-inner" id="sidebarInner">
@@ -41,14 +45,14 @@ const { copy } = Astro.props;
     </div>
 
     <nav class="sidebar-nav" aria-label={copy.sidebar.navAriaLabel}>
-      <a href="#home"    class="sidebar-nav-link">{copy.nav.links.home}</a>
-      <a href="#work"    class="sidebar-nav-link">{copy.nav.links.work}</a>
-      <a href="#about"   class="sidebar-nav-link">{copy.nav.links.about}</a>
-      <a href="#skills"  class="sidebar-nav-link">{copy.nav.links.skills}</a>
-      <a href="#contact" class="sidebar-nav-link">{copy.nav.links.contact}</a>
+      <a href={anchor('home')}    class="sidebar-nav-link">{copy.nav.links.home}</a>
+      <a href={anchor('work')}    class="sidebar-nav-link">{copy.nav.links.work}</a>
+      <a href={anchor('about')}   class="sidebar-nav-link">{copy.nav.links.about}</a>
+      <a href={anchor('skills')}  class="sidebar-nav-link">{copy.nav.links.skills}</a>
+      <a href={anchor('contact')} class="sidebar-nav-link">{copy.nav.links.contact}</a>
     </nav>
 
-    <a href="#contact" class="sidebar-cta">{copy.sidebar.cta}</a>
+    <a href={anchor('contact')} class="sidebar-cta">{copy.sidebar.cta}</a>
 
   </div>
 </aside>
