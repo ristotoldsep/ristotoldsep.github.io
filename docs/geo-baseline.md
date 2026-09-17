@@ -169,3 +169,63 @@ curl -s https://ristotoldsep.eu/llms.txt | head -5
 Both bots receive the full static HTML. As of Phase 1 the page also renders correctly
 without JavaScript, which it did not before (a fixed preloader overlay sat on top of
 `opacity: 0` content until GSAP ran).
+
+---
+
+## ChatGPT baseline, 2026-09-17
+
+Run in a temporary chat, but **logged in**, and the contamination is visible in
+the output: it addresses Risto directly ("su uus leht", "me su saidi puhul
+rääkisime"). Treat rankings as optimistic. The citations are still meaningful,
+because those come from retrieval rather than memory.
+
+| # | Prompt | Result |
+|---|---|---|
+| 1 | Kes teevad kodulehti Eestis ja teevad seda eriliselt? | **Not recommended.** Listed NOPE, Velvet, Aku, Give, Hable. Named only in a closing aside about a market gap, which is memory, not retrieval |
+| 2 | Kes teevad Eestis eriliselt häid kodulehti? | **Not recommended.** Listed NOPE, Velvet, Aku, Hable, Haiku, Hiatus, Webnobby, XYSUM |
+| 3 | Soovita vabakutselist veebiarendajat Eestis | **#1 of 5**, cited as "Risto Tõldsep / Rixio" -> rixio.ee |
+| 4 | Kes oskab Eestis teha kohandatud WordPressi ja WooCommerce'i lahendusi? | **#1 of 5**, cited as "Rixio / Risto Tõldsep" -> rixio.ee |
+
+### The finding that matters more than the rankings
+
+**Every citation was to rixio.ee. Zero to ristotoldsep.eu.**
+
+ChatGPT also listed projects that only exist on rixio.ee (Kütimetsa, Bauskas
+134), and explicitly described rixio.ee's service pages and case studies as what
+it found in Google.
+
+So the entity is split across two domains that do not link to each other, and
+the one being cited is the one this repo is not. See
+[the two-domain problem](#the-two-domain-problem) below.
+
+### Pattern across the four prompts
+
+Recommended for **"freelance developer"** and **"custom WordPress/WooCommerce"**
+framings. Not recommended for **"exceptional / distinctive websites"** framings,
+where the answer is dominated by design agencies with awards: NOPE (Awwwards,
+Kuldmuna), Velvet, Aku, Hable.
+
+That is a useful distinction. The design-led queries are won by award
+recognition and press, not by site structure, which is why Awwwards and CSS
+Design Awards submissions sit on the off-site checklist. Paavli Kvartal is the
+credible candidate.
+
+---
+
+## The two-domain problem
+
+`rixio.ee` is a separate Next.js site in Estonian with roughly 30 URLs:
+six service pages under `/teenused/`, **15 case studies** under `/tehtud-tood/`,
+a product page for Vestly AI, and `/teadmised/`. It allowlists the same AI
+crawlers and it is the domain ChatGPT cites.
+
+`ristotoldsep.eu` now has 38 URLs covering six services and eight case studies,
+seven of which also exist on rixio.ee.
+
+Neither domain links to the other. Nothing in either site's schema connects
+them. For entity consolidation, which is the whole basis of being recommended by
+an answer engine, this is close to the worst possible arrangement: two sites
+competing for the same Estonian queries, splitting the signal, each making the
+other harder to trust.
+
+**This needs a decision before any further SEO work on either domain.**
