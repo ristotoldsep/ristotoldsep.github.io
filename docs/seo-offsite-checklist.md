@@ -154,57 +154,60 @@ Linking both domains is worth doing: two named anchors, and it ties the two
 properties to the same work. If the Rixio mark is used as the link rather than
 the text, give it `aria-label="Rixio Digital"` so it is not an anonymous link.
 
-### Compact variant, where a full line is too much
+### Compact variant: "RT × Rixio"
 
-On sites where a full sentence does not fit, keep the mark small and let the
-accessible names carry the anchor text. Google treats `aria-label` as anchor
-text when a link has no usable visible text, and AI crawlers read it straight
-out of the markup.
+Where a full sentence is too much. `Rixio` is real visible text, so it already
+works as an anchor; only the initials need help. Google treats `aria-label` as
+anchor text when the visible text is not usable, and AI crawlers read it
+straight out of the markup.
 
 ```html
 <p class="site-credit">
   <a href="https://ristotoldsep.eu/"
-     aria-label="Risto Tõldsep, veebiarendus ja disain">RT</a><span aria-hidden="true"> × </span><a
-     href="https://rixio.ee/"
-     aria-label="Rixio Digital, veebiarendus"
-     class="site-credit-mark">
-    <svg viewBox="0 0 64 64" width="14" height="14" aria-hidden="true" focusable="false">
-      <rect x="2" y="2" width="60" height="60" rx="17" fill="#D8FF3E"/>
-      <g fill="none" stroke="#0B0D10" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M18 49V27"/><path d="M18 35C22 27 29 26 34 31"/>
-        <path d="M31 33L49 49"/><path d="M49 33L31 49"/>
-      </g>
-      <rect x="44" y="15" width="8" height="8" rx="2.5" fill="#0B0D10"/>
-    </svg>
-  </a>
+     aria-label="RT, Risto Tõldsep"
+     title="Risto Tõldsep — veebiarendus ja disain">RT</a>
+  <span aria-hidden="true">×</span>
+  <a href="https://rixio.ee/"
+     aria-label="Rixio Digital"
+     title="Rixio Digital — veebiarendus">Rixio</a>
 </p>
 ```
 
-Three things this gets right, and they are easy to get wrong:
+```css
+.site-credit {
+    font-size: 0.8rem;
+    opacity: 0.7;          /* discreet, still legible. Not 0, not hidden */
+}
+.site-credit a { color: inherit; }
+.site-credit a:hover { opacity: 1; }
+```
 
-**The SVG is `aria-hidden`, the link carries the label.** If the inline SVG
-keeps its own `<title>Rixio favicon</title>`, that string becomes the link's
+Why it is written this way:
+
+**`aria-label="RT, Risto Tõldsep"` rather than just the name.** WCAG 2.5.3
+expects a link's accessible name to contain its visible text. Labelling a link
+that reads `RT` as only "Risto Tõldsep" breaks voice control: someone saying
+"click RT" matches nothing. Keeping both satisfies the guideline and still gives
+Google and the AI crawlers the full name.
+
+**`title` as well as `aria-label`.** `aria-label` wins for the accessible name,
+so `title` is doing a different job: a hover tooltip that lets a sighted reader
+discover what RT stands for. That is the bit that makes the credit
+understandable rather than cryptic.
+
+**Keep the labels truthful and short.** `aria-label` is an accessibility
+attribute first; a screen reader announces exactly what is in it. Stuffing it
+with "veebiarendus Tallinnas WordPress WooCommerce koduleht" is keyword spam
+read aloud to a blind user, and Google discounts it anyway.
+
+**If the Rixio mark is used instead of the word**, give the inline SVG
+`aria-hidden="true"` and label the link. The source `favicon.svg` carries
+`<title>Rixio favicon</title>`, which would otherwise become the link's
 accessible name, and "favicon" is both useless as anchor text and wrong for a
-screen reader. Hiding the graphic and labelling the link is cleaner than
-relying on the title.
+screen reader.
 
-**Keep the label truthful and short.** `aria-label` is an accessibility
-attribute before it is an SEO one: a screen reader announces exactly what is in
-it. "Risto Tõldsep, veebiarendus ja disain" is a fair description of where the
-link goes. A stuffed sentence like "veebiarendus Tallinnas WordPress
-WooCommerce koduleht" is keyword spam read aloud to a blind user, and Google
-discounts it anyway.
-
-**Mind the visible-text mismatch.** WCAG 2.5.3 expects a link's accessible name
-to contain its visible text. `aria-label="Risto Tõldsep"` on a link that reads
-`RT` technically fails, because someone using voice control says "click RT" and
-nothing matches. With initials this is minor, but it is the reason the full-text
-version is preferable wherever it fits.
-
-**It is weaker than visible text.** An `aria-label` works, but a visible named
-link is the stronger signal. `Risto Tõldsep × Rixio` at 0.8rem is barely larger
-than `RT ×` and carries more weight, so take the full version wherever the
-client will wear it.
+The full-text version above remains the stronger signal, since visible anchor
+text beats an attribute. Use it wherever the client will wear it.
 
 ### Do not hide it
 
