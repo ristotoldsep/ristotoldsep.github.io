@@ -96,25 +96,97 @@ This is the single most direct lever for `veebiarendaja tallinn` and
 
 ## 5. Client credits and backlinks
 
-A link from a client's own site, in a sentence that says what he did, is worth
-far more than a footer "Website by".
+**This is the highest-value item on the list.** Do it before the blog, before
+any further on-site work.
 
-- [ ] Ask past clients to credit him in their news post or about page.
-- [ ] Target: Clarte, Paavli Kvartal, PR Permanent PMU, Ribaana Horm, Snabb.
+### The credits already exist and they do not work
+
+Checked 2026-09-17. Four of six client sites already link back, every one with
+the anchor text `RT`:
+
+| Site | Credit | Anchor | Action |
+|---|---|---|---|
+| clarte.ee | yes | `RT` | [ ] rewrite anchor |
+| paavli.ee | yes | `RT` | [ ] rewrite anchor |
+| pilleriin.com | yes | `RT` | [ ] rewrite anchor |
+| ribaanahorm.ee | yes, at `opacity: 0.5` | `\| RT` | [ ] rewrite anchor, normalise opacity |
+| serenesleep.ee | **none** | | [ ] add credit |
+| snabb.xyz | **none** | | [ ] add credit |
+
+The four engine baselines show this failing in practice:
+
+- Claude could only attribute clarte.ee by fetching the page and reading the
+  footer. Not from search.
+- Perplexity could not attribute clarte.ee at all, and credited Paavli Kvartal
+  to "Rixio, a digital agency" with no person named.
+- paavli.ee **has** an RT credit, and Claude still could not work out who built
+  it.
+
+A link is not an association. `RT` hands an engine a URL with no name to bind it
+to, so nothing connects paavli.ee to the string "Risto Tõldsep". Two letters
+cannot be matched to a person.
+
+### The fix
+
+Put the names in the anchor text. That is the entire change.
+
+```html
+<p class="site-credit">
+  Veebiarendus ja disain:
+  <a href="https://ristotoldsep.eu/">Risto Tõldsep</a>
+  <span aria-hidden="true">×</span>
+  <a href="https://rixio.ee/">Rixio Digital</a>
+</p>
+```
+
+```css
+.site-credit {
+    font-size: 0.8rem;
+    opacity: 0.7;          /* discreet, still legible. Not 0, not hidden */
+}
+.site-credit a { color: inherit; }
+.site-credit a:hover { opacity: 1; }
+```
+
+English variant: `Web development and design: Risto Tõldsep × Rixio Digital`.
+
+Linking both domains is worth doing: two named anchors, and it ties the two
+properties to the same work. If the Rixio mark is used as the link rather than
+the text, give it `aria-label="Rixio Digital"` so it is not an anonymous link.
+
+### Do not hide it
+
+Hidden text is a named Google spam policy violation: CSS hiding, off-screen
+positioning, `opacity: 0`, `font-size: 0`, matching text and background colours.
+
+It would probably still work for AI crawlers, which read raw HTML and ignore
+visibility. It is not worth it, for one reason: **a manual action lands on the
+client's site, not on ristotoldsep.eu.** That means risking someone else's
+business to gain a backlink. A visible line earns the identical GEO benefit with
+none of that exposure.
+
+A small muted credit in a footer is ordinary practice and nobody objects to it.
+
+### Clients without access
+
+For sites where the footer cannot be edited directly, ask. Templates in both
+languages below. Aim for a sentence in content, such as a news post or a
+partners page, rather than a sitewide footer link, which carries more weight.
 
 ### Credit request, Estonian
 
 > Tere [nimi], üks väike palve. Kui teil on plaanis uuest kodulehest kuskil
 > kirjutada või kui teil on lehel koht, kus partnerid on kirjas, kas te saaksite
-> lisada rea stiilis "Veebiarenduse ja disaini teostas Risto Tõldsep" koos
-> lingiga ristotoldsep.eu-le? See aitab mind rohkem kui oskate arvata ja
+> lisada rea stiilis "Veebiarenduse ja disaini teostas Risto Tõldsep", kus
+> minu nimi ise on lingiks ristotoldsep.eu-le? See aitab mind rohkem kui oskate arvata ja
 > loomulikult ei ole sellega mingit kiiret.
 
 ### Credit request, English
 
 > Hi [name], a small favour. If you ever write about the new site, or if you
 > have a partners section, would you be able to add a line along the lines of
-> "Web development and design by Risto Tõldsep" with a link to ristotoldsep.eu?
+> "Web development and design by Risto Tõldsep", with my name itself as the
+> link to ristotoldsep.eu?
 > It helps me more than you'd think, and there's no rush at all.
 
 ---
