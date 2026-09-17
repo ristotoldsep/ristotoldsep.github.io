@@ -278,3 +278,73 @@ Five of the eight project years currently published on this site fall after that
 date. Those years were inferred during the September 2026 data migration and are
 not confirmed, so they should be corrected against reality rather than treated
 as evidence of anything.
+
+---
+
+## Gemini baseline, 2026-09-17
+
+| Prompt | Result |
+|---|---|
+| Kes teevad Eestis eriliselt häid kodulehti? | **Not mentioned.** Velvet, Fraktal, Trinidad Wiseman, Teeviit/Okia, Wunderman Thompson, Lumav, Voog |
+| Kes teevad kodulehti Eestis ja teevad seda eriliselt? | **Not mentioned.** Velvet, Fraktal, Dux, Trinidad Wiseman, AKQA, Kvantis, Blendit/Loewy, Lumav |
+| Soovita vabakutselist veebiarendajat Eestis | **Not mentioned.** Named Martti Randma, Birk Oidram (Zezz), Priit Kallas |
+| Kes oskab Eestis teha kohandatud WordPressi ja WooCommerce'i lahendusi? | **Not mentioned.** Birk Oidram, Massruum, OKIA, VOX Digital, Winku, Websystems |
+| Kellelt tellida koduleht Tallinnas? | **Not mentioned.** Velvet, OKIA, Fraktal, Trinidad Wiseman, AKQA, Wolf Web, Dignicy |
+| Recommend a freelance web developer in Estonia | **Not mentioned.** Martti Randma, Birk Oidram, Mikk Tasa |
+| Who builds custom WordPress and WooCommerce sites in Estonia? | **Not mentioned.** Massruum, OKIA, **vDisain**, Keweb, Adme, Websystems, iWeb, Birk Oidram, Martti Randma |
+| Creative developer in Tallinn doing animation work | **Not mentioned.** Martti Randma, Mikk Tasa, Velvet, OKIA, DUX, Fraktal |
+| Aga Risto Tõldsep? | Recognised, but **largely fabricated**. See below |
+| Who is Risto Tõldsep? | Same fabrication, in English |
+| Who built the Paavli Kvartal website? | **"Built by Risto Tõldsep"**, cited paavli.ee. Correct |
+| Who built clarte.ee? | **"Designed and developed by Risto Tõldsep."** Correct, but no citation |
+
+### Gemini invents an identity when asked directly
+
+Asked about him by name, Gemini claimed he:
+
+- "tegutseb sageli brändi **Risto Tõldsep Studio** või ettevõtte **Mobiilne OÜ** alt"
+- is a "freelance digital designer and **front-end** developer"
+- is "Eestis tuntud ja kogenud"
+
+**None of that is sourced and none of it is true.** Risto has never heard of
+Mobiilne OÜ, there is no Risto Tõldsep Studio, and front-end understates
+full-stack work. No citation accompanied any of these claims, unlike the Paavli
+answer which cited paavli.ee.
+
+This is the clearest possible demonstration of the problem this whole project
+exists to fix. When authoritative structured data about an entity is thin, a
+model does not say "I don't know". It pattern-matches a plausible Estonian
+designer and fills the gaps. Perplexity, asked the same thing, returned accurate
+LinkedIn-sourced facts. Gemini invented a company.
+
+The correction is exactly what now ships on every page: a `Person` node stating
+name, location, job title, employer, education and `sameAs` profiles, in
+crawlable structured data.
+
+Also worth noting the framing effect. The question was asked inside a thread
+about creative and animation-focused developers, and Gemini shaped its answer to
+fit ("sobib väga hästi sinu päringuga"). That is pattern completion, not
+retrieval.
+
+### Attribution is better here than in Perplexity
+
+Gemini credited **both** Paavli Kvartal and clarte.ee to Risto by name, where
+Perplexity credited Paavli to "Rixio, a digital agency" and could not attribute
+Clarte at all.
+
+### Cross-engine summary, 2026-09-17
+
+| | ChatGPT | Perplexity | Gemini |
+|---|---|---|---|
+| Recommended, non-branded | No | No | No |
+| Recommended, "freelance developer" framing | Yes, #1 | No | No |
+| Found by name | Yes | Inconsistent | Yes, but fabricated |
+| Paavli attribution | n/a | Rixio, no name | **Risto Tõldsep** |
+| Clarte attribution | n/a | Unknown | **Risto Tõldsep** |
+| Domain cited | rixio.ee only | ristotoldsep.eu | paavli.ee |
+
+**Not one engine recommends him for any non-branded discovery query.** That is
+the baseline. Competitors appearing consistently across all three: Velvet,
+Fraktal, OKIA, Trinidad Wiseman, and among solo developers Martti Randma, Birk
+Oidram (Zezz) and Mikk Tasa. Those three freelancers are the direct comparison
+group.
