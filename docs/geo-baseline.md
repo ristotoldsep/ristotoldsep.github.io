@@ -334,17 +334,84 @@ Clarte at all.
 
 ### Cross-engine summary, 2026-09-17
 
-| | ChatGPT | Perplexity | Gemini |
-|---|---|---|---|
-| Recommended, non-branded | No | No | No |
-| Recommended, "freelance developer" framing | Yes, #1 | No | No |
-| Found by name | Yes | Inconsistent | Yes, but fabricated |
-| Paavli attribution | n/a | Rixio, no name | **Risto Tõldsep** |
-| Clarte attribution | n/a | Unknown | **Risto Tõldsep** |
-| Domain cited | rixio.ee only | ristotoldsep.eu | paavli.ee |
+| | ChatGPT | Perplexity | Gemini | Claude |
+|---|---|---|---|---|
+| Recommended, non-branded | No | No | No | No |
+| Recommended, "freelance developer" framing | Yes, #1 | No | No | No |
+| Found by name | Yes | Inconsistent | Yes, but fabricated | Yes |
+| Paavli attribution | n/a | Rixio, no name | Risto Tõldsep | **Could not determine** |
+| Clarte attribution | n/a | Unknown | Risto Tõldsep | Risto Tõldsep, by reading the footer |
+| Domain cited | rixio.ee only | ristotoldsep.eu | paavli.ee | ristotoldsep.eu |
 
-**Not one engine recommends him for any non-branded discovery query.** That is
-the baseline. Competitors appearing consistently across all three: Velvet,
-Fraktal, OKIA, Trinidad Wiseman, and among solo developers Martti Randma, Birk
-Oidram (Zezz) and Mikk Tasa. Those three freelancers are the direct comparison
-group.
+**Not one of the four engines recommends him for any non-branded discovery
+query.** That is the baseline, and it is unambiguous.
+
+Agencies recurring across engines: Velvet, OKIA, Trinidad Wiseman, Fraktal
+(which Claude says stopped trading in 2023), Haiku, Thorgate.
+
+Solo developers recurring across engines, which is the real comparison group:
+**Martti Randma**, **Birk Oidram (Zezz)**, **Mikk Tasa**, **Andri Sisask**.
+Worth studying what they have that he does not.
+
+---
+
+## Claude baseline, 2026-09-17
+
+Chat was logged in and Claude knew who it was talking to ("Kuna sina ise oled
+vabakutseline veebiarendaja Eestis"). It still did not surface him in any
+search. Bias was working in his favour and produced nothing, which makes the
+negative result stronger rather than weaker.
+
+| Prompt | Result |
+|---|---|
+| Kes teevad kodulehti Eestis ja teevad seda eriliselt? | **Not mentioned.** Velvet, Haiku, Thorgate, iWeb |
+| Kes teevad Eestis eriliselt häid kodulehti? | **Not mentioned.** Same. Noted Fraktal ceased trading in 2023, which Gemini still recommends |
+| Soovita vabakutselist veebiarendajat Eestis | **Not mentioned.** Said results were poor and that Estonia has no central list of freelance developers |
+| Kes oskab Eestis teha kohandatud WordPressi ja WooCommerce'i lahendusi? | **Not mentioned.** Web Systems, Major Source, Andri Sisask |
+| Who built the Paavli Kvartal website? | **Could not determine** from search |
+| Who built clarte.ee? | **Correct**, but only by fetching the page and reading the footer credit |
+
+### The finding: the credits exist, and they are too weak to work
+
+Checked directly. Four of six client sites already link back:
+
+| Site | Credit | Anchor text |
+|---|---|---|
+| clarte.ee | yes | `RT` |
+| paavli.ee | yes | `RT` |
+| pilleriin.com | yes | `RT` |
+| ribaanahorm.ee | yes, `opacity: 0.5` | `| RT` |
+| serenesleep.ee | **none** | |
+| snabb.xyz | **none** | |
+
+Every anchor is two letters. No name, no keyword, no sentence describing the
+work. This is precisely the weak pattern the off-site checklist warns about, and
+the baselines show it failing in practice:
+
+- Claude could only attribute clarte.ee by fetching the page and reading the
+  footer. It could not do it from search.
+- Perplexity could not attribute clarte.ee at all, and credited Paavli to
+  "Rixio, a digital agency".
+- Paavli **has** an RT credit, and Claude still could not determine who built it.
+
+A link is not the same as an association. "RT" gives an engine a URL but no name
+to bind it to, so nothing connects paavli.ee to the string "Risto Tõldsep".
+
+**Highest-value fix available right now:** change the anchor text on those four
+sites from `RT` to `Risto Tõldsep`, ideally in a sentence such as
+"Veebiarenduse ja disaini teostas Risto Tõldsep". Three of the four are for
+people he knows well, so the ask is trivial. This is a bigger win than any
+remaining on-site work and it takes an afternoon.
+
+Then add credits to serenesleep.ee and snabb.xyz, which have none.
+
+### Separate bug found on pilleriin.com
+
+The `Organization` node on pilleriin.com carries Clarte's description:
+
+> "PR Permanent pakub teaduspõhiseid ilu- ja hooldustooteid... Premium ripsme- ja
+> kulmuseerum nähtavate tulemustega."
+
+That describes serum products, not a permanent makeup studio. `legalName` is
+"Clarte OÜ" and contact is info@clarte.ee, which may be correct if Clarte OÜ is
+the operating entity, but the description is copy-paste and Google reads it.
