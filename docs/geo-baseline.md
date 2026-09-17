@@ -232,3 +232,49 @@ other harder to trust.
 either way, so competing for the same queries costs nothing in practice. Still
 worth cross-linking the two domains and adding each to the other's `sameAs`,
 which aids entity consolidation without reducing the overlap.
+
+---
+
+## Perplexity baseline, 2026-09-17
+
+Uncontaminated: Perplexity has no memory of Risto, so unlike the ChatGPT run
+these results reflect retrieval only.
+
+| Prompt | Result |
+|---|---|
+| Kes teevad kodulehti Eestis ja teevad seda eriliselt? | **Not mentioned.** Listed Proekspert, Nortal, Mobi Lab, Voog, Reach Digital, Parallel Ideas, **vDisain**, Webabi, Fivecube, Hmmm, Brand New, Made By, ANODA, Bit Finer, Solid Digital, Ascend, Ridango |
+| Kes teevad Eestis eriliselt häid kodulehti? | **Not mentioned.** Velvet, Brand Manual, Refleks, AKU, Koor, Hable, Pult, Ruum 414, Bond, Goodface, celerart., Faster Than Light, Excited, Street 17, WAPI, Ronas IT, Brocoders, Oski, XYSUM, Elogic |
+| Creative developer in Tallinn doing animation work | **Could not find him.** Said outright: "ei leidnud ma värsket infot tema kui veebiarendaja või disaineri kohta 2025-2026. aasta allikatest", speculated he may have stopped updating his site, gone white-label, or changed field. Recommended Abron Studio, Hmmm, Famework, Valtro Studio instead |
+| Who is Risto Tõldsep? | **Found, detailed and accurate.** Cited ristotoldsep.eu and LinkedIn. Correct on TalTech, vDisain, Reaktiiv, services |
+| Who built the Paavli Kvartal website? | **Attributed to "Rixio, a digital agency"**, cited rixio.ee/tehtud-tood/paavli-kvartal. Risto's name does not appear |
+| Who built clarte.ee? | **Could not determine.** Suggested checking the footer or emailing the client, then recommended Massruum, Velsio, EestiWeb, Keweb as alternatives |
+
+### What this baseline actually shows
+
+**Zero recommendations on any non-branded query.** Both Estonian discovery
+prompts returned long agency lists without him. Notably **vDisain, his former
+employer, is listed and he is not.**
+
+**Retrieval is inconsistent.** One response gave a full, accurate biography
+citing ristotoldsep.eu; another, asked in a different framing, concluded there
+was no recent information about him at all and suggested he might have left the
+industry. Same engine, same day. That is what shallow indexing looks like: he is
+findable when you already know the name and the query is unambiguous, and
+invisible otherwise.
+
+**The attribution queries are the cleanest signal, and both failed.**
+Paavli Kvartal went to "Rixio, a digital agency" with no personal name attached.
+clarte.ee could not be attributed at all. These are the two prompts most directly
+targeted by the new case studies and by client credits, which makes them the best
+before/after measurement in this file.
+
+**ristotoldsep.eu is cited here**, unlike in the ChatGPT run where every citation
+went to rixio.ee.
+
+### Note on dates
+
+Perplexity reported **Reaktiiv from December 2024**, presumably from LinkedIn.
+Five of the eight project years currently published on this site fall after that
+date. Those years were inferred during the September 2026 data migration and are
+not confirmed, so they should be corrected against reality rather than treated
+as evidence of anything.
