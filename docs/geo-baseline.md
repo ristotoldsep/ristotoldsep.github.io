@@ -50,7 +50,72 @@ They draw on different indexes, so a win in one is not a win in all.
 
 ## Search Console baseline
 
-Fill in once GSC is verified. Record 28-day totals.
+**Captured 2026-09-17 for the 3 months to 2026-09-13**, which ends three days
+before the 38-page build went live. A clean pre-change measurement.
+
+| Metric | Value |
+|---|---|
+| Distinct queries | **12** |
+| Total impressions | **~12** (1 per query) |
+| Total clicks | **0** |
+| Indexed pages | **2** |
+| Branded queries ("risto tõldsep" / "risto toldsep") | **0** |
+| Estonian queries | **0** |
+
+Every query recorded:
+
+```
+wordpress ai chatbot plugin      wordpress chatbot plugin
+wordpress gtm plugin             wordpress plugin agenda
+claude ui plugin                 n8n wordpress
+best plugin seo wordpress        vue plugin
+wordpress pixel plugin           wordpress ai plugin
+(+2 more)
+```
+
+### What this says
+
+Three things, and the third is the important one.
+
+**The queries are all accidental.** Every one is someone hunting for a *plugin*,
+i.e. software to install. They matched because the single homepage happened to
+mention AI chatbots, GTM, n8n and Vue in its project descriptions. None of them
+is a person looking to hire a developer. Commercial value: zero. This is exactly
+what a 2-URL site with no intent-matched pages produces.
+
+**No Estonian queries at all.** Nothing for veebiarendaja, kodulehe tegija or
+anything in that family, which is the market actually worth winning.
+
+**No branded queries either, and that is the finding that matters.** Not "ranks
+badly for his name" but *nobody searched it*. Search demand for the name is
+effectively nil. That reframes the problem: the site can be perfectly optimised
+and still get no traffic, because SEO captures existing demand and there is
+none to capture yet. Demand for a personal brand comes from third parties
+talking about you, which is what the off-site checklist is for. It is the
+quantitative case for why client backlinks outrank every remaining on-site task.
+
+### Targets to beat
+
+At 4 and 8 weeks, re-run the same 3-month view:
+
+| Metric | Baseline | 4 weeks | 8 weeks |
+|---|---|---|---|
+| Indexed pages | 2 | | |
+| Distinct queries | 12 | | |
+| Impressions | ~12 | | |
+| Clicks | 0 | | |
+| Branded impressions | 0 | | |
+| Estonian-language queries | 0 | | |
+
+Also open **Performance → generative AI features** in Search Console. Google
+reports impressions from AI Overviews and AI Mode separately there, which is the
+closest thing to a direct GEO metric that exists.
+
+---
+
+## Original per-query table
+
+Fill in once GSC has more data. Record 28-day totals.
 
 | Query | Impressions | Clicks | Avg position |
 |---|---|---|---|
