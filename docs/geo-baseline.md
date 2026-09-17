@@ -228,4 +228,7 @@ an answer engine, this is close to the worst possible arrangement: two sites
 competing for the same Estonian queries, splitting the signal, each making the
 other harder to trust.
 
-**This needs a decision before any further SEO work on either domain.**
+**Decided 2026-09-17: leave the overlap in place.** The lead reaches Risto
+either way, so competing for the same queries costs nothing in practice. Still
+worth cross-linking the two domains and adding each to the other's `sameAs`,
+which aids entity consolidation without reducing the overlap.
