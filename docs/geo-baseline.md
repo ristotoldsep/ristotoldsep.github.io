@@ -69,6 +69,30 @@ Site-wide: impressions ______ / clicks ______ / indexed pages **2**.
 
 ---
 
+## Crawler-visibility baseline
+
+Recorded 2026-09-17, the day the 38-page build went live. This is the only part
+of the baseline that can be measured automatically; the answer-engine prompts
+below all sit behind login walls and have to be run by hand.
+
+| Crawler | Homepage bytes | Words after stripping tags | llms-full.txt |
+|---|---|---|---|
+| GPTBot | 48,458 | 1,537 | 200 |
+| OAI-SearchBot | 48,458 | 1,537 | 200 |
+| PerplexityBot | 48,458 | 1,537 | 200 |
+| ClaudeBot | 48,458 | 1,537 | 200 |
+| Googlebot | 48,458 | 1,537 | - |
+| bingbot | 48,458 | 1,537 | - |
+
+Identical payloads confirm no cloaking and no user-agent gating. Re-run with:
+
+```bash
+for ua in GPTBot PerplexityBot ClaudeBot Googlebot bingbot; do
+  printf "%-16s %s words\n" "$ua" \
+    "$(curl -s -A "$ua" https://ristotoldsep.eu/ | sed 's/<[^>]*>/ /g' | wc -w)"
+done
+```
+
 ## Crawlability baseline
 
 ```bash
