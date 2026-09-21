@@ -85,12 +85,21 @@ to fake.
 
 ## 4. Google Business Profile
 
-- [ ] Create a service-area business for Tallinn, if eligible.
-- [ ] Category: Website designer / Web developer.
-- [ ] Use the canonical sentence in the description.
+The single most direct lever for `veebiarendaja tallinn` and
+`kodulehe tegija tallinn`, because the map pack sits above the organic results
+and nothing on-page gets you into it.
 
-This is the single most direct lever for `veebiarendaja tallinn` and
-`kodulehe tegija tallinn`.
+Full setup pack, with every field ready to paste and the character counts
+already checked: **[google-business-profile.md](google-business-profile.md)**
+
+- [ ] Confirm eligibility (service-area businesses must meet clients in person)
+- [ ] Create the listing as `Rixio Digital`, service-area, address hidden
+- [ ] Primary category: Website designer
+- [ ] Paste the ET and EN descriptions
+- [ ] Add services with the prices already published on rixio.ee
+- [ ] Complete verification, most likely by video
+- [ ] Photos, then 3 to 5 reviews, which matter more than anything else here
+- [ ] Add the GBP URL to the site's `sameAs`
 
 ---
 
