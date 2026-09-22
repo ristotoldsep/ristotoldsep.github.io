@@ -113,14 +113,27 @@ any further on-site work.
 Checked 2026-09-17. Four of six client sites already link back, every one with
 the anchor text `RT`:
 
-| Site | Credit | Anchor | Action |
+**Done 2026-09-22.** All four existing credits now carry a name. Verified live:
+
+| Site | Anchor | Links | Status |
 |---|---|---|---|
-| clarte.ee | yes | `RT` | [ ] rewrite anchor |
-| paavli.ee | yes | `RT` | [ ] rewrite anchor |
-| pilleriin.com | yes | `RT` | [ ] rewrite anchor |
-| ribaanahorm.ee | yes, at `opacity: 0.5` | `\| RT` | [ ] rewrite anchor, normalise opacity |
-| serenesleep.ee | **none** | | [ ] add credit |
-| snabb.xyz | **none** | | [ ] add credit |
+| clarte.ee | `Risto Tõldsep` / `Rixio Digital` | both | [x] done |
+| pilleriin.com | `Risto Tõldsep` / `Rixio Digital` | both | [x] done |
+| ribaanahorm.ee | `RT` / `Rixio`, `aria-label` carries full names | both | [x] done |
+| paavli.ee | `RT` / `Rixio`, `aria-label` carries full names | both | [x] done |
+| serenesleep.ee | none | | [ ] add credit |
+| snabb.xyz | none | | [ ] add credit |
+
+Minor: the two compact credits show `Rixio` rather than `Rixio Digital`,
+written before the name was settled against the GBP listing. The `aria-label`
+already says "Rixio Digital", so engines have the full name. Worth correcting
+the visible text next time either site is touched, not worth a deploy of its
+own.
+
+**Re-run the attribution prompts in four to eight weeks.** Before the change,
+"Who built the Paavli Kvartal website?" failed on Claude and was credited to
+"Rixio, a digital agency" on Perplexity, and clarte.ee could not be attributed
+at all. Those two prompts now test a single changed variable.
 
 The four engine baselines show this failing in practice:
 
