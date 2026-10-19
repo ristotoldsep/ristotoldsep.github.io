@@ -132,7 +132,8 @@ function initCursor(): void {
   // The Vestly chat's buttons live in its shadow DOM, out of reach of the listeners above:
   // find them through the event path instead.
   let overChatButton = false;
-  document.addEventListener('pointerover', (e: PointerEvent) => {
+  // mouseover, not pointerover: it fires after the mouseleave of the element above it.
+  document.addEventListener('mouseover', (e: MouseEvent) => {
     const path = e.composedPath().filter((n): n is Element => n instanceof Element);
     const inChat = path.some(el => el.id === 'vestly-chat');
     const onButton = inChat && path.some(el => el.matches('a, button:not(:disabled), [role="button"]'));
