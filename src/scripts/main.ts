@@ -129,6 +129,19 @@ function initCursor(): void {
     el.addEventListener('mouseleave', () => { dot.classList.remove('hover'); ring.classList.remove('hover'); });
   });
 
+  // The Vestly chat's buttons live in its shadow DOM, out of reach of the listeners above:
+  // find them through the event path instead.
+  let overChatButton = false;
+  document.addEventListener('pointerover', (e: PointerEvent) => {
+    const path = e.composedPath().filter((n): n is Element => n instanceof Element);
+    const inChat = path.some(el => el.id === 'vestly-chat');
+    const onButton = inChat && path.some(el => el.matches('a, button:not(:disabled), [role="button"]'));
+    if (onButton === overChatButton) return;
+    overChatButton = onButton;
+    dot.classList.toggle('hover', onButton);
+    ring.classList.toggle('hover', onButton);
+  }, { passive: true });
+
   document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
   document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
 }

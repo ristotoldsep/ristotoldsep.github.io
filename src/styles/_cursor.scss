@@ -1,12 +1,15 @@
 /* ── Custom Cursor ───────────────────────────────────────────── */
 @media (pointer:fine) {
     body,a,button,input,textarea,select { cursor:none; }
+    // The Vestly chat shows the real pointer unless told otherwise; here the dot and ring do it.
+    #vestly-chat { --vestly-cursor: none; --vestly-cursor-pointer: none; --vestly-cursor-text: none; }
 
     .cursor, .cursor-ring {
         position: fixed;
         border-radius: 50%;
         pointer-events: none;
-        z-index: 9999;
+        // Above everything, the Vestly chat included (its layer is 99999).
+        z-index: 2147483647;
         top: 0; left: 0;
         transform: translate(-50%,-50%);
         transition: opacity 0.2s;
