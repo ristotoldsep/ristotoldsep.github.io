@@ -93,3 +93,12 @@
     .cta-full-actions .btn-primary,
     .cta-full-actions .btn-ghost { width: 100%; justify-content: center; }
 }
+
+/* Product cards carry a picture, so they stack before the agency cards do. */
+@media (max-width: 900px) {
+    .product-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+    .product-gallery { grid-template-columns: 1fr; }
+    .product-card-body { padding: 24px 22px 26px; }
+}

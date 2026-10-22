@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageShell from '../../layouts/PageShell.astro';
+import PageHeader from '../layout/PageHeader.astro';
+import SectionCtaFull from '../sections/SectionCtaFull.astro';
+import Footer from '../sections/Footer.astro';
+import { siteCopy } from '../../i18n/site';
+import type { Locale } from '../../data/types';
+import { allProducts, productUi, type Product } from '../../data/products';
+import { alternates, routes } from '../../lib/routes';
+import { softwareAppNode } from '../../lib/schema';
+
+interface Props {
+  product: Product;
+  locale: Locale;
+}
+
+const { product, locale } = Astro.props;
+const copy = siteCopy[locale];
+const ui = productUi[locale];
+const t = product.i18n[locale];
+const other = allProducts.find((p) => p.id !== product.id);
+
+const SITE = Astro.site ?? new URL('https://ristotoldsep.eu');
+const pageUrl = new URL(routes.product(locale, product.id), SITE).href;
+
+const breadcrumbs = [
+  { name: copy.pages.home, url: new URL(routes.home(locale), SITE).href },
+  { name: copy.nav.links.products, url: new URL(`${routes.home(locale)}#products`, SITE).href },
+  { name: product.name, url: pageUrl },
+];
+---
+
+<BaseLayout
+  lang={locale}
+  title={t.seo.title}
+  description={t.seo.description}
+  ogTitle={t.heading}
+  ogType="website"
+  ogImage={product.cover.src}
+  ogImageAlt={t.imageAlt}
+  ogImageType="image/webp"
+  ogImageWidth={product.cover.width}
+  ogImageHeight={product.cover.height}
+  alternates={alternates.product(product.id)}
+  pageType="ItemPage"
+  breadcrumbs={breadcrumbs}
+  faq={t.faq}
+  datePublished={product.publishedAt}
+  dateModified={product.updatedAt}
+  schema={[softwareAppNode(product, locale, SITE.origin, pageUrl)]}
+>
+  <PageShell copy={copy} alternates={alternates.product(product.id)}>
+
+    <PageHeader
+      eyebrow={ui.pageEyebrow}
+      heading={t.heading}
+      lede={t.tagline}
+      breadcrumbs={breadcrumbs.map((c) => ({ name: c.name, url: new URL(c.url).pathname + new URL(c.url).hash }))}
+    >
+      <div class="page-summary" style="margin-top:28px">
+        <p>{t.summary}</p>
+      </div>
+
+      <div class="page-facts">
+        <div class="page-fact">
+          <small>{ui.facts.type}</small>
+          <span>{ui.facts.typeValue}</span>
+        </div>
+        <div class="page-fact">
+          <small>{ui.facts.year}</small>
+          <span>{product.year}</span>
+        </div>
+        <div class="page-fact">
+          <small>{ui.facts.role}</small>
+          <span>{t.role}</span>
+        </div>
+        <div class="page-fact">
+          <small>{ui.facts.site}</small>
+          <a href={product.url} target="_blank" rel="noopener">{new URL(product.url).hostname}</a>
+        </div>
+        <div class="page-fact">
+          <small>{ui.facts.studio}</small>
+          <a href={product.rixioUrl[locale]} target="_blank" rel="noopener">Rixio Digital</a>
+        </div>
+      </div>
+    </PageHeader>
+
+    <section class="page-section">
+      {product.demo ? (
+        <div>
+          <h2 class="page-h2">{ui.demo}</h2>
+          <div class="product-demo" data-demo={product.demo.src}>
+            <img src={product.demo.poster} alt={t.imageAlt} width="1600" height="900" />
+            <button type="button" class="product-demo-btn"><span>{ui.demoStart}</span></button>
+          </div>
+          <p class="product-demo-note">{ui.demoNote}</p>
+        </div>
+      ) : (
+        <figure class="page-cover">
+          <img src={product.cover.src} alt={t.imageAlt} width={product.cover.width} height={product.cover.height} />
+        </figure>
+      )}
+    </section>
+
+    <section class="page-section page-section--tight">
+      <h2 class="page-h2">{ui.about}</h2>
+      <div class="page-prose">
+        {t.about.map((para) => <p>{para}</p>)}
+      </div>
+    </section>
+
+    <section class="page-section">
+      <h2 class="page-h2">{ui.highlights}</h2>
+      <div class="page-highlights">
+        {t.highlights.map((h) => (
+          <article class="page-highlight">
+            <h3 class="page-h3">{h.title}</h3>
+            <p>{h.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {product.gallery && product.gallery.length > 0 && (
+      <section class="page-section">
+        <h2 class="page-h2">{ui.gallery}</h2>
+        <div class="product-gallery">
+          {product.gallery.map((g) => (
+            <img src={g.src} alt={g.alt[locale]} width={g.width} height={g.height} loading="lazy" />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="page-section page-section--tight">
+      <h2 class="page-h2">{ui.audiences}</h2>
+      <ul class="page-list">
+        {t.audiences.map((a) => <li>{a}</li>)}
+      </ul>
+    </section>
+
+    <section class="page-section page-section--tight">
+      <h2 class="page-h2">{ui.stack}</h2>
+      <div class="page-stack">
+        {product.stack.map((tech) => <span>{tech}</span>)}
+      </div>
+
+      <div class="page-actions">
+        <a href={product.url} target="_blank" rel="noopener" class="btn-primary">{ui.visit} {new URL(product.url).hostname}</a>
+        <a href={product.rixioUrl[locale]} target="_blank" rel="noopener" class="btn-ghost">{ui.rixio}</a>
+      </div>
+    </section>
+
+    {t.faq.length > 0 && (
+      <section class="page-section">
+        <h2 class="page-h2">{ui.faq}</h2>
+        <div class="page-faq">
+          {t.faq.map((item) => (
+            <div class="page-faq-item">
+              <h3>{item.q}</h3>
+              <p set:html={item.a}></p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {other && (
+      <section class="page-section">
+        <h2 class="page-h2">{ui.other}</h2>
+        <div class="page-cards">
+          <a class="page-card" href={routes.product(locale, other.id)}>
+            <div class="page-card-img">
+              <img src={other.cover.src} alt={other.i18n[locale].imageAlt} loading="lazy" width={other.cover.width} height={other.cover.height} />
+            </div>
+            <div class="page-card-body">
+              <h3>{other.name}</h3>
+              <p>{other.i18n[locale].tagline}</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    )}
+
+    <SectionCtaFull copy={copy} />
+    <Footer copy={copy} />
+  </PageShell>
+</BaseLayout>
+
+<script>
+  // The tour is a heavy WebGL page: it loads only when the visitor asks for it.
+  document.querySelectorAll<HTMLElement>('.product-demo[data-demo]').forEach((box) => {
+    box.querySelector('button')?.addEventListener('click', () => {
+      const frame = document.createElement('iframe');
+      frame.src = box.dataset.demo!;
+      frame.title = 'Planly 3D';
+      frame.allow = 'fullscreen; autoplay';
+      frame.allowFullscreen = true;
+      box.replaceChildren(frame);
+    });
+  });
+</script>

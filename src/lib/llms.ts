@@ -1,5 +1,6 @@
 import type { Locale } from '../data/types';
 import { publishedProjects } from '../data/projects';
+import { allProducts } from '../data/products';
 import { allServices } from '../data/services';
 import { caseStudies } from '../data/case-studies';
 import { siteCopy, socialLinks } from '../i18n/site';
@@ -11,6 +12,7 @@ const STRINGS = {
   overview: { en: 'Overview', et: 'Ülevaade' },
   services: { en: 'Services', et: 'Teenused' },
   caseStudies: { en: 'Case studies', et: 'Juhtumiuuringud' },
+  products: { en: 'Own products', et: 'Oma tooted' },
   stack: { en: 'Tech stack', et: 'Tehnoloogiad' },
   contact: { en: 'Contact', et: 'Kontakt' },
   optional: { en: 'Optional', et: 'Lisaks' },
@@ -102,6 +104,14 @@ export function renderLlmsIndex(locale: Locale, site: URL): string {
     }),
     '',
 
+    `## ${t('products', locale)}`,
+    '',
+    ...allProducts.map((product) => {
+      const p = product.i18n[locale];
+      return `- [${product.name}](${abs(site, routes.product(locale, product.id))}): ${p.summary} Product site: ${product.url}`;
+    }),
+    '',
+
     `## ${t('stack', locale)}`,
     '',
     ...copy.skills.categories.map(
@@ -137,6 +147,19 @@ export function renderLlmsFull(locale: Locale, site: URL): string {
       for (const item of s.faq) lines.push(`- **${item.q}** ${item.a}`);
       lines.push('');
     }
+  }
+
+  lines.push(`## ${t('products', locale)}`, '');
+  for (const product of allProducts) {
+    const p = product.i18n[locale];
+    lines.push(`### ${product.name}`, '');
+    lines.push(`URL: ${abs(site, routes.product(locale, product.id))}`, '');
+    lines.push(`Product site: ${product.url} | Year: ${product.year} | Role: ${p.role}`, '');
+    lines.push(p.summary, '', ...p.about.flatMap((x) => [x, '']));
+    lines.push(`Stack: ${product.stack.join(', ')}`, '');
+    lines.push(`**${t('highlights', locale)}**`, '');
+    for (const h of p.highlights) lines.push(`- **${h.title}** ${h.text}`);
+    lines.push('');
   }
 
   lines.push(`## ${t('caseStudies', locale)}`, '');

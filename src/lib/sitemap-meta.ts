@@ -1,3 +1,4 @@
+import { allProducts } from '../data/products';
 import type { Locale } from '../data/types';
 import { publishedProjects } from '../data/projects';
 import { allServices } from '../data/services';
@@ -37,6 +38,10 @@ function buildIndex(): Map<string, SitemapEntry> {
       priority: 0.8,
       lastmod: project.updatedAt,
     });
+  }
+
+  for (const product of allProducts) {
+    add(alternates.product(product.id), { changefreq: 'monthly', priority: 0.85, lastmod: product.updatedAt });
   }
 
   for (const service of allServices) {

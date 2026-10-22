@@ -1,6 +1,7 @@
 import type { Faq, Locale } from '../data/types';
 import type { Project } from '../data/projects';
 import type { Service } from '../data/services';
+import type { Product } from '../data/products';
 import { socialLinks } from '../i18n/site';
 
 export type SchemaNode = Record<string, unknown>;
@@ -13,6 +14,7 @@ export const ids = {
   breadcrumb: (url: string) => `${url}#breadcrumb`,
   service: (url: string) => `${url}#service`,
   work: (url: string) => `${url}#creativework`,
+  app: (url: string) => `${url}#software`,
   post: (url: string) => `${url}#article`,
 };
 
@@ -219,3 +221,26 @@ export const buildGraph = (nodes: Array<SchemaNode | null | undefined>) => ({
   '@context': 'https://schema.org',
   '@graph': nodes.filter(Boolean),
 });
+
+/** One of my own products: a SoftwareApplication I authored, its own site as sameAs. */
+export function softwareAppNode(product: Product, lang: Locale, origin: string, url: string): SchemaNode {
+  const t = product.i18n[lang];
+  return {
+    '@type': 'SoftwareApplication',
+    '@id': ids.app(url),
+    name: product.name,
+    description: t.summary,
+    url: product.url,
+    sameAs: [product.url, product.rixioUrl[lang]],
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    inLanguage: lang,
+    image: new URL(product.cover.src, origin).href,
+    author: { '@id': ids.person(origin) },
+    creator: { '@id': ids.person(origin) },
+    publisher: { '@type': 'Organization', name: 'Rixio Digital', url: 'https://rixio.ee' },
+    datePublished: product.publishedAt,
+    keywords: product.stack.join(', '),
+    mainEntityOfPage: { '@id': ids.page(url) },
+  };
+}

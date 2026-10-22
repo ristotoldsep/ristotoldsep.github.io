@@ -26,6 +26,7 @@ const anchor = (hash: string) => (isHome ? `#${hash}` : `${home}#${hash}`);
       <li><a href={anchor('home')}    class:list={['topnav-link', isHome && 'active']}>{copy.nav.links.home}</a></li>
       <li><a href={routes.workIndex(locale)}     class="topnav-link">{copy.nav.links.work}</a></li>
       <li><a href={routes.servicesIndex(locale)} class="topnav-link">{copy.nav.links.services}</a></li>
+      <li><a href={anchor('products')} class="topnav-link">{copy.nav.links.products}</a></li>
       <li><a href={routes.about(locale)}         class="topnav-link">{copy.nav.links.about}</a></li>
       <li><a href={anchor('contact')} class="topnav-link">{copy.nav.links.contact}</a></li>
     </ul>

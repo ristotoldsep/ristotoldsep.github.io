@@ -48,6 +48,7 @@ const anchor = (hash: string) => (isHome ? `#${hash}` : `${home}#${hash}`);
       <a href={anchor('home')}    class="sidebar-nav-link">{copy.nav.links.home}</a>
       <a href={routes.workIndex(copy.locale)}     class="sidebar-nav-link">{copy.nav.links.work}</a>
       <a href={routes.servicesIndex(copy.locale)} class="sidebar-nav-link">{copy.nav.links.services}</a>
+      <a href={anchor('products')} class="sidebar-nav-link">{copy.nav.links.products}</a>
       <a href={routes.about(copy.locale)}         class="sidebar-nav-link">{copy.nav.links.about}</a>
       <a href={anchor('skills')}  class="sidebar-nav-link">{copy.nav.links.skills}</a>
       <a href={anchor('contact')} class="sidebar-nav-link">{copy.nav.links.contact}</a>

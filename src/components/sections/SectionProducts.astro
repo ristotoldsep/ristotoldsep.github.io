@@ -1,0 +1,56 @@
+---
+import type { SiteCopy } from '../../i18n/site';
+import { allProducts, productUi } from '../../data/products';
+import { routes } from '../../lib/routes';
+
+interface Props {
+  copy: SiteCopy;
+}
+
+const { copy } = Astro.props;
+const locale = copy.locale;
+const ui = productUi[locale];
+---
+<section class="sec-inner" id="products">
+
+  <div class="sec-title-block">
+    <p class="sec-eyebrow animate-up">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13 13" fill="currentColor"><path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/></svg>
+      <span>{ui.eyebrow}</span>
+    </p>
+    <h2 class="sec-h2 animate-up">{ui.title}</h2>
+    <p class="sec-text animate-up">{ui.text}</p>
+  </div>
+
+  <div class="product-grid">
+    {allProducts.map((product) => {
+      const t = product.i18n[locale];
+      return (
+        <article class="product-card animate-card" style={`--glow:${product.accent}`}>
+          <div class="product-card-glow"></div>
+          <a class="product-card-img" href={routes.product(locale, product.id)} tabindex="-1" aria-hidden="true">
+            <img src={product.cover.src} alt="" width={product.cover.width} height={product.cover.height} loading="lazy" />
+          </a>
+          <div class="product-card-body">
+            <div class="product-head">
+              <img class="product-mark" src={product.mark} alt="" width="44" height="44" loading="lazy" />
+              <div>
+                <h3><a href={routes.product(locale, product.id)}>{product.name}</a></h3>
+                <p class="product-tagline">{t.tagline}</p>
+              </div>
+            </div>
+            <p class="product-desc">{t.summary}</p>
+            <div class="product-tags">
+              {product.cardTags.map((tag) => <span class="rtag rtag--outline">{tag}</span>)}
+            </div>
+            <div class="product-links">
+              <a href={routes.product(locale, product.id)} class="agency-link">{ui.more}</a>
+              <a href={product.url} target="_blank" rel="noopener" class="product-visit">{ui.visit} {new URL(product.url).hostname} ↗</a>
+            </div>
+          </div>
+        </article>
+      );
+    })}
+  </div>
+
+</section>

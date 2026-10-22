@@ -27,6 +27,7 @@ export interface SiteCopy {
       skills: string;
       contact: string;
       services: string;
+      products: string;
     };
     contactCta: string;
     openMenuLabel: string;
@@ -198,7 +199,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     nav: {
       homeAriaLabel: 'Home',
-      links: { home: 'Home', work: 'Work', services: 'Services', about: 'About', skills: 'Skills', contact: 'Contact' },
+      links: { home: 'Home', work: 'Work', services: 'Services', products: 'Products', about: 'About', skills: 'Skills', contact: 'Contact' },
       contactCta: 'Get in Touch',
       openMenuLabel: 'Open menu',
     },
@@ -396,7 +397,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
     nav: {
       homeAriaLabel: 'Avaleht',
-      links: { home: 'Avaleht', work: 'Tööd', services: 'Teenused', about: 'Minust', skills: 'Oskused', contact: 'Kontakt' },
+      links: { home: 'Avaleht', work: 'Tööd', services: 'Teenused', products: 'Tooted', about: 'Minust', skills: 'Oskused', contact: 'Kontakt' },
       contactCta: 'Võta ühendust',
       openMenuLabel: 'Ava menüü',
     },
