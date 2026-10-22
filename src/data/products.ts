@@ -2,7 +2,7 @@ import type { Faq, I18n, Img, SeoFields } from './types';
 
 /**
  * My own digital products, as opposed to client work (projects.ts). Each has
- * its own site, and a product page at rixio.ee (Rixio Digital, my studio).
+ * its own site.
  * Copy is factual: what the product does and how it's built. No invented
  * clients, user counts or results.
  */
@@ -36,8 +36,6 @@ export interface Product {
   updatedAt: string;
   /** The product's own site. */
   url: string;
-  /** Its product page on rixio.ee, per locale. */
-  rixioUrl: I18n<string>;
   mark: string;
   /** The glow colour on its card and page. */
   accent: string;
@@ -67,13 +65,12 @@ export const products = {
     publishedAt: '2026-10-22',
     updatedAt: '2026-10-22',
     url: 'https://planly.ee',
-    rixioUrl: { en: 'https://rixio.ee/en/products/planly-3d', et: 'https://rixio.ee/tooted/planly-3d' },
     mark: '/images/products/planly-mark.svg',
     accent: 'rgba(200,244,60,0.22)',
     stack: ['Three.js', 'TypeScript', 'Vite', 'Blender (Cycles light baking)', 'Python', 'Gaussian splats', 'PHP', 'Caddy'],
     cardTags: ['3D / WebGL', 'Three.js', 'Real estate', 'Own product'],
     cover: img(
-      '/images/products/planly-3d.webp',
+      '/images/products/planly-3d-card.webp',
       1600,
       1200,
       'Planly 3D tour of a furnished new-build flat on a computer and a phone',
@@ -154,7 +151,6 @@ export const products = {
     publishedAt: '2026-10-22',
     updatedAt: '2026-10-22',
     url: 'https://vestly.ee',
-    rixioUrl: { en: 'https://rixio.ee/en/products/vestly-ai', et: 'https://rixio.ee/tooted/vestly-ai' },
     mark: '/images/products/vestly-mark.svg',
     accent: 'rgba(79,91,213,0.26)',
     stack: ['Laravel', 'PHP 8.3', 'Vite', 'WordPress plugin', 'JavaScript widget', 'OpenAI', 'Anthropic Claude', 'Google Gemini'],
@@ -237,7 +233,7 @@ export const productUi: I18n<{
   more: string;
   visit: string;
   pageEyebrow: string;
-  facts: { type: string; typeValue: string; year: string; role: string; site: string; studio: string };
+  facts: { type: string; typeValue: string; year: string; role: string; site: string };
   about: string;
   highlights: string;
   audiences: string;
@@ -247,18 +243,17 @@ export const productUi: I18n<{
   demo: string;
   demoStart: string;
   demoNote: string;
-  rixio: string;
   backHome: string;
   other: string;
 }> = {
   en: {
     eyebrow: 'Products',
     title: 'Things I build and run myself',
-    text: 'Besides client work, I build my own digital products: designed, coded, launched and run end to end. Both are sold through my studio, Rixio Digital.',
+    text: 'Besides client work, I build my own digital products: designed, coded, launched and run end to end.',
     more: 'About the product',
     visit: 'Visit',
     pageEyebrow: 'Own product',
-    facts: { type: 'Type', typeValue: 'Own digital product', year: 'Launched', role: 'My role', site: 'Product site', studio: 'Sold by' },
+    facts: { type: 'Type', typeValue: 'Own digital product', year: 'Launched', role: 'My role', site: 'Product site' },
     about: 'What it does',
     highlights: 'Highlights',
     audiences: 'Who it\'s for',
@@ -268,18 +263,17 @@ export const productUi: I18n<{
     demo: 'Try the live demo',
     demoStart: 'Start the 3D tour',
     demoNote: 'A real tour, not a video. It loads only when you click.',
-    rixio: 'Product page at Rixio Digital',
     backHome: 'Back to home',
     other: 'My other product',
   },
   et: {
     eyebrow: 'Tooted',
     title: 'Minu enda tooted',
-    text: 'Lisaks kliendiprojektidele ehitan oma digitooteid: disainin, arendan, viin turule ja hoian käigus algusest lõpuni. Mõlemat müün oma stuudio Rixio Digital kaudu.',
+    text: 'Lisaks kliendiprojektidele ehitan oma digitooteid: disainin, arendan, viin turule ja hoian käigus algusest lõpuni.',
     more: 'Tootest lähemalt',
     visit: 'Ava',
     pageEyebrow: 'Oma toode',
-    facts: { type: 'Tüüp', typeValue: 'Oma digitoode', year: 'Turule', role: 'Minu roll', site: 'Toote leht', studio: 'Müüja' },
+    facts: { type: 'Tüüp', typeValue: 'Oma digitoode', year: 'Turule', role: 'Minu roll', site: 'Toote leht' },
     about: 'Mida see teeb',
     highlights: 'Põhilised võimalused',
     audiences: 'Kellele',
@@ -289,7 +283,6 @@ export const productUi: I18n<{
     demo: 'Proovi päris demot',
     demoStart: 'Käivita 3D-tuur',
     demoNote: 'Päris tuur, mitte video. Laeb alles klõpsuga.',
-    rixio: 'Tooteleht Rixio Digitalis',
     backHome: 'Tagasi avalehele',
     other: 'Minu teine toode',
   },

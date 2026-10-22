@@ -79,10 +79,6 @@ const breadcrumbs = [
           <small>{ui.facts.site}</small>
           <a href={product.url} target="_blank" rel="noopener">{new URL(product.url).hostname}</a>
         </div>
-        <div class="page-fact">
-          <small>{ui.facts.studio}</small>
-          <a href={product.rixioUrl[locale]} target="_blank" rel="noopener">Rixio Digital</a>
-        </div>
       </div>
     </PageHeader>
 
@@ -148,7 +144,7 @@ const breadcrumbs = [
 
       <div class="page-actions">
         <a href={product.url} target="_blank" rel="noopener" class="btn-primary">{ui.visit} {new URL(product.url).hostname}</a>
-        <a href={product.rixioUrl[locale]} target="_blank" rel="noopener" class="btn-ghost">{ui.rixio}</a>
+        <a href={`${routes.home(locale)}#products`} class="btn-ghost">{ui.backHome}</a>
       </div>
     </section>
 
