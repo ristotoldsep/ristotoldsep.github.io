@@ -79,6 +79,31 @@ html.js .sec-main .animate-up {
     transform: none;
 }
 
+/*
+   The intro still animates, but as a CSS animation that starts on the first
+   frame rather than a GSAP one the preloader triggered on its way out. The
+   difference matters for the metrics: before, the hero was opacity 0 until the
+   bundle had downloaded, parsed and run; now it is painting from the moment
+   the stylesheet lands, and the fade is just how it arrives.
+
+   The h1 leads with no delay because it is the LCP element - everything else
+   staggers behind it, which is the order it read in anyway.
+*/
+@keyframes rt-intro-up {
+    from { opacity: 0; transform: translateY(26px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .sec-main .animate-up {
+        animation: rt-intro-up 0.7s cubic-bezier(0.22, 0.68, 0.3, 1) both;
+    }
+    .sec-main .sec-eyebrow.animate-up   { animation-delay: 0s; }
+    .sec-main .intro-title.animate-up   { animation-delay: 0s; }
+    .sec-main .intro-subtitle.animate-up { animation-delay: 0.14s; }
+    .sec-main .intro-actions.animate-up  { animation-delay: 0.28s; }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html.js .animate-up,
     html.js .animate-card {
