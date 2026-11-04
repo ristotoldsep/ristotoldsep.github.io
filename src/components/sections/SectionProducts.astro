@@ -10,6 +10,7 @@ interface Props {
 const { copy } = Astro.props;
 const locale = copy.locale;
 const ui = productUi[locale];
+import { srcsetFor } from '../../lib/img';
 ---
 <section class="sec-inner" id="products">
 
@@ -29,7 +30,10 @@ const ui = productUi[locale];
         <article class="product-card animate-card" style={`--glow:${product.accent}`}>
           <div class="product-card-glow"></div>
           <a class="product-card-img" href={routes.product(locale, product.id)} tabindex="-1" aria-hidden="true">
-            <img src={product.cover.src} alt="" width={product.cover.width} height={product.cover.height} loading="lazy" />
+            <img src={product.cover.src} alt=""
+                 srcset={srcsetFor(product.cover.src, product.cover.width)}
+                 sizes="(min-width: 900px) 540px, 92vw"
+                 width={product.cover.width} height={product.cover.height} loading="lazy" />
           </a>
           <div class="product-card-body">
             <div class="product-head">

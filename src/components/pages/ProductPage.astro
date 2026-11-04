@@ -29,6 +29,7 @@ const breadcrumbs = [
   { name: copy.nav.links.products, url: new URL(`${routes.home(locale)}#products`, SITE).href },
   { name: product.name, url: pageUrl },
 ];
+import { srcsetFor } from '../../lib/img';
 ---
 
 <BaseLayout
@@ -87,14 +88,14 @@ const breadcrumbs = [
         <div>
           <h2 class="page-h2">{ui.demo}</h2>
           <div class="product-demo" data-demo={product.demo.src}>
-            <img src={product.demo.poster} alt={t.imageAlt} width="1600" height="900" />
+            <img src={product.demo.poster} alt={t.imageAlt} srcset={srcsetFor(product.demo.poster, 1600)} sizes="(min-width: 900px) 1100px, 94vw" width="1600" height="900" fetchpriority="high" decoding="async" />
             <button type="button" class="product-demo-btn"><span>{ui.demoStart}</span></button>
           </div>
           <p class="product-demo-note">{ui.demoNote}</p>
         </div>
       ) : (
         <figure class="page-cover">
-          <img src={product.cover.src} alt={t.imageAlt} width={product.cover.width} height={product.cover.height} />
+          <img src={product.cover.src} alt={t.imageAlt} srcset={srcsetFor(product.cover.src, product.cover.width)} sizes="(min-width: 900px) 1100px, 94vw" width={product.cover.width} height={product.cover.height} fetchpriority="high" decoding="async" />
         </figure>
       )}
     </section>
@@ -123,7 +124,7 @@ const breadcrumbs = [
         <h2 class="page-h2">{ui.gallery}</h2>
         <div class="product-gallery">
           {product.gallery.map((g) => (
-            <img src={g.src} alt={g.alt[locale]} width={g.width} height={g.height} loading="lazy" />
+            <img src={g.src} alt={g.alt[locale]} srcset={srcsetFor(g.src, g.width)} sizes="(min-width: 900px) 540px, 92vw" width={g.width} height={g.height} loading="lazy" />
           ))}
         </div>
       </section>
@@ -168,7 +169,7 @@ const breadcrumbs = [
         <div class="page-cards">
           <a class="page-card" href={routes.product(locale, other.id)}>
             <div class="page-card-img">
-              <img src={other.cover.src} alt={other.i18n[locale].imageAlt} loading="lazy" width={other.cover.width} height={other.cover.height} />
+              <img src={other.cover.src} alt={other.i18n[locale].imageAlt} loading="lazy" srcset={srcsetFor(other.cover.src, other.cover.width)} sizes="(min-width: 900px) 540px, 92vw" width={other.cover.width} height={other.cover.height} />
             </div>
             <div class="page-card-body">
               <h3>{other.name}</h3>

@@ -13,3 +13,9 @@
 !.env.example
 # Playwright MCP scratch output
 .playwright-mcp/
+
+# Width variants emitted by scripts/responsive-images.mjs at build time.
+# The originals are committed; these are derived, so Netlify regenerates them.
+/public/images/**/*-480.*
+/public/images/**/*-768.*
+/public/images/**/*-1200.*

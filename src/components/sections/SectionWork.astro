@@ -10,6 +10,7 @@ interface Props {
 const { copy } = Astro.props;
 const locale = copy.locale;
 const items = publishedProjects();
+import { srcsetFor } from '../../lib/img';
 ---
 <section id="work" class="sec-inner">
 
@@ -28,6 +29,8 @@ const items = publishedProjects();
       <figure class="gallery-item animate-card">
         <div class="gallery-img-wrap">
           <img src={project.cover.src} alt={t.imageAlt} loading="lazy" decoding="async"
+               srcset={srcsetFor(project.cover.src, project.cover.width)}
+               sizes="(min-width: 900px) 540px, 92vw"
                width={project.cover.width} height={project.cover.height}>
         </div>
         <figcaption class:list={['gallery-caption', index % 2 === 1 && 'gallery-caption--alt']}>

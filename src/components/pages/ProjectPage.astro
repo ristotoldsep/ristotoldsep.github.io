@@ -37,6 +37,7 @@ const related: Project[] = project.services
   .filter((id, i, all) => id !== project.id && all.indexOf(id) === i)
   .slice(0, 3)
   .map((id) => projects[id]);
+import { srcsetFor } from '../../lib/img';
 ---
 
 <BaseLayout
@@ -107,8 +108,12 @@ const related: Project[] = project.services
         <img
           src={project.cover.src}
           alt={t.imageAlt}
+          srcset={srcsetFor(project.cover.src, project.cover.width)}
+          sizes="(min-width: 900px) 1100px, 94vw"
           width={project.cover.width}
           height={project.cover.height}
+          fetchpriority="high"
+          decoding="async"
         />
       </figure>
     </section>
@@ -203,7 +208,7 @@ const related: Project[] = project.services
             return (
               <a class="page-card" href={routes.project(locale, other.id)}>
                 <div class="page-card-img">
-                  <img src={other.cover.src} alt={o.imageAlt} loading="lazy" width={other.cover.width} height={other.cover.height} />
+                  <img src={other.cover.src} alt={o.imageAlt} loading="lazy" srcset={srcsetFor(other.cover.src, other.cover.width)} sizes="(min-width: 900px) 540px, 92vw" width={other.cover.width} height={other.cover.height} />
                 </div>
                 <div class="page-card-body">
                   <h3>{o.name ?? other.name}</h3>
