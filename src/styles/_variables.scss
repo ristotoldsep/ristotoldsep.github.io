@@ -8,7 +8,15 @@
 
     --text:        #EDE8DD;
     --text-muted:  rgba(237,232,221,0.70);
-    --text-dim:    rgba(237,232,221,0.22);
+    /*
+       0.22 blended to #3a383d on --bg, a contrast ratio of 1.73:1 where WCAG
+       AA asks 4.5:1 for body text. Lighthouse flagged the footer copyright,
+       but the token is used in thirteen places - breadcrumbs, form
+       placeholders, section labels - so all of them were close to invisible.
+       0.52 lands at roughly 4.8:1 and still reads as the quietest tone in the
+       palette.
+    */
+    --text-dim:    rgba(237,232,221,0.52);
 
     --accent:      #C49A3C;
     --accent-lt:   #DDB95A;

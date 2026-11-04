@@ -198,7 +198,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       switchLanguageLabel: 'Switch to Estonian',
     },
     nav: {
-      homeAriaLabel: 'Home',
+      homeAriaLabel: 'RT - Risto Toldsep, home',
       links: { home: 'Home', work: 'Work', services: 'Services', products: 'Products', about: 'About', skills: 'Skills', contact: 'Contact' },
       contactCta: 'Get in Touch',
       openMenuLabel: 'Open menu',
@@ -396,7 +396,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       switchLanguageLabel: 'Switch to English',
     },
     nav: {
-      homeAriaLabel: 'Avaleht',
+      homeAriaLabel: 'RT - Risto Tõldsep, avaleht',
       links: { home: 'Avaleht', work: 'Tööd', services: 'Teenused', products: 'Tooted', about: 'Minust', skills: 'Oskused', contact: 'Kontakt' },
       contactCta: 'Võta ühendust',
       openMenuLabel: 'Ava menüü',
