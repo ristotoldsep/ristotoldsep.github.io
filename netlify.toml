@@ -5,6 +5,21 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Let the edge serve the HTML instead of revalidating it every time.
+#
+# Without this, Netlify's CDN answered `fwd=miss` on every single request for
+# the documents and went back to origin: GTmetrix measured 410ms of "backend"
+# on a page that is a static file sitting on a CDN. Netlify-CDN-Cache-Control
+# speaks only to their edge; the Cache-Control browsers see is unchanged.
+#
+# Safe because every page here is statically generated at build time with no
+# server rendering and no request-time data, and Netlify purges this cache on
+# each deploy - so the only way to serve a stale page is to stop deploying.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Netlify-CDN-Cache-Control = "public, durable, max-age=31536000, stale-while-revalidate=86400"
+
 [[headers]]
   for = "/images/*"
   [headers.values]
