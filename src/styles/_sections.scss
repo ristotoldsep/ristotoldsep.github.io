@@ -64,6 +64,21 @@ html.js .animate-card {
 }
 html.js .animate-card { transform: translateY(70px); }
 
+/*
+   The hero is exempt. It holds the h1, which is this page's LCP element, and
+   it is the whole of what Speed Index looks at: GTmetrix's filmstrip showed a
+   dark screen at 0.7s, 1.4s and 2.1s with content only at 2.8s, because the
+   preloader covered the viewport and the hero waited behind it at opacity 0.
+   Nothing above the fold should need JavaScript to become visible.
+
+   Everything below the fold keeps its scroll reveal - those run as you reach
+   them, so they cost nothing in either metric.
+*/
+html.js .sec-main .animate-up {
+    opacity: 1;
+    transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html.js .animate-up,
     html.js .animate-card {

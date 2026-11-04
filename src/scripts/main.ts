@@ -15,70 +15,6 @@ lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time: number) => { lenis.raf(time * 1000); });
 gsap.ticker.lagSmoothing(0);
 
-function revealHero(): void {
-  if (!document.querySelector('.sec-main .animate-up')) return;
-  gsap.to('.sec-main .animate-up', {
-    y: 0,
-    opacity: 1,
-    duration: 1.0,
-    ease: 'power3.out',
-    stagger: 0.14,
-  });
-}
-
-function initPreloader(): void {
-  const preloader = document.getElementById('preloader');
-  const fill      = document.getElementById('preloaderFill');
-  if (!preloader) { revealHero(); return; }
-
-  let progress = 0;
-  const fillInterval = setInterval(() => {
-    progress = Math.min(progress + Math.random() * 18, 90);
-    if (fill) fill.style.width = progress + '%';
-  }, 120);
-
-  // Arrow function rather than a declaration so the null check on
-  // `preloader` above still narrows inside the closure.
-  const done = () => {
-    clearInterval(fillInterval);
-    if (fill) fill.style.width = '100%';
-
-    setTimeout(() => {
-      gsap.to(preloader, {
-        yPercent: -100,
-        duration: 0.85,
-        ease: 'power3.inOut',
-        onComplete: () => { preloader.style.display = 'none'; },
-      });
-
-      gsap.to('.sec-main .animate-up', {
-        y: 0,
-        opacity: 1,
-        duration: 1.0,
-        ease: 'power3.out',
-        stagger: 0.14,
-        delay: 0.1,
-      });
-    }, 300);
-  };
-
-  const MIN = sessionStorage.getItem('rt-preloaded') ? 0 : 600;
-  sessionStorage.setItem('rt-preloaded', '1');
-  const start = Date.now();
-
-  // DOMContentLoaded, not load. `load` waits for every image and for the
-  // deferred chat widget, and the overlay covers the <h1> that is this page's
-  // LCP element - so the hero could not paint until the slowest subresource on
-  // the page had finished. Nothing in the intro needs those to have arrived.
-  if (document.readyState !== 'loading') {
-    setTimeout(done, Math.max(0, MIN - (Date.now() - start)));
-  } else {
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(done, Math.max(0, MIN - (Date.now() - start)));
-    });
-  }
-}
-
 function initSpotlight(): void {
   const spotlight = document.getElementById('spotlight');
   if (!spotlight) return;
@@ -363,7 +299,6 @@ function initRotatingButton(): void {
 
 export function initAll(): void {
   clearTimeout((window as unknown as { __rtReveal?: number }).__rtReveal);
-  initPreloader();
   initSpotlight();
   initCursor();
   initScrollReveal();
