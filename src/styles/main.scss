@@ -1,6 +1,9 @@
 // Tokens
 @use 'variables';
 
+// Self-hosted Syne; must come before anything that sets font-family.
+@use 'fonts';
+
 // Base
 @use 'reset';
 

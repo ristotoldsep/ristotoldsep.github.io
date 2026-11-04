@@ -1,0 +1,35 @@
+/* ── Syne, self-hosted ──────────────────────────────────────────
+   Was five static weights from fonts.googleapis.com. That stylesheet was
+   render-blocking and Lighthouse measured 800ms on it alone, because the font
+   files sat two round trips deep: HTML, then Google's CSS, then gstatic.
+
+   This is the variable font instead, so one 34KB file covers 400 through 800
+   where the five static latin files cost 71KB between them. Serving it from
+   our own origin also drops a third party from a site that sells privacy-aware
+   builds, and lets the year-long immutable cache header apply to it.
+
+   latin-ext is declared but not preloaded: exactly one š appears anywhere on
+   this site, so the browser should fetch it only on the page that needs it. */
+
+@font-face {
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url('/fonts/syne-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+        U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+        U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url('/fonts/syne-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+        U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+        U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F,
+        U+A720-A7FF;
+}

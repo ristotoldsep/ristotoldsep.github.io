@@ -66,10 +66,14 @@ function initPreloader(): void {
   sessionStorage.setItem('rt-preloaded', '1');
   const start = Date.now();
 
-  if (document.readyState === 'complete') {
+  // DOMContentLoaded, not load. `load` waits for every image and for the
+  // deferred chat widget, and the overlay covers the <h1> that is this page's
+  // LCP element - so the hero could not paint until the slowest subresource on
+  // the page had finished. Nothing in the intro needs those to have arrived.
+  if (document.readyState !== 'loading') {
     setTimeout(done, Math.max(0, MIN - (Date.now() - start)));
   } else {
-    window.addEventListener('load', () => {
+    document.addEventListener('DOMContentLoaded', () => {
       setTimeout(done, Math.max(0, MIN - (Date.now() - start)));
     });
   }
@@ -87,8 +91,16 @@ function initSpotlight(): void {
   let tY = window.innerHeight / 2;
   let cX = tX, cY = tY;
 
-  spotlight.style.left = cX + 'px';
-  spotlight.style.top  = cY + 'px';
+  // translate3d, not left/top. Those are layout properties, so writing them
+  // every frame made the browser count each frame as a layout shift: this one
+  // element was the whole of a reproducible CLS of 0.301 on desktop, and the
+  // per-frame relayout fed the main-thread time behind it. The -50% keeps the
+  // circle centred on the cursor, exactly as the stylesheet used to.
+  const place = () => {
+    spotlight.style.transform =
+      'translate3d(' + cX + 'px,' + cY + 'px,0) translate(-50%,-50%)';
+  };
+  place();
 
   document.addEventListener('mousemove', (e: MouseEvent) => {
     tX = e.clientX;
@@ -98,8 +110,7 @@ function initSpotlight(): void {
   gsap.ticker.add(() => {
     cX += (tX - cX) * 0.06;
     cY += (tY - cY) * 0.06;
-    spotlight.style.left = cX + 'px';
-    spotlight.style.top  = cY + 'px';
+    place();
   });
 }
 
@@ -111,6 +122,12 @@ function initCursor(): void {
 
   let mx = 0, my = 0, rx = 0, ry = 0;
 
+  // left/top deliberately, unlike the spotlight above. These two reserve
+  // `transform` for the hover scale, which is transitioned (0.07s on the dot,
+  // 0.22s on the ring) - writing position into the same property would both
+  // override the .hover rule and drag every pointer move through that easing.
+  // They are 7px and 32px and only run on a fine pointer, so the layout cost
+  // is small and lands where TBT was already zero.
   document.addEventListener('mousemove', (e: MouseEvent) => {
     mx = e.clientX; my = e.clientY;
     dot.style.left = mx + 'px';

@@ -10,6 +10,22 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Astro content-hashes everything under /_astro, so the filename changes
+# whenever the bytes do. Without this rule these came back
+# "max-age=0, must-revalidate" and every navigation paid a round trip to be
+# told the file had not changed.
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Syne, self-hosted. Not content-hashed, but it is a pinned version of a
+# typeface - if it is ever replaced, it will be under a new filename.
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # @astrojs/sitemap emits /sitemap-index.xml. The old hand-written
 # /sitemap.xml is already submitted to Search Console, so keep it resolving.
 [[redirects]]

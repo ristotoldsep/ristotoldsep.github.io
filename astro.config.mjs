@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import { sitemapMeta } from './src/lib/sitemap-meta';
 
@@ -9,8 +8,10 @@ export default defineConfig({
   site: SITE,
   output: 'static',
   trailingSlash: 'always',
+  // No Tailwind: preflight was off and not one utility class was used
+  // anywhere, so it emitted zero bytes into the stylesheet and cost only
+  // build time. All styling is the hand-written SCSS in src/styles.
   integrations: [
-    tailwind({ applyBaseStyles: false }),
     sitemap({
       filter: (page) => !page.includes('/404'),
       // The built-in i18n option pairs locales by stripping the locale prefix
