@@ -7,6 +7,21 @@ const SITE = 'https://ristotoldsep.eu';
 export default defineConfig({
   site: SITE,
   output: 'static',
+  build: {
+    /*
+     * Inline the stylesheet rather than linking it.
+     *
+     * One hand-written 43KB sheet (8.4KB over the wire) covers all 43 pages,
+     * and it was the last render-blocking request on the page: Lighthouse put
+     * 170ms against it on mobile. Astro's default only inlines under 4KB.
+     *
+     * Worth it here because the sheet is small gzipped and most visits are one
+     * or two pages deep, so the round trip costs more than the repeat-visit
+     * caching it gives up. /_astro is immutable-cached now, so anyone who does
+     * go deeper pays nothing for the scripts either way.
+     */
+    inlineStylesheets: 'always',
+  },
   trailingSlash: 'always',
   // No Tailwind: preflight was off and not one utility class was used
   // anywhere, so it emitted zero bytes into the stylesheet and cost only
