@@ -19,3 +19,7 @@
 /public/images/**/*-480.*
 /public/images/**/*-768.*
 /public/images/**/*-1200.*
+
+# Local working files: Lighthouse reports, drafted emails and similar.
+# Point-in-time artefacts, not part of the build.
+/context-files/
