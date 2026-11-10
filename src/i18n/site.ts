@@ -288,7 +288,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       projectCta: 'Start a Project ->',
       info: [
         { label: 'Name', value: 'Risto Tõldsep' },
-        { label: 'Email', value: 'ristotoldsep@gmail.com', type: 'email' },
+        { label: 'Email', value: 'info@ristotoldsep.eu', type: 'email' },
         { label: 'Location', value: 'Tallinn, Estonia' },
         { label: 'Freelance', value: 'Available', type: 'badge' },
       ],
@@ -486,7 +486,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       projectCta: 'Alusta projektiga ->',
       info: [
         { label: 'Nimi', value: 'Risto Tõldsep' },
-        { label: 'E-post', value: 'ristotoldsep@gmail.com', type: 'email' },
+        { label: 'E-post', value: 'info@ristotoldsep.eu', type: 'email' },
         { label: 'Asukoht', value: 'Tallinn, Eesti' },
         { label: 'Vabakutseline', value: 'Saadaval', type: 'badge' },
       ],

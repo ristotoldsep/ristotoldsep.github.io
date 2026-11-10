@@ -32,7 +32,7 @@ export function personNode(origin: string, image: string): SchemaNode {
     jobTitle: ['Web Developer', 'Web Designer', 'Full-Stack Developer'],
     description: PERSON_DESCRIPTION,
     knowsLanguage: ['et', 'en'],
-    email: 'mailto:ristotoldsep@gmail.com',
+    email: 'mailto:info@ristotoldsep.eu',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Tallinn',
@@ -200,7 +200,7 @@ export function businessNode(origin: string, image: string): SchemaNode {
     description: PERSON_DESCRIPTION,
     url: origin,
     image,
-    email: 'mailto:ristotoldsep@gmail.com',
+    email: 'mailto:info@ristotoldsep.eu',
     founder: { '@id': ids.person(origin) },
     address: {
       '@type': 'PostalAddress',

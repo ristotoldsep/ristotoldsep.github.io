@@ -76,7 +76,7 @@ function contact(locale: Locale): string[] {
   return [
     `## ${t('contact', locale)}`,
     '',
-    '- **Email:** ristotoldsep@gmail.com',
+    '- **Email:** info@ristotoldsep.eu',
     ...socialLinks.map((link) => `- **${link.title}:** ${link.href}`),
     '',
   ];
