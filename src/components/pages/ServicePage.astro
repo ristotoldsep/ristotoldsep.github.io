@@ -38,7 +38,7 @@ import { srcsetFor } from '../../lib/img';
   lang={locale}
   title={t.seo.title}
   description={t.seo.description}
-  ogTitle={t.heading}
+  ogTitle={t.heading.replace(/\u00AD/g, '')}
   alternates={alternates.service(service.id)}
   pageType="WebPage"
   breadcrumbs={breadcrumbs.map((c) => ({ name: c.name, url: new URL(c.url, SITE).href }))}

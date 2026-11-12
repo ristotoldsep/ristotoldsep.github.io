@@ -7,7 +7,8 @@ export type ServiceId =
   | 'wordpress-ecommerce'
   | 'seo-geo'
   | 'maintenance'
-  | 'integrations';
+  | 'integrations'
+  | 'social-youtube';
 
 export interface ServiceLocaleCopy {
   /** Plain text. Used in <title>, JSON-LD, breadcrumbs and llms.txt. */
@@ -803,6 +804,155 @@ export const services = {
           {
             q: 'Kas see tasub väikeettevõttele ära?',
             a: 'Sõltub täielikult sellest, mitu tundi käsitsi variant maksab. Kui keegi kulutab nädalas kaks tundi andmete ümbertrükkimisele, on see sada tundi aastas ja vastus on tavaliselt jah. Kui see on kümme minutit kuus, siis ei ole.',
+          },
+        ],
+      },
+    },
+  },
+  'social-youtube': {
+    id: 'social-youtube',
+    slug: { en: 'social-media-youtube-setup', et: 'sotsiaalmeedia-ja-youtube' },
+    order: 7,
+    accent: 'rgba(255,70,70,0.12)',
+    cardTags: ['YouTube', 'Podcasts'],
+    relatedProjects: ['ants-rootslane-youtube'],
+    i18n: {
+      en: {
+        name: 'Social Media & YouTube Setup',
+        cardTitle: 'Social Media<br>&amp; YouTube',
+        heading: 'YouTube channel and social media setup in Estonia',
+        summary:
+          'Channel setup that helps people find your videos and keeps them watching: banner and profile picture, playlists, podcast setup, consistent titles and descriptions, end screens and a plain-language read of the analytics.',
+        cta: 'Learn more ->',
+        seo: {
+          title: 'YouTube Channel & Social Media Setup in Estonia | Risto Tõldsep',
+          description:
+            'YouTube and social media channel setup from a Tallinn-based web developer: banner and profile picture, podcast playlists, titles and descriptions, end screens, analytics and monetization guidance.',
+        },
+        intro: [
+          'A lot of good video content sits on channels that are only half set up. No description, no links, no playlists, every video titled differently, and nothing that points a viewer to the next episode. YouTube cannot recommend what it cannot make sense of, and a viewer who finishes one episode has nowhere obvious to go.',
+          'I do not make the videos. I set up everything around them. It is usually a few focused hours of work, and on the Ants Rootslane podcast channel the difference showed within days.',
+          'I have set up the social channels for my own products, Vestly.ai and Planly 3D, and I do the same for clients, with YouTube as the main focus.',
+        ],
+        deliverables: [
+          'Channel branding: a banner and profile picture in the same style as your website, so the channel clearly belongs to the same brand.',
+          'Channel description, contact email and links to your website, booking page, Spotify, Instagram and other channels.',
+          'Playlists that group your videos, and podcast setup so a series shows up as a podcast on YouTube and YouTube Music.',
+          'One title format for every video, with the topic first, because the topic is what people search for.',
+          'A description for every video: a short summary of that episode plus the same set of links.',
+          'End screens on every video, so viewers move on to another episode instead of leaving.',
+          'An analytics read-out in plain language: where the views come from, which videos hold attention and what to do next.',
+          'Monetization guidance: I check whether the channel qualifies for the YouTube Partner Program and walk you through linking AdSense, which you do yourself because your bank details go there.',
+          'The same groundwork on Instagram, Facebook, LinkedIn or TikTok: profile, bio, links and matching visuals.',
+        ],
+        process: [
+          {
+            title: 'Audit',
+            text: 'I go through the channel the way a new viewer would and list what is missing: description, links, playlists, titles, end screens.',
+          },
+          {
+            title: 'Drafts',
+            text: 'I write the channel description, the title format and a description template and send them to you first. Nothing goes live without your OK.',
+          },
+          {
+            title: 'Setup',
+            text: 'Playlists, podcast setup, titles, descriptions, end screens and the new banner and profile picture, done in YouTube Studio with Manager access, so I never need your password.',
+          },
+          {
+            title: 'Follow-up',
+            text: 'A few days later I read the Studio numbers, send you a short summary and suggest next steps, such as a thumbnail template, chapters or Shorts.',
+          },
+        ],
+        faq: [
+          {
+            q: 'Do you need my Google password?',
+            a: 'No. You add me as a Manager on the channel in YouTube Studio settings. That lets me do the setup, and you can remove the access with one click when the work is done.',
+          },
+          {
+            q: 'Do you make the videos too?',
+            a: 'No, I do not film or edit. I work on everything around the videos: the channel, titles and descriptions, playlists, end screens and visuals. That is usually the part that is missing, and it is quick to fix.',
+          },
+          {
+            q: 'How long does it take?',
+            a: 'For a channel with around ten videos, about half a day. The Ants Rootslane channel with 9 podcast episodes took 4 hours.',
+          },
+          {
+            q: 'Can you help with monetization?',
+            a: 'Yes. I check whether the channel meets the YouTube Partner Program requirements and guide you through the application. You link the AdSense account yourself, because your bank details go there, but I walk you through every step.',
+          },
+          {
+            q: 'What about other platforms?',
+            a: 'Instagram, Facebook, LinkedIn and TikTok profiles get the same treatment: consistent visuals, a clear bio and working links. I do the most on YouTube, because it is as much a search engine as a social network, which fits well with my SEO work.',
+          },
+        ],
+      },
+      et: {
+        name: 'Sotsiaalmeedia ja YouTube’i seadistus',
+        cardTitle: 'Sotsiaalmeedia<br>&amp; YouTube',
+        // Soft hyphen so the long word can break on a 390px phone instead of overflowing.
+        heading: 'YouTube’i kanali ja sotsiaal\u00ADmeedia seadistus',
+        summary:
+          'Kanali seadistus, mis aitab sinu videoid leida ja vaatajaid kanalil hoida: bänner ja profiilipilt, playlistid, podcasti seadistus, ühtsed pealkirjad ja kirjeldused, lõpuekraanid ning arusaadav ülevaade statistikast.',
+        cta: 'Loe lähemalt ->',
+        seo: {
+          title: 'YouTube’i kanali ja sotsiaalmeedia seadistus | Risto Tõldsep',
+          description:
+            'YouTube’i ja sotsiaalmeedia kanalite seadistus Tallinnas tegutsevalt veebiarendajalt: bänner ja profiilipilt, podcasti playlistid, pealkirjad ja kirjeldused, lõpuekraanid, statistika ja abi raha teenimise taotlemisel.',
+        },
+        intro: [
+          'Paljud head videod on kanalil, mis on poolenisti seadistamata. Kanalil pole kirjeldust ega linke, playliste pole, iga video pealkiri on ise moodi ja miski ei suuna vaatajat järgmise osa juurde. YouTube ei oska soovitada seda, millest ta aru ei saa, ja vaataja, kes ühe osa lõpuni vaatab, ei tea, kuhu edasi minna.',
+          'Videoid ma ise ei tee, aga korrastan kõik nende ümber. Tavaliselt on see paar tundi keskendunud tööd ja Ants Rootslase podcasti kanalil oli vahe näha juba mõne päevaga.',
+          'Olen seadistanud sotsiaalmeedia oma toodetele Vestly.ai ja Planly 3D ning teen sama klientidele, kõige rohkem YouTube’is.',
+        ],
+        deliverables: [
+          'Kanali välimus: bänner ja profiilipilt kodulehega samas stiilis, et kanal oleks selgelt sama brändi osa.',
+          'Kanali kirjeldus, kontaktmeil ja lingid kodulehele, broneerimislehele, Spotifysse, Instagrami ja mujale.',
+          'Playlistid, mis koondavad videod teemade kaupa, ja podcasti seadistus, et sari oleks YouTube’is ja YouTube Musicus podcastina üleval.',
+          'Kõigile videotele üks pealkirja vorm, teema ees, sest just teema järgi otsitakse.',
+          'Igale videole oma kirjeldus: lühike kokkuvõte just sellest osast ja sama komplekt linke.',
+          'Lõpuekraanid kõigile videotele, et vaataja liiguks järgmise osa juurde, mitte ei lahkuks.',
+          'Statistika lihtsas keeles: kust vaatamised tulevad, millised videod hoiavad tähelepanu ja mida edasi teha.',
+          'Abi raha teenimisel: kontrollin, kas kanal vastab YouTube’i partnerprogrammi tingimustele, ja juhendan AdSense’i sidumisel. Selle teed ise, kuna sinna lähevad sinu pangaandmed.',
+          'Sama alus Instagramis, Facebookis, LinkedInis või TikTokis: profiil, tutvustus, lingid ja ühtne visuaal.',
+        ],
+        process: [
+          {
+            title: 'Ülevaatus',
+            text: 'Vaatan kanalit nagu uus vaataja ja panen kirja, mis puudu on: kirjeldus, lingid, playlistid, pealkirjad, lõpuekraanid.',
+          },
+          {
+            title: 'Mustandid',
+            text: 'Kirjutan kanali kirjelduse, pealkirja vormi ja kirjelduse põhja ning saadan need enne sulle üle. Ilma sinu nõusolekuta ei lähe midagi üles.',
+          },
+          {
+            title: 'Seadistus',
+            text: 'Playlistid, podcasti seadistus, pealkirjad, kirjeldused, lõpuekraanid ning uus bänner ja profiilipilt. Töötan YouTube Studios halduri õigustega, nii et sinu parooli ma ei vaja.',
+          },
+          {
+            title: 'Järelvaatus',
+            text: 'Mõne päeva pärast loen Studio numbrid läbi, saadan sulle lühikese ülevaate ja pakun välja järgmised sammud, näiteks pisipildi malli, peatükid või Shortsid.',
+          },
+        ],
+        faq: [
+          {
+            q: 'Kas vajad mu Google’i parooli?',
+            a: 'Ei. Lisad mind YouTube Studio seadetes kanali halduriks. Nii saan seadistuse ära teha ja kui töö on valmis, saad ligipääsu ühe klikiga eemaldada.',
+          },
+          {
+            q: 'Kas teed ka videoid?',
+            a: 'Ei, filmimise ja montaažiga ma ei tegele. Teen kõike videote ümber: kanal, pealkirjad ja kirjeldused, playlistid, lõpuekraanid ja visuaal. Just see osa on tavaliselt puudu ja selle saab kiiresti korda.',
+          },
+          {
+            q: 'Kui kaua see aega võtab?',
+            a: 'Umbes kümne videoga kanalil pool päeva. Ants Rootslase kanal üheksa podcasti osaga võttis 4 tundi.',
+          },
+          {
+            q: 'Kas aitad ka raha teenimisega?',
+            a: 'Jah. Kontrollin, kas kanal vastab YouTube’i partnerprogrammi tingimustele, ja juhendan taotlemisel. AdSense’i konto seod ise, sest sinna lähevad sinu pangaandmed, aga juhendan iga sammu juures.',
+          },
+          {
+            q: 'Aga teised platvormid?',
+            a: 'Instagrami, Facebooki, LinkedIni ja TikToki profiilid saavad sama käsitluse: ühtne visuaal, selge tutvustus ja töötavad lingid. Kõige rohkem teen YouTube’is, sest see on sama palju otsingumootor kui sotsiaalvõrgustik ja sobib hästi kokku minu SEO tööga.',
           },
         ],
       },

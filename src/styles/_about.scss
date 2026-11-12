@@ -127,6 +127,11 @@
     gap: 20px;
 }
 
+// An odd number of services would leave the last card alone in half a row.
+.services-grid > .svc-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+}
+
 .svc-card {
     position: relative;
     background: rgba(255,255,255,0.03);

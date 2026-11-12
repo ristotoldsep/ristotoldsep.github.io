@@ -36,7 +36,7 @@ import { srcsetFor } from '../lib/img';
 
     <section class="page-section">
       <h2 class="page-h2">{copy.pages.servicesIndex.heading}</h2>
-      <div class="page-cards">
+      <div class="page-cards page-cards--services">
         {allServices.map((service) => (
           <a class="page-card" href={routes.service(locale, service.id)}>
             <div class="page-card-body">

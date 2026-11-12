@@ -350,8 +350,8 @@ export const siteCopy: Record<Locale, SiteCopy> = {
         eyebrow: 'Services',
         title: 'Web Development & Design Services in Estonia | Risto Tõldsep',
         heading: 'What I can do for you',
-        lede: 'Design, development, eCommerce, SEO and automation, delivered by one person who does all of it rather than handing you between departments.',
-        metaDescription: 'Web design, full-stack development, WordPress and WooCommerce, technical SEO, maintenance and automation services from a freelance developer in Tallinn, Estonia.',
+        lede: 'Design, development, eCommerce, SEO, automation and YouTube setup, delivered by one person who does all of it rather than handing you between departments.',
+        metaDescription: 'Web design, full-stack development, WordPress and WooCommerce, technical SEO, maintenance, automation and YouTube channel setup from a freelance developer in Tallinn, Estonia.',
       },
       project: {
         eyebrow: 'Case Study',
@@ -548,8 +548,8 @@ export const siteCopy: Record<Locale, SiteCopy> = {
         eyebrow: 'Teenused',
         title: 'Veebiarenduse ja disaini teenused Eestis | Risto Tõldsep',
         heading: 'Mida saan sinu jaoks teha',
-        lede: 'Disain, arendus, e-kaubandus, SEO ja automatiseerimine ühelt inimeselt, kes teeb neid kõiki, mitte ei suuna sind osakondade vahel edasi.',
-        metaDescription: 'Veebidisain, full-stack arendus, WordPress ja WooCommerce, tehniline SEO, hooldus ja automatiseerimine vabakutseliselt veebiarendajalt Tallinnas.',
+        lede: 'Disain, arendus, e-kaubandus, SEO, automatiseerimine ja YouTube’i seadistus ühelt inimeselt, kes teeb neid kõiki, mitte ei suuna sind osakondade vahel edasi.',
+        metaDescription: 'Veebidisain, full-stack arendus, WordPress ja WooCommerce, tehniline SEO, hooldus, automatiseerimine ja YouTube’i kanali seadistus vabakutseliselt veebiarendajalt Tallinnas.',
       },
       project: {
         eyebrow: 'Juhtumiuuring',

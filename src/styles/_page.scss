@@ -247,6 +247,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+// Text-only service cards: a lone last card takes the full row.
+.page-cards--services > .page-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+}
 .page-card {
     display: flex;
     flex-direction: column;

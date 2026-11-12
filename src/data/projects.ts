@@ -9,7 +9,17 @@ export type ProjectId =
   | 'ribaana-horm'
   | 'qinutritionist'
   | 'serene-sleep'
-  | 'paavli-kvartal';
+  | 'paavli-kvartal'
+  | 'ants-rootslane-youtube';
+
+/**
+ * The Ants Rootslane YouTube case study carries figures from YouTube Studio
+ * (views per day, new subscribers, CTR, average view). Studio numbers are not
+ * public; Ants approved publishing them on 2026-11-12. Setting this to false
+ * hides them again and leaves only the public figures.
+ * Used in this file (metrics) and in case-studies.ts (results).
+ */
+export const ANTS_STUDIO_FIGURES_APPROVED = true;
 
 export interface ProjectLocaleCopy {
   /** Display name override. Brands rarely translate, so this is usually absent. */
@@ -532,6 +542,76 @@ export const projects = {
           title: 'Paavli Kvartal interaktiivne WordPressi leht - juhtumiuuring | Risto Tõldsep',
           description:
             'Kohandatud WordPressi teema Tallinna loomekvartalile koos filtreeritava interaktiivse kaardi, sektsioonide kaupa kerimise ja kohandatud sündmuste importijaga.',
+        },
+      },
+    },
+  },
+  'ants-rootslane-youtube': {
+    id: 'ants-rootslane-youtube',
+    slug: { en: 'ants-rootslane-youtube-channel', et: 'ants-rootslane-youtube-kanal' },
+    name: 'Ants Rootslane YouTube',
+    order: 9,
+    featured: false,
+    status: 'published',
+    year: 2026,
+    publishedAt: '2026-11-12',
+    updatedAt: '2026-11-12',
+    client: { name: 'Ants Rootslane', url: 'https://antsrootslane.ee/', location: 'Estonia', industry: 'Therapy / Podcast' },
+    liveUrl: 'https://www.youtube.com/@AntsRootslane',
+    stack: ['YouTube Studio', 'YouTube Podcasts', 'Playlists', 'End screens', 'Channel branding', 'Google AdSense'],
+    cardTags: ['YouTube', 'Podcast', 'Branding'],
+    cover: {
+      src: '/images/projects/ants-rootslane-youtube.webp',
+      width: 1942,
+      height: 1218,
+      alt: {
+        en: 'Ants Rootslane YouTube channel with the new podcast banner and profile picture',
+        et: 'Ants Rootslase YouTube’i kanal uue podcasti bänneri ja profiilipildiga',
+      },
+    },
+    metrics: [
+      { value: '5.2k', label: { en: 'subscribers', et: 'tellijat' } },
+      { value: '9', label: { en: 'episodes in the podcast playlist', et: 'osa podcasti playlistis' } },
+      { value: '25k', label: { en: 'public views on the newest episode in its first 4 days', et: 'avalikku vaatamist uusimal osal esimese 4 päevaga' } },
+      ...(ANTS_STUDIO_FIGURES_APPROVED
+        ? [
+            { value: '250 → 9.7k', label: { en: 'views per day, before vs after', et: 'vaatamist päevas, enne ja pärast' } },
+            { value: '3×', label: { en: 'more views on older episodes', et: 'rohkem vaatamisi vanematel osadel' } },
+          ]
+        : []),
+    ],
+    services: ['social-youtube'],
+    i18n: {
+      en: {
+        heading: 'Ants Rootslane: YouTube channel and podcast setup for “Minu elu, minu reeglid”',
+        tagline: 'Podcast playlist, unified titles and descriptions, end screens and new channel branding',
+        summary:
+          'Risto Tõldsep set up the YouTube channel of Estonian therapist Ants Rootslane and his podcast “Minu elu, minu reeglid” in November 2026: a podcast playlist with all 9 episodes, one title format, a description with links for every episode, end screens, a channel description and links, and a new banner and profile picture in the style of antsrootslane.ee.',
+        cardDescription:
+          'YouTube channel setup for a therapist’s podcast with 5.2k subscribers. I marked the series as a podcast, gave all 9 episodes one title format and their own descriptions with links, added end screens, wrote the channel description and links, and made a new banner and profile picture in the style of his website. I also guided him through YouTube monetization and linking AdSense.',
+        imageAlt: 'Ants Rootslane YouTube channel with the new podcast banner and profile picture',
+        role: 'Channel setup and branding',
+        cta: 'View channel ->',
+        seo: {
+          title: 'Ants Rootslane YouTube Channel - Case Study | Risto Tõldsep',
+          description:
+            'How I set up a therapist’s podcast channel on YouTube in four hours: podcast playlist, unified titles, per-episode descriptions, end screens, channel links and new branding.',
+        },
+      },
+      et: {
+        heading: 'Ants Rootslane: YouTube’i kanali ja podcasti „Minu elu, minu reeglid“ seadistus',
+        tagline: 'Podcasti playlist, ühtsed pealkirjad ja kirjeldused, lõpuekraanid ning kanali uus välimus',
+        summary:
+          'Risto Tõldsep seadistas 2026. aasta novembris süsteemse terapeudi Ants Rootslase YouTube’i kanali ja podcasti „Minu elu, minu reeglid“: podcasti playlist kõigi 9 osaga, ühtne pealkirja vorm, igale osale oma kirjeldus koos linkidega, lõpuekraanid, kanali kirjeldus ja lingid ning uus bänner ja profiilipilt antsrootslane.ee stiilis.',
+        cardDescription:
+          'YouTube’i kanali seadistus terapeudi podcastile, millel on 5200 tellijat. Märkisin sarja podcastiks, andsin kõigile 9 osale ühtse pealkirja ja oma kirjelduse koos linkidega, lisasin lõpuekraanid, kirjutasin kanali kirjelduse ja lingid ning tegin uue bänneri ja profiilipildi tema kodulehe stiilis. Juhendasin ka YouTube’is raha teenimise ja AdSense’i sidumise juures.',
+        imageAlt: 'Ants Rootslase YouTube’i kanal uue podcasti bänneri ja profiilipildiga',
+        role: 'Kanali seadistus ja kujundus',
+        cta: 'Ava kanal ->',
+        seo: {
+          title: 'Ants Rootslase YouTube’i kanal - juhtumiuuring | Risto Tõldsep',
+          description:
+            'Kuidas seadistasin terapeudi podcasti kanali YouTube’is nelja tunniga: podcasti playlist, ühtsed pealkirjad, iga osa kirjeldus, lõpuekraanid, kanali lingid ja uus kujundus.',
         },
       },
     },

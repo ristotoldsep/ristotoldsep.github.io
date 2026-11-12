@@ -1,5 +1,5 @@
 import type { Faq, I18n } from './types';
-import type { ProjectId } from './projects';
+import { ANTS_STUDIO_FIGURES_APPROVED, type ProjectId } from './projects';
 
 /** Long-form case study prose, kept out of projects.ts so the entity registry
  *  stays readable and the writing stays easy to edit. A project without an
@@ -637,4 +637,128 @@ export const caseStudies: Partial<Record<ProjectId, I18n<CaseStudyCopy>>> = {
     },
   },
 
+  // Results lines marked STUDIO come from YouTube Studio, published with Ants's
+  // approval. See ANTS_STUDIO_FIGURES_APPROVED in projects.ts.
+  'ants-rootslane-youtube': {
+    en: {
+      problem: [
+        'Ants Rootslane is a systemic therapist and author, and his podcast “Minu elu, minu reeglid” already had an audience of about 5,000 subscribers on YouTube. The channel around the podcast was barely set up.',
+        'There was no playlist, so the podcast did not show up as a podcast on YouTube or YouTube Music. The channel description was empty and the channel page had no links. Most videos had the same generic podcast text underneath, the titles were in different formats, and nothing pointed a viewer from one episode to the next.',
+      ],
+      solution: [
+        'A “Minu elu, minu reeglid” playlist marked as a podcast, with all 9 episodes in order.',
+        'One title format for every episode, topic first because that is what people search for: “Topic | Minu elu, minu reeglid #N”.',
+        'A description for every episode: one or two sentences on what that episode covers, then the same links to events, therapy bookings, Spotify, Instagram and the website.',
+        'A channel description and five channel links: website, events, Spotify, Instagram and Facebook.',
+        'End screens on all 9 episodes, so viewers move on to another episode instead of leaving.',
+        'A new banner and profile picture in the visual style of antsrootslane.ee.',
+        'Monetization guidance: the channel already met the YouTube Partner Program requirements, so I explained the application and how Ants links his own AdSense account.',
+      ],
+      highlights: [
+        {
+          title: 'Titles written for search',
+          text: 'People search for the topic, not the episode number. With the topic first and the podcast name and number last, each title reads well in search results and the series still stays together.',
+        },
+        {
+          title: 'Drafts before any change',
+          text: 'I sent Ants the channel description, the title list and the description template as drafts first, and changed things on the channel once the texts were agreed. Two of the episode descriptions are in his own words.',
+        },
+        {
+          title: 'Manager access, no passwords',
+          text: 'I work on the channel as a Manager in YouTube Studio. Ants keeps full ownership, and the AdSense account with his bank details stays his alone.',
+        },
+        {
+          title: 'A podcast, not just videos',
+          text: 'Marking the playlist as a podcast puts the series in the channel’s Podcasts tab and on YouTube Music, one more place where people look for something to listen to.',
+        },
+      ],
+      results: [
+        'The channel page now has a description, five links, the new banner and a Podcasts tab with all 9 episodes.',
+        'The newest episode, published the same weekend, passed 25,000 public views in its first four days.',
+        'The whole setup took 4 hours.',
+        ...(ANTS_STUDIO_FIGURES_APPROVED
+          ? [
+              // STUDIO
+              'Views per day went from about 250 before the work to between 5,900 and 9,700 in the three days after it (YouTube Studio).',
+              // STUDIO
+              'New subscribers went from 0 to 5 a day to more than 100 in three days.',
+              // STUDIO
+              'The older episodes got about three times more views than before, around 800 a day together. A new episode came out the same weekend, so part of the jump in daily views belongs to it, but the growth on the older episodes points to the setup itself.',
+              // STUDIO
+              'The new episode had 21.4k views in its first three days, an 8.4% thumbnail click-through rate and an average view of 27.5 minutes.',
+            ]
+          : []),
+      ],
+      faq: [
+        {
+          q: 'Did the videos themselves change?',
+          a: 'No. The episodes stayed as they were. The difference came from the channel around them: titles, descriptions, the podcast playlist, end screens and links.',
+        },
+        {
+          q: 'Why does a podcast need a playlist on YouTube?',
+          a: 'YouTube treats a series as a podcast only when it sits in a playlist marked as a podcast. Without one, the episodes do not show in the Podcasts tab or on YouTube Music, and viewers have no simple way to play them in order.',
+        },
+      ],
+    },
+    et: {
+      problem: [
+        'Ants Rootslane on süsteemne terapeut ja autor ning tema podcastil „Minu elu, minu reeglid“ oli YouTube’is juba umbes 5000 tellijat. Kanal podcasti ümber oli aga peaaegu seadistamata.',
+        'Playlisti polnud, seega ei olnud podcast YouTube’is ega YouTube Musicus podcastina üleval. Kanali kirjeldus oli tühi ja kanali lehel polnud ühtegi linki. Enamiku videote all oli sama üldine podcasti tekst, pealkirjad olid eri vormis ja miski ei suunanud vaatajat ühest osast järgmise juurde.',
+      ],
+      solution: [
+        'Playlist „Minu elu, minu reeglid“, märgitud podcastiks, kõik 9 osa järjest sees.',
+        'Kõigile osadele üks pealkirja vorm, teema ees, sest selle järgi otsitakse: „Teema | Minu elu, minu reeglid #N“.',
+        'Igale osale oma kirjeldus: üks-kaks lauset selle osa teemast ja seejärel samad lingid vestlusõhtutele, teraapiasse broneerimisele, Spotifysse, Instagrami ja kodulehele.',
+        'Kanali kirjeldus ja viis kanali linki: koduleht, vestlusõhtud, Spotify, Instagram ja Facebook.',
+        'Lõpuekraanid kõigile 9 osale, et vaataja liiguks järgmise osa juurde, mitte ei lahkuks.',
+        'Uus bänner ja profiilipilt antsrootslane.ee stiilis.',
+        'Abi raha teenimisel: kanal vastas juba YouTube’i partnerprogrammi tingimustele, nii et selgitasin taotlemist ja seda, kuidas Ants oma AdSense’i konto ise seob.',
+      ],
+      highlights: [
+        {
+          title: 'Pealkirjad otsingu jaoks',
+          text: 'Inimesed otsivad teemat, mitte osa numbrit. Kui teema on ees ning podcasti nimi ja number lõpus, on pealkiri otsingutulemustes hästi loetav ja sari püsib ikkagi koos.',
+        },
+        {
+          title: 'Enne mustandid, siis muudatused',
+          text: 'Saatsin Antsule kanali kirjelduse, pealkirjade nimekirja ja kirjelduse põhja kõigepealt mustandina ning muutsin kanalil asju alles siis, kui tekstid olid kokku lepitud. Kahe osa kirjeldus on tema enda sõnadega.',
+        },
+        {
+          title: 'Halduri õigused, mitte paroolid',
+          text: 'Töötan kanalil YouTube Studio halduri õigustega. Kanal jääb täielikult Antsu omaks ja AdSense’i konto koos tema pangaandmetega on ainult tema käes.',
+        },
+        {
+          title: 'Podcast, mitte lihtsalt videod',
+          text: 'Kui playlist on märgitud podcastiks, ilmub sari kanali Podcastide vahekaardile ja YouTube Musicusse, kus inimesed otsivad midagi kuulamiseks.',
+        },
+      ],
+      results: [
+        'Kanali lehel on nüüd kirjeldus, viis linki, uus bänner ja Podcastide vahekaart kõigi 9 osaga.',
+        'Uusim osa, mis ilmus samal nädalavahetusel, ületas esimese nelja päevaga 25 000 avalikku vaatamist.',
+        'Kogu seadistus võttis 4 tundi.',
+        ...(ANTS_STUDIO_FIGURES_APPROVED
+          ? [
+              // STUDIO
+              'Vaatamisi päevas oli enne tööd umbes 250, kolmel päeval pärast seda 5900 kuni 9700 (YouTube Studio).',
+              // STUDIO
+              'Uusi tellijaid tuli enne 0 kuni 5 päevas, kolme päevaga üle 100.',
+              // STUDIO
+              'Vanemad osad said umbes kolm korda rohkem vaatamisi kui varem, kokku ligi 800 päevas. Samal nädalavahetusel ilmus ka uus osa, nii et osa päevaste vaatamiste kasvust tuleb sellest, aga vanade osade kasv näitab, et mõju oli ka seadistusel endal.',
+              // STUDIO
+              'Uus osa sai esimese kolme päevaga 21 400 vaatamist, pisipildi klikkimise määr oli 8,4% ja keskmine vaatamine 27,5 minutit.',
+            ]
+          : []),
+      ],
+      faq: [
+        {
+          q: 'Kas videoid endid ka muudeti?',
+          a: 'Ei. Osad jäid samaks. Vahe tuli kanalist nende ümber: pealkirjad, kirjeldused, podcasti playlist, lõpuekraanid ja lingid.',
+        },
+        {
+          q: 'Miks on podcastil YouTube’is playlisti vaja?',
+          a: 'YouTube käsitleb sarja podcastina ainult siis, kui see on podcastiks märgitud playlistis. Ilma selleta ei ilmu osad Podcastide vahekaardile ega YouTube Musicusse ja vaatajal pole lihtsat viisi neid järjest vaadata.',
+        },
+      ],
+    },
+  },
 };
