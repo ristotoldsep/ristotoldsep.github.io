@@ -113,6 +113,9 @@ export function pageNode(a: {
     inLanguage: a.lang,
     isPartOf: { '@id': ids.website(a.origin) },
     about: { '@id': ids.person(a.origin) },
+    ...(['ProfilePage', 'AboutPage'].includes(a.type)
+      ? { primaryImageOfPage: new URL('/portrait.jpg', a.origin).href }
+      : {}),
     ...(a.type === 'ProfilePage' ? { mainEntity: { '@id': ids.person(a.origin) } } : {}),
     ...(a.hasBreadcrumb ? { breadcrumb: { '@id': ids.breadcrumb(a.url) } } : {}),
     ...(a.faq?.length ? { mainEntity: faqEntities(a.faq) } : {}),
