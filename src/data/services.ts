@@ -97,7 +97,7 @@ export const services = {
           },
           {
             q: 'How long does a website design take?',
-            a: 'For a typical business site, design is a few weeks depending on how quickly feedback comes back. The slowest part is almost always content, not design.',
+            a: 'For a typical business site, the design takes a couple of days, depending on how quickly feedback comes back. The slowest part is almost always content, not design.',
           },
           {
             q: 'Will I get the Figma files?',
@@ -154,7 +154,7 @@ export const services = {
           },
           {
             q: 'Kui kaua kodulehe disain aega võtab?',
-            a: 'Tavalise ärilehe puhul on disain paar nädalat, sõltuvalt sellest, kui kiiresti tagasiside tuleb. Kõige aeglasem osa on peaaegu alati sisu, mitte disain.',
+            a: 'Tavalise ärilehe puhul valmib disain paari päevaga, sõltuvalt sellest, kui kiiresti tagasiside tuleb. Kõige aeglasem osa on peaaegu alati sisu, mitte disain.',
           },
           {
             q: 'Kas saan Figma failid endale?',
@@ -359,7 +359,7 @@ export const services = {
           },
           {
             q: 'How long does WordPress development take?',
-            a: 'A smaller custom website usually takes a few weeks, a WooCommerce store with integrations a couple of months. What moves the schedule most is how quickly content and feedback come in, so we agree those dates at the start.',
+            a: 'A standard custom website takes me a couple of days, a WooCommerce store with integrations up to a couple of weeks. What moves the schedule most is how quickly content and feedback come in, so we agree those dates at the start.',
           },
         ],
       },
@@ -442,7 +442,7 @@ export const services = {
           },
           {
             q: 'Kui kaua võtab WordPressi kodulehe arendus aega?',
-            a: 'Väiksem kohandatud koduleht valmib tavaliselt mõne nädalaga, WooCommerce e-pood koos integratsioonidega paari kuuga. Ajakava mõjutab kõige rohkem see, kui kiiresti sisu ja tagasiside liiguvad, seega lepime need kuupäevad kokku kohe alguses.',
+            a: 'Tavaline kohandatud koduleht valmib mul paari päevaga, WooCommerce e-pood koos integratsioonidega kuni paari nädalaga. Ajakava mõjutab kõige rohkem see, kui kiiresti sisu ja tagasiside liiguvad, seega lepime need kuupäevad kokku kohe alguses.',
           },
         ],
       },

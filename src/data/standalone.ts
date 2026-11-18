@@ -221,7 +221,7 @@ export const hirePage: I18n<StandalonePageCopy> = {
       },
       {
         q: 'How long does a website take?',
-        a: 'A custom marketing site is typically a few weeks of build once the content and design are settled. The slowest part of almost every project is content, not development.',
+        a: 'A custom marketing site takes me a couple of days once the content is settled, an online store up to a couple of weeks. The slowest part of almost every project is content, not development.',
       },
       {
         q: 'What happens after launch?',
@@ -291,7 +291,7 @@ export const hirePage: I18n<StandalonePageCopy> = {
       },
       {
         q: 'Kui kaua kodulehe tegemine aega võtab?',
-        a: 'Kohandatud turundusleht on tavaliselt paar nädalat arendust, kui sisu ja disain on paigas. Peaaegu iga projekti aeglasem osa on sisu, mitte arendus.',
+        a: 'Kohandatud turundusleht valmib mul paari päevaga, kui sisu on paigas, e-pood kuni paari nädalaga. Peaaegu iga projekti aeglasem osa on sisu, mitte arendus.',
       },
       {
         q: 'Mis saab pärast avaldamist?',
