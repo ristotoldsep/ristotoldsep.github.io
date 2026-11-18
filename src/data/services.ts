@@ -281,18 +281,19 @@ export const services = {
     relatedProjects: ['clarte', 'pr-permanent-pmu', 'serene-sleep'],
     i18n: {
       en: {
-        name: 'WordPress & eCommerce',
+        name: 'WordPress development & eCommerce',
         cardTitle: 'WordPress<br>&amp; eCommerce',
-        heading: 'Custom WordPress and WooCommerce development in Estonia',
+        heading: 'WordPress development and WooCommerce stores in Tallinn, Estonia',
         summary:
           'Custom themes, plugins, and complete online stores. Multi-language, multi-currency, high-performance shops that convert browsers into buyers.',
         cta: 'Learn more ->',
         seo: {
-          title: 'Custom WordPress & WooCommerce Development, Estonia | Risto Tõldsep',
+          title: 'WordPress Developer in Tallinn, Estonia | Risto Tõldsep',
           description:
-            'Custom WordPress themes, plugins and WooCommerce stores built in Tallinn, Estonia. Multi-language, multi-currency, fast, and no page builder bloat.',
+            'Freelance WordPress developer in Tallinn, Estonia: custom themes on ACF blocks, plugins and WooCommerce stores. Multilingual, fast, and no page builder bloat.',
         },
         intro: [
+          'I am a freelance WordPress developer in Tallinn, Estonia. I have spent 5+ years building custom websites and online stores, and a large share of that work is WordPress and WooCommerce: custom themes, Gutenberg and ACF blocks, plugins and integrations, for Estonian businesses and clients abroad.',
           'I build WordPress sites and WooCommerce stores as custom themes, not as a purchased template bent into shape. That means the site does what the brand needs rather than what a theme author assumed, and it stays fast because it only ships the code it actually uses.',
           'Most of my work is for Estonian businesses selling to Estonia and abroad, which in practice means multilingual content, local payment methods and a client who needs to run the site themselves afterwards.',
         ],
@@ -352,21 +353,30 @@ export const services = {
             q: 'Do you take over existing WordPress sites?',
             a: 'Often, yes. I will look at what is there first and tell you honestly whether fixing it or rebuilding it is the better use of your money.',
           },
+          {
+            q: 'Can I hire you as a freelance WordPress developer?',
+            a: 'Yes. I take WordPress and WooCommerce projects directly as a freelance developer, so there is no agency layer between you and the person writing the code, and you talk to the same person from scoping to launch.',
+          },
+          {
+            q: 'How long does WordPress development take?',
+            a: 'A smaller custom website usually takes a few weeks, a WooCommerce store with integrations a couple of months. What moves the schedule most is how quickly content and feedback come in, so we agree those dates at the start.',
+          },
         ],
       },
       et: {
-        name: 'WordPress ja e-kaubandus',
+        name: 'WordPress arendus ja e-poed',
         cardTitle: 'WordPress<br>&amp; e-kaubandus',
-        heading: 'Kohandatud WordPressi ja WooCommerce arendus Eestis',
+        heading: 'WordPress arendus ja WooCommerce e-poed Tallinnas',
         summary:
           'Kohandatud teemad, pluginad ja terviklikud veebipoed. Mitmekeelsed, mitme valuutaga ja suure jõudlusega lahendused, mis muudavad külastajad ostjateks.',
         cta: 'Loe lähemalt ->',
         seo: {
-          title: 'WordPressi ja WooCommerce arendus, e-poe tegemine | Risto Tõldsep',
+          title: 'WordPress arendus ja WooCommerce e-poed | Risto Tõldsep',
           description:
-            'Kohandatud WordPressi teemad, pluginad ja WooCommerce e-poed Tallinnast. Mitmekeelsed, mitme valuutaga, kiired ja ilma lehetegija lisakoormata.',
+            'Vabakutseline WordPress arendaja Tallinnas: kohandatud teemad ACF plokkidel, pluginad ja WooCommerce e-poed. Mitmekeelsed, kiired, ilma lehetegija lisakoormata.',
         },
         intro: [
+          'Olen vabakutseline WordPress arendaja Tallinnas. Mul on 5+ aastat kogemust kohandatud kodulehtede ja e-poodide arendamisel ning suur osa sellest on WordPressi ja WooCommerce\'i projektid: kohandatud teemad, Gutenbergi ja ACF plokid, pluginad ning integratsioonid Eesti ja välismaa ettevõtetele.',
           'Teen WordPressi kodulehti ja WooCommerce e-poode kohandatud teemadena, mitte ostetud malli ümber painutades. See tähendab, et leht teeb seda, mida bränd vajab, mitte seda, mida teema autor eeldas, ja püsib kiire, sest laeb ainult seda koodi, mida päriselt kasutab.',
           'Enamik minu tööst on Eesti ettevõtetele, kes müüvad Eestisse ja välismaale, mis praktikas tähendab mitmekeelset sisu, kohalikke makseviise ja klienti, kes peab lehte hiljem ise haldama.',
         ],
@@ -425,6 +435,14 @@ export const services = {
           {
             q: 'Kas võtad üle olemasolevaid WordPressi lehti?',
             a: 'Sageli küll. Vaatan kõigepealt üle, mis olemas on, ja ütlen ausalt, kas selle parandamine või uuesti ehitamine on sinu raha parem kasutus.',
+          },
+          {
+            q: 'Kas teed WordPressi arendust ka vabakutselisena?',
+            a: 'Jah. Võtan WordPressi ja WooCommerce\'i projekte vabakutselise arendajana otse, nii et sinu ja koodi kirjutava inimese vahel ei ole agentuuri vahelüli ning suhtled kaardistusest avaldamiseni sama inimesega.',
+          },
+          {
+            q: 'Kui kaua võtab WordPressi kodulehe arendus aega?',
+            a: 'Väiksem kohandatud koduleht valmib tavaliselt mõne nädalaga, WooCommerce e-pood koos integratsioonidega paari kuuga. Ajakava mõjutab kõige rohkem see, kui kiiresti sisu ja tagasiside liiguvad, seega lepime need kuupäevad kokku kohe alguses.',
           },
         ],
       },
