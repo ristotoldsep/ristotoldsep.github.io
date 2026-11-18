@@ -11,6 +11,7 @@ import { publishedProjects } from '../../data/projects';
 import { allServices } from '../../data/services';
 import { routes, type Alternates } from '../../lib/routes';
 import { businessNode, type SchemaNode } from '../../lib/schema';
+import { PORTRAIT } from '../../lib/portrait';
 
 interface Props {
   copy: StandalonePageCopy;
@@ -35,7 +36,7 @@ const {
 
 const copy = siteCopy[locale];
 const SITE = Astro.site ?? new URL('https://ristotoldsep.eu');
-const portraitURL = new URL('/portrait.jpg', SITE).href;
+const portraitURL = new URL(PORTRAIT.path, SITE).href;
 
 const breadcrumbs = [
   { name: copy.pages.home, url: routes.home(locale) },

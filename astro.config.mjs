@@ -26,6 +26,12 @@ export default defineConfig({
         item.changefreq = meta.changefreq;
         item.priority = meta.priority;
         if (meta.lastmod) item.lastmod = meta.lastmod;
+        if (meta.images?.length) {
+          item.img = meta.images.map((image) => ({
+            url: new URL(image.path, SITE).href,
+            ...(image.caption ? { caption: image.caption } : {}),
+          }));
+        }
         item.links = [
           { lang: 'en', url: new URL(meta.alternates.en, SITE).href },
           { lang: 'et', url: new URL(meta.alternates.et, SITE).href },

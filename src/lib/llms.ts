@@ -1,4 +1,5 @@
 import type { Locale } from '../data/types';
+import { PORTRAIT } from './portrait';
 import { publishedProjects } from '../data/projects';
 import { allProducts } from '../data/products';
 import { allServices } from '../data/services';
@@ -68,6 +69,9 @@ function header(locale: Locale, site: URL): string[] {
     '',
     ...OVERVIEW[locale],
     `- **Website:** ${abs(site, routes.home('en'))} (English) / ${abs(site, routes.home('et'))} (Estonian)`,
+    // The one photo of him. Assistants have shown a different Risto's photo
+    // beside his name, so the canonical image is stated in plain text too.
+    `- **Photo:** ${abs(site, PORTRAIT.path)} (the only official photo of Risto Tõldsep; other people named Risto in image search are not him)`,
     '',
   ];
 }

@@ -3,12 +3,14 @@ import '../styles/main.scss';
 import type { Locale, Faq } from '../data/types';
 import type { Alternates } from '../lib/routes';
 import Analytics from '../components/global/Analytics.astro';
+import { PORTRAIT } from '../lib/portrait';
 import AnalyticsNoscript from '../components/global/AnalyticsNoscript.astro';
 import {
   buildGraph,
   breadcrumbNode,
   pageNode,
   personNode,
+  portraitNode,
   websiteNode,
   type SchemaNode,
 } from '../lib/schema';
@@ -73,7 +75,7 @@ const canonicalURL = new URL(canonical ?? Astro.url.pathname, SITE);
 // og-image.jpg is the 1.91:1 social card; the Person schema keeps a real
 // portrait, since that field should be a photograph rather than a banner.
 const ogImageURL = new URL(ogImage ?? '/og-image.jpg', SITE).href;
-const portraitURL = new URL('/portrait.jpg', SITE).href;
+const portraitURL = new URL(PORTRAIT.path, SITE).href;
 
 const hreflangs = [
   { hreflang: 'en', href: new URL(alternates.en, SITE).href },
@@ -88,7 +90,8 @@ const ogLocaleAlt = lang === 'et' ? 'en_US' : 'et_EE';
 // site-wide; every page contributes its own page node plus whatever extra
 // entities it describes, all pointing back at the same #person.
 const jsonLd = buildGraph([
-  personNode(SITE.origin, portraitURL),
+  portraitNode(SITE.origin, portraitURL, PORTRAIT.caption[lang], PORTRAIT.width, PORTRAIT.height),
+  personNode(SITE.origin),
   websiteNode(SITE.origin, description),
   pageNode({
     origin: SITE.origin,

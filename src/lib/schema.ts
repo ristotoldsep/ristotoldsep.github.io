@@ -8,6 +8,7 @@ export type SchemaNode = Record<string, unknown>;
 
 export const ids = {
   person: (origin: string) => `${origin}/#person`,
+  portrait: (origin: string) => `${origin}/#portrait`,
   website: (origin: string) => `${origin}/#website`,
   business: (origin: string) => `${origin}/#business`,
   page: (url: string, suffix = 'webpage') => `${url}#${suffix}`,
@@ -21,14 +22,35 @@ export const ids = {
 export const PERSON_DESCRIPTION =
   'Risto Tõldsep is a freelance web developer and designer based in Tallinn, Estonia, who designs and builds custom websites, WordPress and WooCommerce stores, interactive frontends, and AI-powered web tools.';
 
-export function personNode(origin: string, image: string): SchemaNode {
+/**
+ * The portrait as its own ImageObject, referenced by @id from the Person and
+ * from profile pages. A bare URL string says only "an image"; this says whose
+ * image it is, with a caption naming him, which is the signal image search
+ * uses to tie a face to a name.
+ */
+export function portraitNode(origin: string, url: string, caption: string, width: number, height: number): SchemaNode {
+  return {
+    '@type': 'ImageObject',
+    '@id': ids.portrait(origin),
+    url,
+    contentUrl: url,
+    width,
+    height,
+    caption,
+    name: 'Risto Tõldsep',
+    representativeOfPage: true,
+    about: { '@id': ids.person(origin) },
+  };
+}
+
+export function personNode(origin: string): SchemaNode {
   return {
     '@type': 'Person',
     '@id': ids.person(origin),
     name: 'Risto Tõldsep',
     alternateName: 'Risto Toldsep',
     url: origin,
-    image,
+    image: { '@id': ids.portrait(origin) },
     jobTitle: ['Web Developer', 'Web Designer', 'Full-Stack Developer'],
     description: PERSON_DESCRIPTION,
     knowsLanguage: ['et', 'en'],
@@ -114,7 +136,7 @@ export function pageNode(a: {
     isPartOf: { '@id': ids.website(a.origin) },
     about: { '@id': ids.person(a.origin) },
     ...(['ProfilePage', 'AboutPage'].includes(a.type)
-      ? { primaryImageOfPage: new URL('/portrait.jpg', a.origin).href }
+      ? { primaryImageOfPage: { '@id': ids.portrait(a.origin) } }
       : {}),
     ...(a.type === 'ProfilePage' ? { mainEntity: { '@id': ids.person(a.origin) } } : {}),
     ...(a.hasBreadcrumb ? { breadcrumb: { '@id': ids.breadcrumb(a.url) } } : {}),
